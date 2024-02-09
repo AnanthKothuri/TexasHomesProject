@@ -1,12 +1,13 @@
 import React from 'react';
+import PageLayout from '../Layouts/PageLayout/PageLayout.js';
+import data from './data.json'; // Your data file or an array of data
 
 const SheltersPage = () => {
-  return (
-    <div>
-      <h2>Shelters</h2>
-      <p>This is the shelter page.</p>
-    </div>
-  );
+  return <PageLayout data={data.shelters} />;
 }
 
 export default SheltersPage;
+
+
+
+

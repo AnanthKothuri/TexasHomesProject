@@ -1,0 +1,22 @@
+{
+    "shelters": [
+      {
+        "id": "1",
+        "image": "path-to-your-image.jpg",
+        "title": "Shelter 1",
+        "description": "Description for Shelter 1"
+      },
+      {
+        "id": "2",
+        "image": "path-to-your-image.jpg",
+        "title": "Shelter 2",
+        "description": "Description for Shelter 2"
+      },
+      {
+        "id": "3",
+        "image": "path-to-your-image.jpg",
+        "title": "Shelter 3",
+        "description": "Description for Shelter 3"
+      }
+    ]
+  }  
