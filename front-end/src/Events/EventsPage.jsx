@@ -1,12 +1,11 @@
 import React from 'react';
+import PageLayout from '../ModelTemplates/PageLayout';
+import data from './eventData.json';
 
 const EventsPage = () => {
-  return (
-    <div>
-      <h2>Events</h2>
-      <p>This is the events page.</p>
-    </div>
-  );
+  return <PageLayout data={data.events} pageTitle={"Events"} />;
 }
 
 export default EventsPage;
+
+

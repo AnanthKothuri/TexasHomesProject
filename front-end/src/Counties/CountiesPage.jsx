@@ -1,12 +1,11 @@
 import React from 'react';
+import PageLayout from '../ModelTemplates/PageLayout';
+import data from './countyData.json';
 
 const CountiesPage = () => {
-  return (
-    <div>
-      <h2>Counties</h2>
-      <p>This is the counties page.</p>
-    </div>
-  );
+  return <PageLayout data={data.counties} pageTitle={"Counties"} />;
 }
 
 export default CountiesPage;
+
+
