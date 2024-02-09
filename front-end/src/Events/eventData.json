@@ -1,0 +1,28 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "image": "",
+            "description": "This is a description for the first event",
+            "title": "Event 1",
+            "date": "January 1, 2024",
+            "time": "9:00 am"
+        },
+        {
+            "id": 2,
+            "image": "",
+            "description": "This is a description for the second event",
+            "title": "Event 2",
+            "date": "January 1, 2024",
+            "time": "9:00 am"
+        },
+        {
+            "id": 1,
+            "image": "",
+            "description": "This is a description for the third event",
+            "title": "Event 3",
+            "date": "January 1, 2024",
+            "time": "9:00 am"
+        }
+    ]
+}

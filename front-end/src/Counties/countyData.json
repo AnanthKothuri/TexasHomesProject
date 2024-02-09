@@ -1,0 +1,31 @@
+{
+    "counties": [
+        {
+            "id": 1,
+            "image": "",
+            "description": "This is a description for the first county",
+            "title": "County 1",
+            "total_population": 100000,
+            "homeless_population": 1000,
+            "map": ""
+        },
+        {
+            "id": 2,
+            "image": "",
+            "description": "This is a description for the second county",
+            "title": "County 2",
+            "total_population": 100000,
+            "homeless_population": 1000,
+            "map": ""
+        },
+        {
+            "id": 1,
+            "image": "",
+            "description": "This is a description for the third county",
+            "title": "County 3",
+            "total_population": 100000,
+            "homeless_population": 1000,
+            "map": ""
+        }
+    ]
+}
