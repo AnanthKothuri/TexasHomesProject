@@ -1,13 +1,11 @@
 import React from 'react';
-import PageLayout from '../Layouts/PageLayout/PageLayout.js';
-import data from './data.json'; // Your data file or an array of data
+import PageLayout from '../ModelTemplates/PageLayout';
+import data from './shelterData.json';
 
 const SheltersPage = () => {
-  return <PageLayout data={data.shelters} />;
+  return <PageLayout data={data.shelters} pageTitle={"Shelters"} />;
 }
 
 export default SheltersPage;
-
-
 
 

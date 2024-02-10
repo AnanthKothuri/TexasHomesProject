@@ -6,6 +6,7 @@ import SheltersPage from './Shelters/SheltersPage';
 import CountiesPage from './Counties/CountiesPage';
 import EventsPage from './Events/EventsPage';
 import NavBar from './Navbar';
+import InstancePage from './ModelTemplates/InstancePage';
 
 function App() {
   return (
@@ -17,8 +18,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/shelters" element={<SheltersPage />} />
+          <Route path="/:type/:id" element={<InstancePage />} />
           <Route path="/counties" element={<CountiesPage />} />
+          <Route path="/:type/:id" element={<InstancePage />} />
           <Route path="/events" element={<EventsPage />} />
+          <Route path="/:type/:id" element={<InstancePage />} />
         </Routes>
       </div>
     </Router>
