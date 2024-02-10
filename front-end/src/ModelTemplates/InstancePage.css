@@ -1,0 +1,77 @@
+/* InstancePage.css */
+.instance-page {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .instance-title {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .instance-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .instance-image, .instance-map {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .instance-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .instance-stats, .instance-details {
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+  
+  .instance-stats h2, .instance-details h2 {
+    margin-top: 0;
+  }
+  
+  .instance-map-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Additional styles for specific attributes and buttons */
+  .row-attribute {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .row-attribute p {
+    margin: 0;
+    padding-right: 10px;
+  }
+  
+  .card-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .card-button:hover {
+    background-color: #0056b3;
+  }
+  
