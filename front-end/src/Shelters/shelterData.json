@@ -1,6 +1,7 @@
 {
     "shelters": [
         {
+          "id": 1,
           "name": "Promise House",
           "address": "224 W Page Ave.",
           "city": "Dallas",
@@ -23,6 +24,7 @@
           "update_datetime": "2023-06-21T17:24:12Z"
         },
         {
+          "id": 2,
           "name": "Eden Outreach, Inc.",
           "address": "3110 Metropolitan Ave",
           "city": "Dallas",
@@ -43,6 +45,7 @@
           "update_datetime": "2023-06-21T17:24:12Z"
         },
         {
+          "id": 3,
           "name": "Homeward Bound Inc",
           "address": "233 W. 10th Street",
           "city": "Dallas",
