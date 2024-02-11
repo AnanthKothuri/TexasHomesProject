@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './InstanceCard.css'; // Make sure to create a corresponding CSS file for styling
+import { useNavigate } from 'react-router-dom';
 
 function InstanceCard({item, type}) {
 
