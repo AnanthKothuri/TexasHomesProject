@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './InstanceCard.css'; // Make sure to create a corresponding CSS file for styling
 import { useNavigate } from 'react-router-dom';
 
@@ -17,8 +16,6 @@ function InstanceCard({item, type}) {
 
 export default InstanceCard;
 
-let navigate = useNavigate()
-
 function ShelterInstanceCard({item}) {
     const containerStyle = {
         height: '250px',
@@ -29,6 +26,7 @@ function ShelterInstanceCard({item}) {
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
+    let navigate = useNavigate()
 
     function navigateToShelter() {
         navigate(`/shelters/${item.id}`);
@@ -79,6 +77,7 @@ function CountyInstanceCard({item}) {
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
+    let navigate = useNavigate()
 
     function navigateToCounty() {
         navigate(`/counties/${item.id}`);
@@ -129,6 +128,7 @@ function EventInstanceCard({item}) {
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
+    let navigate = useNavigate()
 
     function navigateToEvent() {
         navigate(`/events/${item.id}`);
