@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './InstanceCard.css'; // Make sure to create a corresponding CSS file for styling
 
 function InstanceCard({item, type}) {
@@ -15,6 +16,8 @@ function InstanceCard({item, type}) {
 
 export default InstanceCard;
 
+let navigate = useNavigate()
+
 function ShelterInstanceCard({item}) {
     const containerStyle = {
         height: '250px',
@@ -25,6 +28,11 @@ function ShelterInstanceCard({item}) {
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
+
+    function navigateToShelter() {
+        navigate(`/shelters/${item.id}`);
+      }
+  
 
     return (
         <div className="card">
@@ -53,7 +61,7 @@ function ShelterInstanceCard({item}) {
                     </div>          
                 </div>
 
-                <button className="card-button">Learn More</button>
+                <button className="card-button" onClick={navigateToShelter}>Learn More</button>
             </div>
 
         </div>
@@ -70,6 +78,11 @@ function CountyInstanceCard({item}) {
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
+
+    function navigateToCounty() {
+        navigate(`/counties/${item.id}`);
+      }
+  
 
     return (
         <div className="card">
@@ -99,7 +112,7 @@ function CountyInstanceCard({item}) {
                     </div>
                 </div>
 
-                <button className="card-button">Explore County</button>
+                <button className="card-button" onClick={navigateToCounty}>Explore County</button>
             </div>
         </div>
     )
@@ -115,6 +128,11 @@ function EventInstanceCard({item}) {
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
+
+    function navigateToEvent() {
+        navigate(`/events/${item.id}`);
+      }
+  
 
     return (
         <div className="card">
@@ -134,7 +152,7 @@ function EventInstanceCard({item}) {
                     <p>{item.time}</p>
                 </div>
 
-                <button className="card-button">View Event</button>
+                <button className="card-button" onClick={navigateToEvent}>View Event</button>
             </div>
 
         </div>
