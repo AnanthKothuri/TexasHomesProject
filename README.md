@@ -9,7 +9,7 @@ https://www.postman.com/martian-spaceship-409221/workspace/texashomeproject/over
 
 ### Team Member Information
 
-| Name                     | GitLabID        |
+| Name                     | GitLab ID       |
 | :----------------------- | --------------- |
 | Jeronimo Del Valle Ocejo | @jerodvo        |
 | Gabriel Casanova         | @gabecasanova   |
@@ -65,13 +65,13 @@ Instances of each model must connect to instances of at least two other models.
 
 Instances of each model must be rich with different media (e.g., feeds, images, maps, text, videos, etc).
 
-Describe two types of media for instances of each model
+Describe two types of media for instances of each model:
 
     1. Photo of shelter, Google Maps location, text describing contact information
     2. Graphics highlighting county location within Texas, descriptions/logos for organizations/nonprofits in the county
     3. Pictures/fliers depicting the event alongside a text description
 
-describe three questions that your site will answer
+Describe three questions that your site will answer:
 
     1. Where are homeless shelters in Texas located?
     2. How are different counties affected by homelessness and how are individuals within the county assisting homeless populations?
