@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { contributors } from 'Contributors';
+import { contributors } from './Contributors';
 
 const AboutPage = () => {
 
