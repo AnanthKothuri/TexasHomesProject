@@ -15,7 +15,7 @@ function PageLayout({ data = [], pageTitle}) {
         {/* search bar */}
 
         {/* grid */}
-        <div class="row row-cols-3">
+        <div class="row row-cols-auto">
             {data.length === 0 ? (
             <div>No items found.</div>
             ) : (
@@ -25,6 +25,10 @@ function PageLayout({ data = [], pageTitle}) {
                 </div>
             ))
             )}
+        </div>
+
+        <div style={{padding: 30, paddingBottom: 50}}>
+            {data.length} out of {data.length} {pageTitle}
         </div>
     </div>
   );
