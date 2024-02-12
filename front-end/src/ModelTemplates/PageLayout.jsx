@@ -3,8 +3,8 @@ import InstanceCard from './InstanceCard.jsx';
 import './PageLayout.css';
 
 function PageLayout({ data = [], pageTitle}) {
-  // organize cards on about page in sets of 2 columns rather than 3
-  let gridClass = pageTitle == "About Us" ? "row row-cols-2" : "row row-cols-3";
+  // organize cards on about page in sets of 4 columns rather than 3
+  let gridClass = pageTitle == "About Us" ? "row row-cols-4" : "row row-cols-3";
 
   return (
     <div className="container text-center">
