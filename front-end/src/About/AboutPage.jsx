@@ -8,14 +8,12 @@ const AboutPage = () => {
   let env = process.env;
   console.log(env);
   let secrets = process.env.secrets;
-  if (secrets) {
-    try {
-      secrets = JSON.parse(secrets);
-      console.log(secrets);
-      console.log('made it here');
-    } catch (error) {
-      console.error('Error parsing secrets JSON:', error);
-    }
+  try {
+    secrets = JSON.parse(secrets);
+    console.log(secrets);
+    console.log('made it here');
+  } catch (error) {
+    console.error('Error parsing secrets JSON:', error);
   }
 
   return (
