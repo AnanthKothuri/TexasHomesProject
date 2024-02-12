@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { contributors } from './Contributors';
+import { contributors } from "../data/about";
 import PageLayout from '../ModelTemplates/PageLayout';
 
 const AboutPage = () => {

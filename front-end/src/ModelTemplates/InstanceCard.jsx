@@ -3,7 +3,6 @@ import './InstanceCard.css'; // Make sure to create a corresponding CSS file for
 import { useNavigate } from 'react-router-dom';
 
 function InstanceCard({item, type}) {
-
     return (
         <div>
             { type === "Shelters" ? (<ShelterInstanceCard item={item} />) : 
@@ -19,32 +18,26 @@ export default InstanceCard;
 
 function AboutUsInstanceCard({item}) {
     const containerStyle = {
-        height: '300px',
-        background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(${item.image_name}) center/cover no-repeat`,
+        height: '250px',
+        background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45)), url(${item.img_src}) center/cover no-repeat`,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'flex-start', 
         paddingLeft: 20
     };
-    
+
     return (
         <div className="card">
             <div style={containerStyle}>
-                <h4 style={{color: 'white'}}>{item.name}</h4>
+                <h4 style={{color: 'white', fontSize: 20}}><b>{item.name}</b></h4>
             </div>
-
             <div className="card-content">
-
                 <div className='description-text'>
-                    {item.description !== "" ? item.description : "This is a blank description."}
+                    <p className="clamp">{item.description}</p>
                 </div>
 
                 <div style={{paddingTop: 20}}>
-                    <div className='row-attribute'>
-                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Role: </p>
-                        <p>{item.role != "" ? item.role : "N/A"}</p>
-                    </div>
                     <div className='row-attribute'>
                         <p style={{fontWeight: 'bold', paddingRight: 10}}>Number of Commits:</p>
                         <p>{item.num_commits}</p>
@@ -56,7 +49,7 @@ function AboutUsInstanceCard({item}) {
                 </div>
             </div>
         </div>
-    )
+      );
 }
 
 function ShelterInstanceCard({item}) {

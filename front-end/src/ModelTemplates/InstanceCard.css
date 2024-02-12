@@ -40,4 +40,11 @@
             line-clamp: 3;
     -webkit-box-orient: vertical;
   }
+
+  .clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Change the number to control the maximum number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   
