@@ -25,8 +25,6 @@ const AboutPage = () => {
       )
       .then((response) => {
         setContributorResults(response.data);
-        // console.log('contributorResults:')
-        // console.log(response.data);
       });
 
     // fetch issue data
@@ -38,8 +36,6 @@ const AboutPage = () => {
       })
       .then((response) => {
         setIssueResults(response.data);
-        // console.log('issueResults:')
-        // console.log(response.data);
       });
   }, [PROJECT_ID, GITLAB_TOKEN]);
 
@@ -51,29 +47,24 @@ const AboutPage = () => {
       );
       
       // numCommits
-      const numCommits = teamMemberData ? teamMemberData.commits : 0;
+      const num_commits = teamMemberData ? teamMemberData.commits : 0;
 
       // numIssues
-      const numIssues = issueResults.filter(
+      const num_issues = issueResults.filter(
         (issue) => issue.author.username === contributor.gitlab_username
       ).length;
 
-      // Create object for the team member
+      // append new entry for each team member
       return {
         ...contributor,
-        numCommits,
-        numIssues
+        num_commits,
+        num_issues
       };
     })
   };
 
-  console.log(data);
-
   return (
-    // <PageLayout data={data.aboutPage} pageTitle={"About Us"}/>
-    <div>
-      <h1>About Page</h1>
-    </div>
+    <PageLayout data={data.aboutPage} pageTitle={"About Us"}/>
   );
 }
 
