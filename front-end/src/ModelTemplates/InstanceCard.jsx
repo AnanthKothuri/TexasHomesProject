@@ -142,15 +142,28 @@ function EventInstanceCard({item}) {
             </div>
 
             <div className="card-content">
-                <p>{item.description}</p>
 
-                <div className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Date</p>
-                    <p>{item.date}</p>
+                <div className='description-text'>
+                        {item.description}
                 </div>
-                <div className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Time</p>
-                    <p>{item.time}</p>
+
+                <div style={{paddingTop: 20}}>
+                    <div className='row-attribute'>
+                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Date Posted</p>
+                        <p>{item.date_posted}</p>
+                    </div>
+                    <div className='row-attribute'>
+                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Time</p>
+                        <p>{item.time}</p>
+                    </div>
+                    <div className='row-attribute'>
+                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Causes</p>
+                        <p>{item.cause_areas}</p>
+                    </div>
+                    <div className='row-attribute'>
+                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Location</p>
+                        <p>{item.location}</p>
+                    </div>
                 </div>
 
                 <button className="card-button" onClick={navigateToEvent}>View Event</button>
