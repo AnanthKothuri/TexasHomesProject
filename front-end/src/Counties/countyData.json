@@ -2,30 +2,39 @@
     "counties": [
         {
             "id": 1,
-            "image": "",
-            "description": "This is a description for the first county",
-            "title": "County 1",
-            "total_population": 100000,
-            "homeless_population": 1000,
-            "map": ""
+            "name": "Andrews County", 
+            "population": "14,786", 
+            "housing": "5,814", 
+            "website_url": "https://en.wikipedia.org/wiki/Andrews_County%2C_Texas", 
+            "short_description": "County in Texas, United States", 
+            "long_description": "Andrews County is a county in the U.S. state of Texas. It is in West Texas and its county seat is Andrews.", 
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Andrews_County_Courthouse%2C_Andrews%2C_Texas.jpg", 
+            "map": "//upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Map_of_Texas_highlighting_Andrews_County.svg/1280px-Map_of_Texas_highlighting_Andrews_County.svg.png", 
+            "images": ["//upload.wikimedia.org/wikipedia/commons/thumb/8/89/Andrews_County_Courthouse%2C_Andrews%2C_Texas.jpg/1280px-Andrews_County_Courthouse%2C_Andrews%2C_Texas.jpg", "//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Texas_in_United_States.svg/960px-Texas_in_United_States.svg.png"]
         },
         {
             "id": 2,
-            "image": "",
-            "description": "This is a description for the second county",
-            "title": "County 2",
-            "total_population": 100000,
-            "homeless_population": 1000,
-            "map": ""
+            "name": "Collin County", 
+            "population": "782,341", 
+            "housing": "66,920", 
+            "website_url": "https://en.wikipedia.org/wiki/Collin_County%2C_Texas", 
+            "short_description": "County in Texas, United States", 
+            "long_description": "Collin County is located in the U.S. state of Texas. It is part of the Dallas-Fort Worth-Arlington metropolitan statistical area, and a small portion of the city of Dallas is in the county. At the 2020 United States census, the county's population is 1,064,465, making it the sixth-most populous county in Texas and the 43rd-largest county by population in the United States. Its county seat is McKinney.", 
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Collin_county_tx_courthouse.jpg", 
+            "map": "//upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Map_of_Texas_highlighting_Collin_County.svg/1280px-Map_of_Texas_highlighting_Collin_County.svg.png", 
+            "images": ["//upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Collin_county_tx_courthouse.jpg/1280px-Collin_county_tx_courthouse.jpg", "//upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Collin_County%2C_Texas.svg/960px-Flag_of_Collin_County%2C_Texas.svg.png", "//upload.wikimedia.org/wikipedia/commons/thumb/1/11/Seal_of_Collin_County%2C_Texas.svg/200px-Seal_of_Collin_County%2C_Texas.svg.png", "//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Texas_in_United_States.svg/960px-Texas_in_United_States.svg.png"]
         },
         {
             "id": 3,
-            "image": "",
-            "description": "This is a description for the third county",
-            "title": "County 3",
-            "total_population": 100000,
-            "homeless_population": 1000,
-            "map": ""
+            "name": "Milam County", 
+            "population": "24,757", 
+            "housing": "11,305", 
+            "website_url": "https://en.wikipedia.org/wiki/Milam_County%2C_Texas", 
+            "short_description": "County in Texas, United States", 
+            "long_description": "Milam County is a county located in the U.S. state of Texas. As of the 2020 census, its population was 24,754. The county seat is Cameron. The county was created in 1834 as a municipality in Mexico and organized as a county in 1837. Milam County is named for Benjamin Rush Milam, an early settler and a soldier in the Texas Revolution.", 
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Milam_county_courthouse.jpg", 
+            "map": "//upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Map_of_Texas_highlighting_Milam_County.svg/1280px-Map_of_Texas_highlighting_Milam_County.svg.png", 
+            "images": ["//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Milam_county_courthouse.jpg/1280px-Milam_county_courthouse.jpg", "//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Texas_in_United_States.svg/960px-Texas_in_United_States.svg.png", "//upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Milam_County%2C_TX%2C_sign_IMG_2241.JPG/1280px-Milam_County%2C_TX%2C_sign_IMG_2241.JPG"]
         }
     ]
 }

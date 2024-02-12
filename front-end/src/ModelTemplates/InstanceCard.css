@@ -31,4 +31,20 @@
     flex-direction: row;
     align-items: flex-start;
   }
+
+  .description-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+            line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Change the number to control the maximum number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   

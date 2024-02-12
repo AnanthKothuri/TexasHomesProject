@@ -3,6 +3,8 @@ import InstanceCard from './InstanceCard.jsx';
 import './PageLayout.css';
 
 function PageLayout({ data = [], pageTitle}) {
+  // organize cards on About Page in  4 columns rather than 3
+  let gridClass = pageTitle === "About Us" ? "row row-cols-4" : "row row-cols-3";
 
   return (
     <div className="container text-center">
@@ -15,12 +17,12 @@ function PageLayout({ data = [], pageTitle}) {
         {/* search bar */}
 
         {/* grid */}
-        <div class="row row-cols-3">
+        <div className={gridClass}>
             {data.length === 0 ? (
             <div>No items found.</div>
             ) : (
             data.map((item, index) => (
-                <div class="col">
+                <div className="col" key={item.name}>
                     <InstanceCard item={item} type={pageTitle} />
                 </div>
             ))

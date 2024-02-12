@@ -1,7 +1,10 @@
 // InstancePage.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import data from './data.json'; // Adjust the path as necessary and ensure data.json includes shelters, counties, and events
+import shelterData from '../Shelters/shelterData.json'
+import countyData from '../Counties/countyData.json'
+import eventData from '../Events/eventData.json'
+
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
 
 const InstancePage = () => {
@@ -10,13 +13,13 @@ const InstancePage = () => {
 
   switch (type) {
     case 'shelters':
-      instanceData = data.shelters.find(item => item.id.toString() === id);
+      instanceData = shelterData.shelters.find(item => item.id.toString() === id);
       break;
     case 'counties':
-      instanceData = data.counties.find(item => item.id.toString() === id);
+      instanceData = countyData.counties.find(item => item.id.toString() === id);
       break;
     case 'events':
-      instanceData = data.events.find(item => item.id.toString() === id);
+      instanceData = eventData.events.find(item => item.id.toString() === id);
       break;
     default:
       return <div className="instance-not-found">Page type not recognized{type}yuh</div>;
