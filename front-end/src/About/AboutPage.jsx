@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { contributors } from './Contributors';
+import PageLayout from '../ModelTemplates/PageLayout';
 
 const AboutPage = () => {
 
@@ -42,31 +43,36 @@ const AboutPage = () => {
       });
   }, [PROJECT_ID, GITLAB_TOKEN]);
 
-  {contributors.map((contributor, index) => {
-    // teamMember only includes data for 1 team member (based on email)
-    const teamMember = contributorResults.filter(
-      (contributorFromAPI) => contributorFromAPI.email === contributor.email
-    );
-    // get numCommits
-    let numCommits = 0;
-    if (teamMember.length > 0) {
-      numCommits = teamMember[0].commits;
-    }
-    // get numIssues
-    const numIssues = issueResults.filter(
-      (issue) => issue.author.username === contributor.gitlab_username
-    ).length;
+  const data = {
+    aboutPage: contributors.map((contributor) => {
+      // teamMemberData only includes data for 1 team member (based on email)
+      const teamMemberData = contributorResults.find(
+        (contributorFromAPI) => contributorFromAPI.email === contributor.email
+      );
+      
+      // numCommits
+      const numCommits = teamMemberData ? teamMemberData.commits : 0;
 
-    console.log(contributor.name);
-    console.log(numCommits);
-    console.log(numIssues);
-    console.log('');
-  })}
+      // numIssues
+      const numIssues = issueResults.filter(
+        (issue) => issue.author.username === contributor.gitlab_username
+      ).length;
+
+      // Create object for the team member
+      return {
+        ...contributor,
+        numCommits,
+        numIssues
+      };
+    })
+  };
+
+  console.log(data);
 
   return (
+    // <PageLayout data={data.aboutPage} pageTitle={"About Us"}/>
     <div>
-      <h2>About</h2>
-      <p>This is the about page.</p>
+      <h1>About Page</h1>
     </div>
   );
 }
