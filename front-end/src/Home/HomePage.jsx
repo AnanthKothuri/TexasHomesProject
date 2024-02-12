@@ -1,16 +1,13 @@
 import React from 'react';
 import mainImage from "../assets/homemainimage.jpg";
-import slide1 from "../assets/homess1.jpg"; // Imported slide 1
-import slide2 from "../assets/homess3.jpg"; // Imported slide 2
+// Assuming slide1 and slide2 are correctly imported if they are to be used in the HomePageCarousel component
 import { MdNightShelter } from "react-icons/md";
-import { FaHandsHelping } from "react-icons/fa";
-import { FaLandmarkFlag } from "react-icons/fa6"; // Check this import
-import Slideshow from '../components/Slideshow';
-import Feature from '../components/Feature'; // Assuming Feature component is correctly imported
+import { FaHandsHelping } from "react-icons/fa"; // Adjusted import for consistency
+import { FaLandmarkFlag } from "react-icons/fa6"; // Adjusted import for consistency
+import Feature from '../components/Feature';
+import HomePageCarousel from '../components/HomePageCarousel'; // Ensure this component is set up correctly to display the carousel
 
 const HomePage = () => {
-  const slides = [slide1, slide2]; // Updated slides array
-
   const pageContainerStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -40,7 +37,9 @@ const HomePage = () => {
       <div style={contentAndImageContainerStyle}>
         <div style={textAndFeatureContainerStyle}>
           <h2 style={{ marginBottom: '20px' }}>Texas Homes Project</h2>
-          <p>Texas Homes Project hopes to assist individuals experiencing homelessness in Texas...</p>
+          <p>Texas Homes Project hopes to assist individuals experiencing homelessness in Texas. 
+            We hope to provide an internet platform that can connect people in need to homeless shelters, raise awareness for organizations working to assist homeless populations, 
+            and highlight local volunteer opportunities to aid homeless individuals.</p>
           <Feature
             icon={<MdNightShelter />}
             iconBg="#FFFFFF"
@@ -60,9 +59,10 @@ const HomePage = () => {
             smalltext="There are X upcoming volunteer events."
           />
         </div>
-        <img src={mainImage} alt="Descriptive Alt Text" style={imageStyle} />
+        <HomePageCarousel />
       </div>
-      <Slideshow slides={slides} interval={5000} />
+      {/* Carousel goes here, below the text/features and image but within the page container */}
+
     </div>
   );
 }
