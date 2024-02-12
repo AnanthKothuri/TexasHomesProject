@@ -3,6 +3,8 @@ import InstanceCard from './InstanceCard.jsx';
 import './PageLayout.css';
 
 function PageLayout({ data = [], pageTitle}) {
+  // organize cards on about page in sets of 2 columns rather than 3
+  let gridClass = pageTitle == "About Us" ? "row row-cols-2" : "row row-cols-3";
 
   return (
     <div className="container text-center">
@@ -15,7 +17,7 @@ function PageLayout({ data = [], pageTitle}) {
         {/* search bar */}
 
         {/* grid */}
-        <div class="row row-cols-3">
+        <div class={gridClass}>
             {data.length === 0 ? (
             <div>No items found.</div>
             ) : (

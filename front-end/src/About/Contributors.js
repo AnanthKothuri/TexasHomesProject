@@ -12,7 +12,8 @@ export const contributors = [
     email: "gabecasanova7@gmail.com",
     gitlab_username: "gabecasanova",
     image_name: "gabriel-image.pdf",
-    description: "I'm a senior CS major at UT Austin. In my spare time, I enjoy working out, reading, and occasionally FaceTiming my dog back home.",
+    description:
+      "I'm a senior CS major at UT Austin. In my spare time, I enjoy reading and working out with friends.",
     role: "",
   },
   {
@@ -28,7 +29,8 @@ export const contributors = [
     email: "ananth.s.kothuri@gmail.com",
     gitlab_username: "ananth.kothuri",
     image_name: "ananth-image.pdf",
-    description: "I’m a sophomore CS and Math major at UT Austin. I love to read, play with my dog, and travel to new countries and places.",
+    description:
+      "I’m a sophomore CS and Math major at UT Austin. I love to read, play with my dog, and travel to new countries and places.",
     role: "",
   },
 ];
