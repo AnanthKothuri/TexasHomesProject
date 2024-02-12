@@ -18,10 +18,9 @@ function InstanceCard({item, type}) {
 export default InstanceCard;
 
 function AboutUsInstanceCard({item}) {
-    let imagePath = item.image_name != "" ? `Images/${item.image_name}` : "";
     const containerStyle = {
-        height: '250px',
-        background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(${imagePath}) center/cover no-repeat`,
+        height: '300px',
+        background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(${item.image_name}) center/cover no-repeat`,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
