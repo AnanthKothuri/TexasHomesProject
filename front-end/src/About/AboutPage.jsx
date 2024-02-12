@@ -1,20 +1,47 @@
 import React from 'react';
+import axios from 'axios';
+import { contributors } from 'Contributors';
 
 const AboutPage = () => {
 
-  console.log('hi');
+  const [contributorRes, setContributorRes] = useState([]);
+  const [issueRes, setIssueRes] = useState([]);
 
-  // Parse the secrets JSON string
-  let env = process.env;
-  console.log(env);
-  let secrets = process.env.secrets;
-  try {
-    secrets = JSON.parse(secrets);
-    console.log(secrets);
-    console.log('made it here');
-  } catch (error) {
-    console.error('Error parsing secrets JSON:', error);
-  }
+  const projectID = 54614586;
+  const gitLabToken = 'glpat-FcEHeSx7LEzvmsJuN5zd';
+
+  useEffect(() => {
+    // fetch commit data
+    axios
+      .get(
+        `https://gitlab.com/api/v4/projects/${projectID}/repository/contributors`,
+        {
+          headers: {
+            "PRIVATE-TOKEN": gitLabToken,
+          },
+        }
+      )
+      .then((response) => {
+        setContributorRes(response.data);
+        console.log(response.data);
+      });
+
+    // detch issue data
+    axios
+      .get(`https://gitlab.com/api/v4/projects/${projectID}/issues`, {
+        headers: {
+          "PRIVATE-TOKEN": gitLabToken,
+        },
+      })
+      .then((response) => {
+        setIssueRes(response.data);
+        console.log(response.data);
+      });
+  }, [gitLabToken, projectID]);
+
+  console.log(contributors);
+  console.log(contributorRes);
+  console.log(issueRes);
 
   return (
     <div>
