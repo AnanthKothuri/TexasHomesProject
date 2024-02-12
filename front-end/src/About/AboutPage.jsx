@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { contributors } from './Contributors';
 
 const AboutPage = () => {
 
-  const [contributorRes, setContributorRes] = useState([]);
-  const [issueRes, setIssueRes] = useState([]);
+  const [contributorResults, setContributorResults] = useState([]);
+  const [issueResults, setIssueResults] = useState([]);
 
   const projectID = 54614586;
   const gitLabToken = 'glpat-FcEHeSx7LEzvmsJuN5zd';
@@ -22,11 +22,11 @@ const AboutPage = () => {
         }
       )
       .then((response) => {
-        setContributorRes(response.data);
+        setContributorResults(response.data);
         console.log(response.data);
       });
 
-    // detch issue data
+    // fetch issue data
     axios
       .get(`https://gitlab.com/api/v4/projects/${projectID}/issues`, {
         headers: {
@@ -34,14 +34,14 @@ const AboutPage = () => {
         },
       })
       .then((response) => {
-        setIssueRes(response.data);
+        setIssueResults(response.data);
         console.log(response.data);
       });
   }, [gitLabToken, projectID]);
 
   console.log(contributors);
-  console.log(contributorRes);
-  console.log(issueRes);
+  console.log(contributorResults);
+  console.log(issueResults);
 
   return (
     <div>
