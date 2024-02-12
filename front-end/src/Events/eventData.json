@@ -2,27 +2,72 @@
     "events": [
         {
             "id": 1,
-            "image": "",
-            "description": "This is a description for the first event",
-            "title": "Event 1",
-            "date": "January 1, 2024",
-            "time": "9:00 am"
+            "organization": "REBUILDING TOGETHER NORTH TEXAS",
+            "image": "https://res.cloudinary.com/dktp1ybbx/image/upload/c_limit,h_180,w_180/f_auto,fl_lossy,q_auto/v1680915460/organization/prod/183409/7EvaUW35vN.png",
+            "description": "We are looking for an experienced volunteer to help maintain our accounting records. This work can only be performed remotely but there may be a training period in-person. This volunteer would do all of our AP/AR/GL Entries (about 50 per month) and prepare our P&L, Cash Flow, and Balance Sheet. This volunteer would be needed between the 1st of the month and the 2nd Wednesday, when we have out board meeting. This person will be directly interfacing with our leadership team as well as the board of directors. We use QuickBooks and SalesForce software. Come join a fun team!",
+            "title": "Part-time Bookkeeper (Remote)",
+            "date_posted": "February 2, 2024",
+            "time": "We'll work with your schedule.",
+            "cause_areas": "Homeless & Housing, Seniors, Veterans & Military Families",
+            "location": "6555 Excellence Way, Plano, TX 75023",
+            "skills": "Accounting, Bookkeeping",
+            "requirements": "Driver's License Needed, Background Check, Must be at least 18, Orientation or Training, This should be about 4-5 hours per month with a ramp up that could be longer.",
+            "related_models": [
+                {
+                    "type": "Counties",
+                    "id": 3
+                  },
+                  {
+                    "type": "Events",
+                    "id": 3
+                  }
+              ]
         },
         {
             "id": 2,
-            "image": "",
-            "description": "This is a description for the second event",
-            "title": "Event 2",
-            "date": "January 1, 2024",
-            "time": "9:00 am"
+            "organization": "SOUPMOBILE",
+            "image": "https://www.volunteermatch.org/images/gallery/2D2E9132-C9B2-82A4-C39E-4C04D790A3FF_m?ts=1494878621000",
+            "description": "CALLING ALL PRAYER WARRIORS: Join the SoupMobile Prayer Team as a Prayer Warrior and help us pray for the homeless & others in need. Every week we will email you the prayer requests we have received, and you pray over them in the privacy of our own home. If you believe in the power of prayer and seek to help your fellowman, then this volunteer opportunity is just for you! This is a wonderful 'VIRTUAL' volunteer opportunity whereby from the privacy of your own home and thru prayer, you can make a real difference in the lives of the less fortunate! Because this is a 'virtual' volunteer opportunity, it doesn't matter if you live in Dallas, New York, San Francisco, Japan, Zimbabwe, Germany, Mexico, Canada, Australia or anywhere else in the world. As long as you have a valid email address, you are good to go! May the Lord bless & keep you. Pastor David Timothy-SoupMobile Church 2423 S. Good Latimer Expy. Dallas,Texas 75215",
+            "title": "Prayer Team Warrior",
+            "date_posted": "January 31, 2024",
+            "time": "We'll work with your schedule.",
+            "cause_areas": "Faith-Based, Homeless & Housing, Hunger",
+            "location": "Multiple locations, Dallas, TX 75215",
+            "skills": "None",
+            "requirements": "Big Heart!",
+            "related_models": [
+                {
+                  "type": "Counties",
+                  "id": 1
+                },
+                {
+                    "type": "Counties",
+                    "id": 2
+                  }
+              ]
         },
         {
-            "id": 1,
-            "image": "",
-            "description": "This is a description for the third event",
-            "title": "Event 3",
-            "date": "January 1, 2024",
-            "time": "9:00 am"
+            "id": 3,
+            "organization": "RESULTS",
+            "image": "https://res.cloudinary.com/dktp1ybbx/image/upload/c_limit,h_180,w_180/f_auto,fl_lossy,q_auto/v1596574240/organization/prod/731054/QuEOUkICuI.png",
+            "description": "In 2021, in the midst of a global pandemic and economic crisis, RESULTS advocates were part of an historic effort that cut US child poverty in half. By raising our voices, we ensured that our leaders heard the needs of our communities. For decades before this, we’ve mobilized against cuts to vital anti-poverty programs and ensured programs like SNAP, housing assistance, and tax credits that support families facing financial uncertainty are available when people need them.\n\nWe invite you to be part of our community of change this year and help continue to make a difference in Texas.\n\nWhat You’ll Do as an Advocate\n\nWith just 4-6 hours per month as a RESULTS volunteer advocate you will:\n\nTake effective advocacy actions with other volunteers in your community, such as communicating with members of Congress and their staff, publishing media, and organizing in your community.\nAttend monthly webinars covering policy updates, advocacy training, anti-oppression, as well as other support & tools available for volunteers.\nBecome a more effective advocate through self-paced advocacy skills training & action taking.\nConnect with a community of advocates in Texas and across the U.S.\nCall for Solutions to Hunger & Housing Instability\n\nToo many families are forced to make hard choices between paying rent and buying food and other necessities. A growing affordable housing crisis only makes this worse. 1 in 6 children in the US lack the food security to grow, learn, and lead active lives. And due to inaction from Congress, after seeing a dramatic reduction in child poverty in 2021, critical support expired, and child poverty nearly doubled again. We must stand with millions in our country facing hunger, housing insecurity, and economic hardship.\n\nAs an advocate this year, you will:\n\nProtect and expand funding for programs that promote health and ensure access to nutritious food.\nSecure resources and financial support for stable, affordable housing.\nHelp put money back in people’s pockets by making our tax code work for households with low-incomes and people experiencing poverty.\nAs we face uncertainty about what will come next in our country, this is when our advocacy matters the most. Help us ensure that our leaders understand the needs of your community and make decisions that secure the rights of nutrition, housing, and financial stability to all.\n\nGet Started Today\n\nBe part of our unstoppable community of change. Sign up for your 1-hour New Advocate Orientation www.results.org/volunteer\n\n",
+            "title": "Be an advocate for solutions to hunger & housing insecurity in Texas",
+            "date_posted": "January 31, 2024",
+            "time": "We'll work with your schedule.",
+            "cause_areas": "Advocacy & Human Rights, Homeless & Housing, Politics",
+            "location": "Multiple locations, McKinney, TX 75069",
+            "skills": "Advocacy\nLobbying\nPublic Advocacy\nCommunity Outreach\nRelationship Building\nVerbal / Written Communication",
+            "requirements": "Must be at least 18\nOrientation or Training\nVolunteers typically spend between 4-6 hours / month on advocacy, more time available for those who want to take on more.\nVirtual orientation, attendance at monthly virtual or in-person local group meeting",
+            "related_models": [
+                {
+                    "type": "Counties",
+                    "id": 2
+                  },
+                  {
+                    "type": "Events",
+                    "id": 1
+                  }
+              ]
         }
     ]
 }

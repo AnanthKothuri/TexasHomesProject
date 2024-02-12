@@ -1,30 +1,16 @@
 import React from 'react';
 import './InstanceCard.css'; // Make sure to create a corresponding CSS file for styling
 import { useNavigate } from 'react-router-dom';
+import {Card, Button} from 'react-bootstrap'
 
 function InstanceCard({item, type}) {
 
-    const containerStyle = {
-        height: '250px',
-        background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url(${item.image}) center/cover no-repeat`,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        alignItems: 'flex-start', 
-        paddingLeft: 20
-    };
-
     return (
-        <div className="card">
-            <div style={containerStyle}>
-                <h4 style={{color: 'white'}}>{item.title}</h4>
-            </div>
-
+        <div>
             { type === "Shelters" ? (<ShelterInstanceCard item={item} />) : 
                 type === "Counties" ? (<CountyInstanceCard item={item} />) :
                 <EventInstanceCard item={item} />
             }
-
         </div>
      );
 }
@@ -32,73 +18,96 @@ function InstanceCard({item, type}) {
 export default InstanceCard;
 
 function ShelterInstanceCard({item}) {
-    let navigate = useNavigate();
-  
+    let navigate = useNavigate()
+
     function navigateToShelter() {
-      // Navigate to the county instance page with the county's ID
-      navigate(`/shelters/${item.id}`);
-    }
+        navigate(`/shelters/${item.id}`);
+      }
     return (
-        <div className="card-content">
-            <p>{item.description}</p>
-
-            <div className='row-attribute'>
-                <p style={{fontWeight: 'bold', paddingRight: 10}}>Attribute1</p>
-                <p>Here is some other data that's very important</p>
-            </div>
-
-            <button className="card-button" onClick={navigateToShelter}>Learn More</button>
-        </div>
+        <Card className='card-content' style={{ width: 400 }}>
+            <Card.Header>Shelter</Card.Header>
+            <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Body>
+                <Card.Title>{item.name}</Card.Title>
+                <Card.Text className='description-text'>{item.description}</Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>City</p>
+                    <p>{item.city}</p>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Address</p>
+                    <p>{item.address}</p>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Website</p>
+                    <p>{item.official_website}</p>
+                </Card.Text>
+                <Button variant="primary" className="card-button" onClick={navigateToShelter}>Learn More</Button>
+            </Card.Body>
+        </Card>
     )
 }
 
-function CountyInstanceCard({ item }) {
-    let history = useNavigate();
-  
+function CountyInstanceCard({item}) {
+    let navigate = useNavigate()
+
     function navigateToCounty() {
-      // Navigate to the county instance page with the county's ID
-      history(`/counties/${item.id}`);
-    }
-  
+        navigate(`/counties/${item.id}`);
+      }
     return (
-      <div className="card-content">
-        <p>{item.description}</p>
-  
-        <div className='row-attribute'>
-          <p style={{fontWeight: 'bold', paddingRight: 10}}>Total Pop.</p>
-          <p>{item.total_population.toLocaleString()}</p>
-        </div>
-        <div className='row-attribute'>
-          <p style={{fontWeight: 'bold', paddingRight: 10}}>Homeless Pop.</p>
-          <p>{item.homeless_population.toLocaleString()}</p>
-        </div>
-  
-        <button className="card-button" onClick={navigateToCounty}>Explore County</button>
-      </div>
-    );
-  }
+        <Card className='card-content' style={{ width: 400 }}>
+            <Card.Header>County</Card.Header>
+            <Card.Img variant="top" src={item.image_url} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Body>
+                <Card.Title>{item.name}</Card.Title>
+                <Card.Subtitle className='description-text'>{item.short_description}</Card.Subtitle>
+                <Card.Text className='description-text'>{item.long_description}</Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Population</p>
+                    <p>{item.population}</p>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Housing Units</p>
+                    <p>{item.housing}</p>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Website</p>
+                    <p className='description-text'>{item.website_url}</p>
+                </Card.Text>
+                <Button variant="primary" className="card-button" onClick={navigateToCounty}>Explore County</Button>
+            </Card.Body>
+        </Card>
+    )
+}
 
 function EventInstanceCard({item}) {
-    let navigate = useNavigate();
-  
+    let navigate = useNavigate()
+
     function navigateToEvent() {
-      // Navigate to the event instance page with the event's ID
-      navigate(`/events/${item.id}`);
-    }
+        navigate(`/events/${item.id}`);
+      }
+
     return (
-        <div className="card-content">
-            <p>{item.description}</p>
-
-            <div className='row-attribute'>
-                <p style={{fontWeight: 'bold', paddingRight: 10}}>Date</p>
-                <p>{item.date}</p>
-            </div>
-            <div className='row-attribute'>
-                <p style={{fontWeight: 'bold', paddingRight: 10}}>Time</p>
-                <p>{item.time}</p>
-            </div>
-
-            <button className="card-button" onClick={navigateToEvent}>View Event</button>
-        </div>
+        <Card className='card-content' style={{ width: 400 }}>
+            <Card.Header>Event</Card.Header>
+            <Card.Img variant="top" src={item.image} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Body>
+                <Card.Title>{item.title}</Card.Title>
+                <Card.Text className='description-text'>{item.description}</Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Date Posted</p>
+                    <p>{item.date}</p>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Time</p>
+                    <p>{item.time}</p>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Location</p>
+                    <p className='description-text'>{item.location}</p>
+                </Card.Text>
+                <Button variant="primary" className="card-button" onClick={navigateToEvent}>View Event</Button>
+            </Card.Body>
+        </Card>
     )
 }

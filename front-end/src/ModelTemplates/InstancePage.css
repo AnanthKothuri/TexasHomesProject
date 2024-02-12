@@ -1,4 +1,12 @@
-/* InstancePage.css */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+
+/* InstancePage.css
 .instance-page {
     margin: 20px auto;
     max-width: 800px;
@@ -47,7 +55,7 @@
   }
   
   /* Additional styles for specific attributes and buttons */
-  .row-attribute {
+  /* .row-attribute {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -73,5 +81,4 @@
   
   .card-button:hover {
     background-color: #0056b3;
-  }
-  
+  } */
