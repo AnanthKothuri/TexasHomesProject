@@ -39,8 +39,11 @@ const AboutPage = () => {
       });
   }, [gitLabToken, projectID]);
 
-  console.log(contributors);
+  // console.log(contributors);
+  console.log('contributerResults:')
   console.log(contributorResults);
+  
+  console.log('issueResults:')
   console.log(issueResults);
 
   return (
