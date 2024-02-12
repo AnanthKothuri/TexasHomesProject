@@ -11,7 +11,17 @@
             "cause_areas": "Homeless & Housing, Seniors, Veterans & Military Families",
             "location": "6555 Excellence Way, Plano, TX 75023",
             "skills": "Accounting, Bookkeeping",
-            "requirements": "Driver's License Needed, Background Check, Must be at least 18, Orientation or Training, This should be about 4-5 hours per month with a ramp up that could be longer."
+            "requirements": "Driver's License Needed, Background Check, Must be at least 18, Orientation or Training, This should be about 4-5 hours per month with a ramp up that could be longer.",
+            "related_models": [
+                {
+                    "type": "Counties",
+                    "id": 3
+                  },
+                  {
+                    "type": "Events",
+                    "id": 3
+                  }
+              ]
         },
         {
             "id": 2,
@@ -24,7 +34,17 @@
             "cause_areas": "Faith-Based, Homeless & Housing, Hunger",
             "location": "Multiple locations, Dallas, TX 75215",
             "skills": "None",
-            "requirements": "Big Heart!"
+            "requirements": "Big Heart!",
+            "related_models": [
+                {
+                  "type": "Counties",
+                  "id": 1
+                },
+                {
+                    "type": "Counties",
+                    "id": 2
+                  }
+              ]
         },
         {
             "id": 3,
@@ -37,7 +57,17 @@
             "cause_areas": "Advocacy & Human Rights, Homeless & Housing, Politics",
             "location": "Multiple locations, McKinney, TX 75069",
             "skills": "Advocacy\nLobbying\nPublic Advocacy\nCommunity Outreach\nRelationship Building\nVerbal / Written Communication",
-            "requirements": "Must be at least 18\nOrientation or Training\nVolunteers typically spend between 4-6 hours / month on advocacy, more time available for those who want to take on more.\nVirtual orientation, attendance at monthly virtual or in-person local group meeting"
+            "requirements": "Must be at least 18\nOrientation or Training\nVolunteers typically spend between 4-6 hours / month on advocacy, more time available for those who want to take on more.\nVirtual orientation, attendance at monthly virtual or in-person local group meeting",
+            "related_models": [
+                {
+                    "type": "Counties",
+                    "id": 2
+                  },
+                  {
+                    "type": "Events",
+                    "id": 1
+                  }
+              ]
         }
     ]
 }

@@ -7,6 +7,7 @@ import CountiesPage from './Counties/CountiesPage';
 import EventsPage from './Events/EventsPage';
 import NavBar from './Navbar';
 import InstancePage from './ModelTemplates/InstancePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
