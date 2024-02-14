@@ -8,7 +8,7 @@ function InstanceCard({item, type}) {
         <div>
             { type === "Shelters" ? (<ShelterInstanceCard item={item} />) : 
                 type === "Counties" ? (<CountyInstanceCard item={item} />) :
-                type === "About Us" ? (<AboutUsInstanceCard item={item} />) :
+                type === "Meet the Team" ? (<DeveloperInstanceCard item={item} />) :
                 <EventInstanceCard item={item} />
             }
         </div>
@@ -17,39 +17,39 @@ function InstanceCard({item, type}) {
 
 export default InstanceCard;
 
-function AboutUsInstanceCard({item}) {
-    const containerStyle = {
-        height: '250px',
-        background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45)), url(${item.img_src}) center/cover no-repeat`,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        alignItems: 'flex-start', 
-        paddingLeft: 20
+function DeveloperInstanceCard({item}) {
+
+    const renderStat = (label, value) => (
+        <>
+            <b>{label}: </b>
+            <span style={{ color: "#7c94b4" }}>{value}</span>
+        </>
+    );
+
+    const roleStyle = {
+        fontSize: '0.7em',
+        backgroundColor: '#cfe3ff',
+        borderRadius: '7px',
+        padding: '1.5px 5px',
+        marginLeft: '10px',
     };
 
     return (
-        <div className="card">
-            <div style={containerStyle}>
-                <h4 style={{color: 'white', fontSize: 20}}><b>{item.name}</b></h4>
-            </div>
-            <div className="card-content">
-                <div className='description-text'>
-                    <p className="clamp">{item.description}</p>
-                </div>
-
-                <div style={{paddingTop: 20}}>
-                    <div className='row-attribute'>
-                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Number of Commits:</p>
-                        <p>{item.num_commits}</p>
-                    </div>
-                    <div className='row-attribute'>
-                        <p style={{fontWeight: 'bold', paddingRight: 10}}>Number of Issues:</p>
-                        <p>{item.num_issues}</p>
-                    </div>          
-                </div>
-            </div>
-        </div>
+        <Card className='card-content mb-4 shadow' style={{ width: 400 }}>
+            <Card.Img variant="top" src={item.img_src} style={{height: 300, objectFit: 'cover'}} />
+            <Card.Body>
+                <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'  }}>
+                    <b>{item.name}</b>  
+                    <span style={roleStyle}>{item.role}</span>
+                </Card.Title>
+                <Card.Text className='description-text'>{item.description}</Card.Text>
+                <Card.Text className='row-attribute' style={{ fontFamily: 'monospace', display: 'flex', justifyContent: 'center' }}>
+                    <Card.Text style={{ textAlign: 'center' }}>
+                        {renderStat('commits', item.num_commits)} | {renderStat('issues', item.num_issues)} | {renderStat('tests', item.num_tests)}
+                    </Card.Text>
+                </Card.Text>
+            </Card.Body>
+        </Card>
       );
 }
 
