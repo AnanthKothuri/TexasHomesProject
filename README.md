@@ -5,7 +5,7 @@
 https://www.texashomesproject.me
 
 ### Postman API Documentation:
-https://www.postman.com/martian-spaceship-409221/workspace/texashomeproject/overview
+https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be25-bda989164be8
 
 ### Team Member Information
 
@@ -78,3 +78,8 @@ Describe three questions that your site will answer:
     3. How can I help/volunteer in my local community?
 
 We will then approve the project or request that you refine the idea.
+
+#### P1
+Estimated Time to Completion: 10 hours
+
+Actual Time to Completion: 
