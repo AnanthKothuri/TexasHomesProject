@@ -1,9 +1,9 @@
 // InstancePage.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import shelterData from '../Shelters/shelterData.json'
-import countyData from '../Counties/countyData.json'
-import eventData from '../Events/eventData.json'
+import shelterData from '../data/shelterData.json'
+import countyData from '../data/countyData.json'
+import eventData from '../data/eventData.json'
 import InstanceCard from './InstanceCard';
 import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
 
