@@ -5,7 +5,7 @@ import AboutPage from './About/AboutPage';
 import SheltersPage from './Shelters/SheltersPage';
 import CountiesPage from './Counties/CountiesPage';
 import EventsPage from './Events/EventsPage';
-import NavBar from './Navbar';
+import NavBar from './components/Navbar';
 import InstancePage from './ModelTemplates/InstancePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
