@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build-code-job:
+  image: node:20-alpine
+  stage: build
+  script:
+    - echo "Making the website"
+    - cd ./frontend
+    - npm install
+    - CI=false
+    - npm run build
