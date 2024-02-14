@@ -6,7 +6,7 @@ build-code-job:
   stage: build
   script:
     - echo "Making the website"
-    - cd ./frontend
+    - cd ./front-end
     - npm install
     - CI=false
     - npm run build
