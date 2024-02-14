@@ -68,7 +68,7 @@ function ShelterInstancePage({item}) {
         <Card.Body>
           <Card.Title>{item.name}</Card.Title>
           <Card.Text>{item.address}</Card.Text>
-          <a href="/counties" className="btn btn-primary">Back to Shelters</a>
+          <a href="/shelters" className="btn btn-primary">Back to Shelters</a>
         </Card.Body>
         <Card.Footer className="text-body-secondary">
           {item.city}, {item.state} {item.zip_code}
@@ -165,7 +165,7 @@ function EventInstancePage({item}) {
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>{item.organization}</Card.Text>
-          <a href="/counties" className="btn btn-primary">Back to Events</a>
+          <a href="/events" className="btn btn-primary">Back to Events</a>
         </Card.Body>
         <Card.Footer className="text-body-secondary">
           {item.location}
