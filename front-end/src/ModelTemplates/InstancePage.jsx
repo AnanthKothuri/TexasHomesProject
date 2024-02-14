@@ -41,7 +41,7 @@ const InstancePage = () => {
 
       <div className='container' style={{padding: 40}}>
         <h1>Related</h1>
-        <div class="row row-cols-3">
+        <div class="row row-cols-auto">
 
           {instanceData.related_models.map((item, index) => (
                 <div class="col">
