@@ -60,7 +60,7 @@ function ShelterInstanceCard({item}) {
         navigate(`/shelters/${item.id}`);
       }
     return (
-        <Card className='card-content' style={{ width: 400 }}>
+        <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>Shelter</Card.Header>
             <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
@@ -91,7 +91,7 @@ function CountyInstanceCard({item}) {
         navigate(`/counties/${item.id}`);
       }
     return (
-        <Card className='card-content' style={{ width: 400 }}>
+        <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>County</Card.Header>
             <Card.Img variant="top" src={item.image_url} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
@@ -124,7 +124,7 @@ function EventInstanceCard({item}) {
       }
 
     return (
-        <Card className='card-content' style={{ width: 400 }}>
+        <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>Event</Card.Header>
             <Card.Img variant="top" src={item.image} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
