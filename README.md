@@ -16,6 +16,8 @@ https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be
 | Shahmir Masood           | @shahmir-m      |
 | Ananth Kothuri           | @ananth.kothuri |
 
+Pipeline URL: https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
+
 Group number:
 
     Group 21
