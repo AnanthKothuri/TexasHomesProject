@@ -5,38 +5,44 @@ import slide3 from "../assets/homess3.jpg";
 import { Carousel, Image } from 'react-bootstrap';
 
 const HomePageCarousel = () => {
-  const opacity = 0.6
-  const image_height = '30rem'
-  const image_background = 'rgba(0, 0, 0, 0.5)'
+  const IMAGE_OPACITY = 0.6
+  const IMAGE_HEIGHT = '30rem'
+  const COLOR_OVERLAY = 'rgba(0, 0, 0, 0.5)'
 
+  const titleStyling = {
+    fontSize: 80,
+    margin: 50,
+    fontWeight: 'bold',
+    textShadow: '0 0 0.2em grey',
+  }
+  
+  const captionStyling = {
+    fontSize: 19,
+    textShadow: '0 0 0.3em grey',
+  }
+
+  const slides = [
+    { image: slide1, caption: "Homeless tents set up in front of a Picasso quote" },
+    { image: slide2, caption: "Mother and son holding up a sign asking for help" },
+    { image: slide3, caption: "Belongings of a homeless person piled near a bench" },
+  ];
+
+  const renderCarouselItems = (slides) => {
+    return slides.map((slide, index) => (
+      <Carousel.Item key={index} style={{ width: '100%', height: IMAGE_HEIGHT, background: COLOR_OVERLAY }}>
+        <Image src={slide.image} fluid style={{ objectFit: 'cover', width: '100%', height: '100%', opacity: IMAGE_OPACITY }} />
+        <Carousel.Caption>
+          <h1 style={titleStyling}>Texas Homes Project</h1>
+          <p style={captionStyling}><b>Caption:</b> {slide.caption}</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    ));
+  };
+  
   return (
     <>
-      <Carousel >
-
-        <Carousel.Item style={{width: '100%', height: image_height, background: image_background}}> 
-          <Image src={slide1} fluid style={{ objectFit: 'cover', width: '100%', height: '100%', opacity: opacity}}/>;
-          <Carousel.Caption>
-            <h1 style={{fontSize: 80, margin: 50}}>Texas Homes Project</h1>
-            <p>Caption: Homeless tents set up in front a Picasso quote</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item style={{width: '100%', height: image_height, background: image_background}}>
-        <Image src={slide2} fluid style={{ objectFit: 'cover', width: '100%', height: '100%', opacity: opacity }}/>;
-          <Carousel.Caption>
-            <h1 style={{fontSize: 80, margin: 50}}>Texas Homes Project</h1>
-            <p>Caption: Mother and son holding up a sign asking for help</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item style={{width: '100%', height: image_height, background: image_background}}>
-        <Image src={slide3} fluid style={{ objectFit: 'cover', width: '100%', height: '100%', opacity: opacity }}/>;
-          <Carousel.Caption>
-            <h1 style={{fontSize: 80, margin: 50}}>Texas Homes Project</h1>
-            <p>Caption: Belongings of a homeless person piled near a bench</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
+      <Carousel>
+        {renderCarouselItems(slides)}
       </Carousel>
     </>
   );
