@@ -78,3 +78,7 @@ Describe three questions that your site will answer:
     3. How can I help/volunteer in my local community?
 
 We will then approve the project or request that you refine the idea.
+
+P1
+    Estimated Time to Completion: 10 hours
+    Actual Time to Completion: 
