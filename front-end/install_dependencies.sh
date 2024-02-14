@@ -5,3 +5,4 @@ npm install react-icons
 pip install beautifulsoup4
 pip install Selenium
 pip install webdriver-manager
+npm install mdbreact
