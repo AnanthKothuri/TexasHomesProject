@@ -104,6 +104,7 @@ function ShelterInstancePage({item}) {
         <ListGroup.Item>Twitter: {item.twitter}</ListGroup.Item>
         <ListGroup.Item>Facebook: {item.facebook}</ListGroup.Item>
         <ListGroup.Item>Instagram: {item.instagram}</ListGroup.Item>
+        <ListGroup.Item>Coordinates: {item.coordinate}</ListGroup.Item>
       </ListGroup>
 
     </Container>
