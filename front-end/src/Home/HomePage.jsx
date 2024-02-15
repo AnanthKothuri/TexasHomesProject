@@ -1,6 +1,5 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
-import mainImage from "../assets/homemainimage.jpg";
 // Assuming slide1 and slide2 are correctly imported if they are to be used in the HomePageCarousel component
 import { MdNightShelter } from "react-icons/md";
 import { FaHandsHelping } from "react-icons/fa"; // Adjusted import for consistency

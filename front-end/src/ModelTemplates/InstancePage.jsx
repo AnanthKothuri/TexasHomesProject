@@ -6,7 +6,7 @@ import countyData from '../data/countyData.json'
 import eventData from '../data/eventData.json'
 import InstanceCard from './InstanceCard';
 import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
-import { MDBContainer} from 'mdbreact'
+// import GoogleMap from '../components/GoogleMap';
 
 
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
@@ -82,7 +82,7 @@ function ShelterInstancePage({item}) {
             </Col>
             <Col>
               <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen></iframe>
+                <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
               </div>
             </Col>
       </Row>
@@ -174,9 +174,16 @@ function EventInstancePage({item}) {
         </Card.Footer>
       </Card>
 
-      <Col md={4}>
-        <img src={item.image} className="img-fluid rounded-start" alt={item.name} />
-      </Col>
+      <Row style={{ maxWidth: '50rem'}}>
+          <Col md={4}>
+            <img src={item.image} className="img-fluid rounded-start" alt={item.name} />
+          </Col>
+            <Col>
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
+              </div>
+            </Col>
+      </Row>
 
 
       <Col md={8} style={{ margin: 20, maxWidth: '50rem' }}>
