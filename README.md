@@ -19,7 +19,6 @@ https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be
 https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
 
 ### Git SHA:
-___
 
 ### Phase Leader: Ananth Kothuri
  * facilitated the team by planning/delegating team member tasks
@@ -33,6 +32,8 @@ ___
  * Ananth: 17 hours
 
 ### Actual Time to Completion: 20 hours
+
+===
 
 Group number:
 
