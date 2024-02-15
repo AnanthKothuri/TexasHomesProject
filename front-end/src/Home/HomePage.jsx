@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
-import mainImage from "../assets/homemainimage.jpg";
+import mainImage from "../assets/home-page/homemainimage.jpg";
 // Assuming slide1 and slide2 are correctly imported if they are to be used in the HomePageCarousel component
 import { MdNightShelter } from "react-icons/md";
 import { FaHandsHelping } from "react-icons/fa"; // Adjusted import for consistency
@@ -48,20 +48,20 @@ const HomePage = () => {
           </div>
           {/* Display info for "Shelters", "Counties", "Events" with icons */}
           <Feature
-              icon={<MdNightShelter style={{ color: "#0b2b68", fontSize: '1.5em' }}/>}
-              text="Shelters"
-              smalltext="There are X homeless shelters in Texas."
-            />
-            <Feature
-              icon={<FaLandmarkFlag style={{ color: "#c91e40", fontSize: '1.2em' }}/>}
-              text="Counties"
-              smalltext="There are X counties in Texas."
-            />
-            <Feature
-              icon={<FaHandsHelping style={{ color: "#1d66b5", fontSize: '1.3em' }}/>}
-              text="Events"
-              smalltext="There are X upcoming volunteer events."
-            />
+            icon={<MdNightShelter style={{ color: "#0b2b68", fontSize: '1.5em' }}/>}
+            text="Shelters"
+            smalltext="There are X homeless shelters in Texas."
+          />
+          <Feature
+            icon={<FaLandmarkFlag style={{ color: "#c91e40", fontSize: '1.2em' }}/>}
+            text="Counties"
+            smalltext="There are X counties in Texas."
+          />
+          <Feature
+            icon={<FaHandsHelping style={{ color: "#1d66b5", fontSize: '1.3em' }}/>}
+            text="Events"
+            smalltext="There are X upcoming volunteer events."
+          />
         </Col>
       </Row>
 
