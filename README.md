@@ -19,6 +19,7 @@ https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be
 https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
 
 ### Git SHA:
+f578ed87da97833136d59310fe0dfa4bda8e1ce0
 
 ### Phase Leader: Ananth Kothuri
  * facilitated the team by planning/delegating team member tasks
