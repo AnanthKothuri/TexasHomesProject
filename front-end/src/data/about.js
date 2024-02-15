@@ -33,10 +33,10 @@ export const tools_used = [
     src: postman_img,
     name: "Postman",
   },
-  {
-    src: python_img,
-    name: "Python",
-  },
+  // {
+  //   src: python_img,
+  //   name: "Python",
+  // },
   {
     src: react_img,
     name: "React",
