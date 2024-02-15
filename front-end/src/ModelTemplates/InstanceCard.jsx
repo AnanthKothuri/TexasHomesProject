@@ -21,7 +21,7 @@ function DeveloperInstanceCard({item}) {
 
     const roleStyle = {
         fontSize: '0.7em',
-        backgroundColor: '#cfe3ff',
+        backgroundColor: '#e0edff',
         borderRadius: '7px',
         padding: '2px 6px',
         marginLeft: '10px',
