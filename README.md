@@ -1,10 +1,7 @@
 # SWE - Texas Homes Project - Group 21
 
-### Website
-https://www.texashomesproject.me
-
-### Postman API Documentation:
-https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be25-bda989164be8
+## Website:
+    https://www.texashomesproject.me
 
 ### Team Member Information:
 
@@ -15,17 +12,20 @@ https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be
 | Shahmir Masood           | @shahmir-m      |
 | Ananth Kothuri           | @ananth.kothuri |
 
-### Pipeline URL:
-https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
+## Postman API Documentation:
+    https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be25-bda989164be8
 
-### Git SHA:
+## Pipeline URL:
+    https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
 
-### Phase Leader: Ananth Kothuri
-* facilitated the team by planning/delegating team member tasks
-* quickly responded to text messages regarding the project
-* hosted team meet-ups to collaboratively code
+## Git SHA:
+    ___
 
-#### P1
+## Phase Leader: Ananth Kothuri
+    * facilitated the team by planning/delegating team member tasks
+    * quickly responded to text messages regarding the project
+    * hosted team meet-ups to collaboratively code
+
 ## Estimated Time to Completion:
  * Jeronimo: 13 hours
  * Gabriel: 17 hours
