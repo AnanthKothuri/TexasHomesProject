@@ -1,7 +1,6 @@
-import "./App.css";
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { logo_info } from "./data/logo";
+import { logo_info } from "../data/logo";
 
 function NavBar() {
   return (

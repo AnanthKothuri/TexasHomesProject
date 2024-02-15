@@ -1,11 +1,12 @@
 // InstancePage.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import shelterData from '../Shelters/shelterData.json'
-import countyData from '../Counties/countyData.json'
-import eventData from '../Events/eventData.json'
+import shelterData from '../data/shelterData.json'
+import countyData from '../data/countyData.json'
+import eventData from '../data/eventData.json'
 import InstanceCard from './InstanceCard';
 import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
+import { MDBContainer} from 'mdbreact'
 
 
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
@@ -75,14 +76,15 @@ function ShelterInstancePage({item}) {
         </Card.Footer>
       </Card>
 
-      <Row style={{ maxWidth: '50rem' }}>
-        {
-          item.photo_urls.map((url, index) => (
+      <Row style={{ maxWidth: '50rem'}}>
             <Col md={4}>
-                <img src={url} className="img-fluid rounded-start" alt={item.name} />
+                <img src={item.photo_urls[0]} className="img-fluid rounded-start" alt={item.name} />
             </Col>
-          ))
-        }
+            <Col>
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen></iframe>
+              </div>
+            </Col>
       </Row>
 
 
