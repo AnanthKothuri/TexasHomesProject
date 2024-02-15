@@ -33,7 +33,7 @@ https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
 
 ### Actual Time to Completion: 20 hours
 
-===
+---
 
 Group number:
 
