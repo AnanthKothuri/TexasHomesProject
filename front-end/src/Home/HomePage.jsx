@@ -47,20 +47,20 @@ const HomePage = () => {
           </div>
           {/* Display info for "Shelters", "Counties", "Events" with icons */}
           <Feature
-              icon={<MdNightShelter style={{ color: "#0b2b68", fontSize: '1.5em' }}/>}
-              text="Shelters"
-              smalltext="There are X homeless shelters in Texas."
-            />
-            <Feature
-              icon={<FaLandmarkFlag style={{ color: "#c91e40", fontSize: '1.2em' }}/>}
-              text="Counties"
-              smalltext="There are X counties in Texas."
-            />
-            <Feature
-              icon={<FaHandsHelping style={{ color: "#1d66b5", fontSize: '1.3em' }}/>}
-              text="Events"
-              smalltext="There are X upcoming volunteer events."
-            />
+            icon={<MdNightShelter style={{ color: "#0b2b68", fontSize: '1.5em' }}/>}
+            text="Shelters"
+            smalltext="There are X homeless shelters in Texas."
+          />
+          <Feature
+            icon={<FaLandmarkFlag style={{ color: "#c91e40", fontSize: '1.2em' }}/>}
+            text="Counties"
+            smalltext="There are X counties in Texas."
+          />
+          <Feature
+            icon={<FaHandsHelping style={{ color: "#1d66b5", fontSize: '1.3em' }}/>}
+            text="Events"
+            smalltext="There are X upcoming volunteer events."
+          />
         </Col>
       </Row>
 

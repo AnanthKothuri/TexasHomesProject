@@ -19,20 +19,27 @@ export default InstanceCard;
 
 function DeveloperInstanceCard({item}) {
 
-    const renderStat = (label, value) => (
-        <>
-            <b>{label}: </b>
-            <span style={{ color: "#7c94b4" }}>{value}</span>
-        </>
-    );
-
     const roleStyle = {
         fontSize: '0.7em',
-        backgroundColor: '#cfe3ff',
+        backgroundColor: '#e0edff',
         borderRadius: '7px',
-        padding: '1.5px 5px',
+        padding: '2px 6px',
         marginLeft: '10px',
     };
+
+    const statStyle = {
+        backgroundColor: '#f2f2f2',
+        borderRadius: '7px',
+        padding: '4px 8px',
+        margin: '0px 2px',
+    }
+
+    const renderStat = (label, value) => (
+        <span style={statStyle}>
+            <b>{label}: </b>
+            <span style={{ color: "#6b6b6b" }}>{value}</span>
+        </span>
+    );
 
     return (
         <Card className='card-content mb-4 shadow' style={{ width: 400 }}>
@@ -45,7 +52,7 @@ function DeveloperInstanceCard({item}) {
                 <Card.Text className='description-text'>{item.description}</Card.Text>
                 <Card.Text className='row-attribute' style={{ fontFamily: 'monospace', display: 'flex', justifyContent: 'center' }}>
                     <Card.Text style={{ textAlign: 'center' }}>
-                        {renderStat('commits', item.num_commits)} | {renderStat('issues', item.num_issues)} | {renderStat('tests', item.num_tests)}
+                        {renderStat('commits', item.num_commits)} {renderStat('issues', item.num_issues)} {renderStat('tests', item.num_tests)}
                     </Card.Text>
                 </Card.Text>
             </Card.Body>

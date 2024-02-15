@@ -1,7 +1,7 @@
 import React from 'react';
-import slide1 from "../assets/homess1.jpg";
-import slide2 from "../assets/homess2.jpg";
-import slide3 from "../assets/homess3.jpg";
+import slide1 from "../assets/home-page/homeless1.jpg";
+import slide2 from "../assets/home-page/homeless2.jpg";
+import slide3 from "../assets/home-page/homeless3.jpg";
 import { Carousel, Image } from 'react-bootstrap';
 
 const HomePageCarousel = () => {
@@ -22,9 +22,18 @@ const HomePageCarousel = () => {
   }
 
   const slides = [
-    { image: slide1, caption: "Homeless tents set up in front of a Picasso quote" },
-    { image: slide2, caption: "Mother and son holding up a sign asking for help" },
-    { image: slide3, caption: "Belongings of a homeless person piled near a bench" },
+    { 
+      image: slide1, 
+      caption: "Homeless tents set up in front of a Picasso quote"
+    },
+    { 
+      image: slide2,
+      caption: "Mother and son holding up a sign asking for help"
+    },
+    { 
+      image: slide3,
+      caption: "Belongings of a homeless person piled near a bench"
+    },
   ];
 
   const renderCarouselItems = (slides) => {

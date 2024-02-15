@@ -72,10 +72,12 @@ const AboutPage = () => {
         </header>
         <p style={{ fontSize: '1.5em', paddingLeft: 120, paddingRight: 120 }}>
           We're on a mission to make it easier for people experiencing homelessness to receive the
-          help they need. <b>Texas Homes Project</b> is your go-to online resource for anyone
+          help they need. Texas Homes Project is your go-to online resource for anyone
           looking to support Texas homeless populations. Our goal is to connect communities with
           nearby homeless shelters, support organizations that aid the homeless, and spread the
-          word about upcoming volunteer opportunities.
+          word about upcoming volunteer opportunities. We hope the result of integrating this
+          disparate data will encourage users to feel more confidence in being able to quickly access 
+          resources when presented with an opportunity of helping someone suffering from homeslessness.
         </p>
       </div>
       <PageLayout data={data.aboutPage} pageTitle={"Meet the Team"}/>

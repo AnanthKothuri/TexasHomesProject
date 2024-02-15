@@ -1,4 +1,4 @@
-import logo_img from "../assets/transparent-tx-house-logo.png";
+import logo_img from "../assets/logo.png";
 
 export const logo_info = {
     src: logo_img,
