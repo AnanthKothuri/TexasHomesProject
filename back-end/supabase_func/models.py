@@ -21,6 +21,7 @@ class Event(BaseModel):
     description: str
     image_url: str = ""
     video_url: str = ""
+    # posting_url: str = ""
     date_posted: str = ""
     time: str = ""
     cause_areas: list = []
@@ -31,3 +32,4 @@ class Event(BaseModel):
     requirements: list = []
     good_for: list = []
     related_models: dict = {}
+    map_url: str = ""
