@@ -1,6 +1,7 @@
 import os
 from supabase import create_client, Client
-from models import County
+from models import County, Event
+import json
 
 url = "https://nnnfcaicnnrvlvfnbqdh.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ubmZjYWljbm5ydmx2Zm5icWRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcxODA0MjgsImV4cCI6MjAyMjc1NjQyOH0.9hRcAO7LLgaMtCqqJN7oq3_1Xzssz-GapF4vbcsakUQ"
@@ -15,3 +16,30 @@ def insert_county(county: County):
     except Exception as error:
         print(f"Could not insert county to supabase: {error}")
     print("Successfully added county to supabase")
+
+def update_county(county: County):
+    assert(county)
+    try:
+        data, count = supabase.table('Counties').update(county).eq('id', county["id"]).execute()
+    except Exception as error:
+        print(f"Could not update county in supabase: {error}")
+    print("Successfully updated county in supabase")
+
+def get_all_counties():
+    try:
+        data, count = supabase.table('Counties').select("*").execute()
+    except Exception as error:
+        print(f"Could not get all counties from supabase: {error}")
+        return None
+    
+    print("Successfully retrieved all counties from supabase")
+    return data[1]
+
+
+def insert_event(event: Event):
+    assert(event)
+    try:
+        data, count = supabase.table('Events').insert(event).execute()
+    except Exception as error:
+        print(f"Could not insert event to supabase: {error}")
+    print("Successfully added event to supabase")
