@@ -4,5 +4,7 @@ pip install wikipedia-api
 pip install --upgrade google-api-python-client
 pip install googlemaps
 pip install gmaps
+pip install geopy
 pip install bs4
 pip install selenium
+pip install serpapi
