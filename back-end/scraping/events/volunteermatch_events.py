@@ -20,41 +20,6 @@ options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(options=options)
 
-def print_missing_values(events):
-    missing_vals = [0] * 14
-    for event in events:
-        print(event)
-        if event["title"] == "": missing_vals[0] += 1
-        if event["organization"] == "": missing_vals[1] += 1
-        if event["description"] == "": missing_vals[2] += 1
-        if event["image_url"] == "": missing_vals[3] += 1
-        if event["video_url"] == "": missing_vals[4] += 1
-        if event["date_posted"] == "": missing_vals[5] += 1
-        if event["time"] == "": missing_vals[6] += 1
-        if event["cause_areas"] == []: missing_vals[7] += 1
-        if event["address"] == "": missing_vals[8] += 1
-        if event["lat"] == 0: missing_vals[9] += 1
-        if event["long"] == 0: missing_vals[10] += 1
-        if event["skills"] == []: missing_vals[11] += 1
-        if event["requirements"] == []: missing_vals[12] += 1
-        if event["good_for"] == []: missing_vals[13] += 1
-
-    print(f"Total number of events: {len(events)}")
-    print(f"Missing title: {missing_vals[0]}")
-    print(f"Missing organization: {missing_vals[1]}")
-    print(f"Missing description: {missing_vals[2]}")
-    print(f"Missing image_url: {missing_vals[3]}")
-    print(f"Missing video_url: {missing_vals[4]}")
-    print(f"Missing date_posted: {missing_vals[5]}")
-    print(f"Missing time: {missing_vals[6]}")
-    print(f"Missing cause_areas: {missing_vals[7]}")
-    print(f"Missing address: {missing_vals[8]}")
-    print(f"Missing lat: {missing_vals[9]}")
-    print(f"Missing long: {missing_vals[10]}")
-    print(f"Missing skills: {missing_vals[11]}")
-    print(f"Missing requirements: {missing_vals[12]}")
-    print(f"Missing good_for: {missing_vals[13]}")
-
 def click_read_more():
     try:
         read_more_element = WebDriverWait(driver, 4).until(
@@ -101,8 +66,6 @@ def get_event_details(id, url):
 
         img_box = description_box.find("img") if description_box else None
         event["image_url"] = img_box["src"] if img_box else ""
-        # video = search_video(f"{event['organization']}, homelessness, volunteering, texas")
-        # event["video_url"] = video if video != None else ""
         event["video_url"] = ""
 
         date_box = soup.find("section", class_="logistics__section logistics__section--date-posted").find("p")

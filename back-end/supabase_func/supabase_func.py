@@ -43,3 +43,21 @@ def insert_event(event: Event):
     except Exception as error:
         print(f"Could not insert event to supabase: {error}")
     print("Successfully added event to supabase")
+
+def update_event(event: Event):
+    assert(event)
+    try:
+        data, count = supabase.table('Events').update(event).eq('id', event["id"]).execute()
+    except Exception as error:
+        print(f"Could not update event in supabase: {error}")
+    print("Successfully updated event in supabase")
+
+def get_all_events():
+    try:
+        data, count = supabase.table('Events').select("*").execute()
+    except Exception as error:
+        print(f"Could not get all events from supabase: {error}")
+        return None
+    
+    print("Successfully retrieved all events from supabase")
+    return data[1]
