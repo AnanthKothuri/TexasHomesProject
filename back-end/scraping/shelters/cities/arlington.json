@@ -1,0 +1,70 @@
+{
+    "Arlington": [
+      {
+        "name": "Arlington Family Life Shelter",
+        "address": "712 West Abram",
+        "city": "Arlington",
+        "state": "TX",
+        "zip_code": "76004",
+        "location": "32.73501700383379,-97.11565899528361",
+        "phone_number": "(817) 860-1836",
+        "email_address": "info@arlingtonlifeshelter.org",
+        "fax_number": "",
+        "official_website": "https://arlingtonlifeshelter.org/",
+        "twitter": "https://twitter.com/tsa_ntxyet",
+        "facebook": "https://www.facebook.com/arlington.life.shelter/",
+        "instagram": "https://www.instagram.com/arlingtonlifeshelter/",
+        "description": "Salvation Army supported family shelter.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/18_arlingtonlifeshelter.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/3327_arlingtonlifeshelter_org.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/3327_1636598324.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/fb_629.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Mission Arlington",
+        "address": "210 W. South St.",
+        "city": "Arlington",
+        "state": "TX",
+        "zip_code": "76010",
+        "location": "32.734717979438,-97.10924398950732",
+        "phone_number": "(817) 277-6620",
+        "email_address": "",
+        "fax_number": "",
+        "official_website": "",
+        "twitter": "",
+        "facebook": "https://www.facebook.com/missionarlington",
+        "instagram": "",
+        "description": "",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/592__wsa.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Arlington Life Shelter",
+        "address": "325 W. Division Street",
+        "city": "Arlington",
+        "state": "TX",
+        "zip_code": "76011",
+        "location": "32.73959599562902,-97.11027303576016",
+        "phone_number": "(817) 548-9885",
+        "email_address": "borander@arlingtonlifeshelter.org",
+        "fax_number": "",
+        "official_website": "https://arlingtonlifeshelter.org/",
+        "twitter": "https://twitter.com/ArlLifeShelter",
+        "facebook": "https://www.facebook.com/arlington.life.shelter/",
+        "instagram": "https://www.instagram.com/arlingtonlifeshelter/",
+        "description": "Arlington Life Shelter serves men, women and children of all ages.Emergency Shelter Program Emergency shelter services are provided for up to three (3) nights and during periods of extreme cold or heat. 14 day services and housing placement are provided for persons unable to work due to disability or age.Employment ProgramThe Employment Program is a comprehensive program designed to help adults get back on their feet and self-sufficient. It can range from a few weeks to several weeks, depending on one's needs and commitment. Additional requirements for the Employment Program:",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/18_arlingtonlifeshelter.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/47__xrm.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/47_arlingtonlifeshelter_org.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/fb_629.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      }
+    ]
+  }

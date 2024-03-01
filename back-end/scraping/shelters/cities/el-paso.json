@@ -1,0 +1,260 @@
+{
+    "El Paso": [
+      {
+        "name": "Salvation Army of El Paso Emergency Shelter",
+        "address": "4300 E. Paisano Dr",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79905",
+        "location": "31.76656998310544,-106.44040197433922",
+        "phone_number": "(915) 544-9811",
+        "email_address": "saauxiliaryofhoodcounty@gmail.com",
+        "fax_number": "",
+        "official_website": "https://www.salvationarmytexas.org/elpaso/",
+        "twitter": "https://twitter.com/salarmyelpasotx",
+        "facebook": "https://www.facebook.com/pg/SalArmyElPasoTX/about/?ref=page_internal",
+        "instagram": "https://www.instagram.com/salarmytx",
+        "description": "",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/17390__hav.jpeg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Annunciation House",
+        "address": "1003 E. San Antonio",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.760161012299434,-106.47957203280161",
+        "phone_number": "(915) 545-4509",
+        "email_address": "refugees@annunciationhouse.org",
+        "fax_number": "",
+        "official_website": "https://annunciationhouse.org/",
+        "twitter": "https://twitter.com/ahouseelpaso",
+        "facebook": "https://www.facebook.com/AnnunciationHouse",
+        "instagram": "https://www.instagram.com/annunciation_house/",
+        "description": "Annunciation House is a volunteer organization that offers hospitality to migrants, immigrants and refugees in the border region of El Paso, Texas and Ciudad Juarez. It provides shelter, clothing, food, and other necessities to a lot of vulnerable individuals, mostly from Mexico and Central America.Annunciation House is the entry point for most of the guests. It hosts individuals that have short to mid term needs, who might stay for weeks or months. These individuals might be people who came to the U.S. seeking work, people that have fled their home country due to violence, corruption or extortion, or undocumented individuals/families that are living in El Paso but are currently facing financial hardship.Annunciation House includes four houses, each of which has a different focus, although these distinctions are fluid and change accordingly with the guest needs.Casa Vides:Is a long term house of hospitality for individuals that are going through immigration proceedings such as political asylum or other types of cases, and medical situations. It also provides hospitality to Mexican nationals, widows of U.S. citizens who must spend some time in the U.S to collect the Social Security benefits that they are entitled to receive.Casa del Refugiado:Is a very short-term house of hospitality to individuals that have just been released from ICE custody. It is the largest facility, with a capacity of around 500 people. Guests typically stay at this house somewhere between 1 to 3 days, which is usually enough time to address their basic needs while they connect with family/friends in the U.S. There is a high turnover in this house and numbers are very unpredictable as they depend on ICE's release weekly schedule. Casa Oscar Romero:It houses short-term and long-term guests making it the most varied house.Casa Teresa:Houses all the offices of the Annunciation House. Also, it has an apartment that volunteers can utilize as a gathering place for recreational/community time or use as a retreat on their days off.Mailing Address:Annunciation House, Inc.P.O. Box 11189El Paso, TX 79995-1189",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/16_annunciation_house.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/fb_600.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/43_mmpsuccu.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/43_annunciationhouse_org.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/43__jyb.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Dame La Mano Crisis Center",
+        "address": "1014 S Virginia St",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.751260981779197,-106.47785499993611",
+        "phone_number": "(915) 546-4040",
+        "email_address": "",
+        "fax_number": "",
+        "official_website": "",
+        "twitter": "",
+        "facebook": "https://www.facebook.com/dame.lamano.1",
+        "instagram": "",
+        "description": "",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/fb_1865.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Reynolds Home For Women and Children",
+        "address": "8023 San Jose Road",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79915",
+        "location": "31.726690983272476,-106.35154902299473",
+        "phone_number": "(915) 274-2598",
+        "email_address": "dmtruax@yahoo.com",
+        "fax_number": "",
+        "official_website": "https://reynoldshome.org/",
+        "twitter": "https://twitter.com/reynoldshome",
+        "facebook": "https://www.facebook.com/reynoldshome1/",
+        "instagram": "https://www.instagram.com/reynoldshome1/",
+        "description": "Reynolds Home provides shelter to homeless women and children, provides case management to residents to empower them to better themselves educationally and vocationall.Eligibility: Homeless women and children only.Fees: NoneIntake Procedure: Call for availability.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/2845_1649844692.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/2845_reynoldshome_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "El Paso Housing Authority HACEP Shelter Program",
+        "address": "5300 Paisano",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79905",
+        "location": "31.76724698942492,-106.42700400502747",
+        "phone_number": "(915) 849-3742",
+        "email_address": "sbhaskar@hacep.org",
+        "fax_number": "",
+        "official_website": "http://www.hacep.org/",
+        "twitter": "https://www.twitter.com/elpasohousing",
+        "facebook": "https://www.facebook.com/homeeptx",
+        "instagram": "https://www.instagram.com/homeeptx/",
+        "description": "Shelter Plus Care Program will help homeless veterans receive housing and supportive services through the collaboration with El Paso Veterans Affairs Healthcare Services and Integrity Asset Management. HUD-VASH program.As of 16NOV09, 40 housing slots vouchers available for homeless veterans. For Homeless Civilians The final sub-category of public housing is the Shelter Plus Care Program. This is a transformative, grant-funded initiative to assist chronically homeless disabled individuals. HACEP provides 22 units to the residents of Siesta Gardens in the Northeast. Meanwhile, a partnership with Emergence Health Network provides important onsite counseling and rehabilitative care to the residents. These are but a few of the many programs HACEP offers to the residents of the City of El Paso. If you need any additional information that is not listed on our website, feel free to contact our customer service department at (915) 849-3742.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/2826__toa.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/2826_hacep_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "La Posada Home Inc",
+        "address": "1020 N. Campbell Street",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79902",
+        "location": "31.767000016647856,-106.48996902931945",
+        "phone_number": "(915) 544-4595",
+        "email_address": "laposada915@gmail.com",
+        "fax_number": "",
+        "official_website": "http://www.laposadahome.org/",
+        "twitter": "https://twitter.com/laposadahomeep",
+        "facebook": "https://www.facebook.com/LaPosadaHomeEP/",
+        "instagram": "https://www.instagram.com/laposadahomeep/",
+        "description": "Transitional/Permanent long term emergency housing for homeless families victims of domestic violence. La Posada Home serves women with children who are survivors of domestic violence. The average client is a Hispanic female, between the ages of 20 and 35, who is in the \"Extreme Low Income\" bracket; no high school diploma, with an average of two children under the age of 18 and escaping domestic violence.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/236_laposadahomeep.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/520_laposadahome_org.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/520_1635417238.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Villa Maria",
+        "address": "920 S Oregon St",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.750405985745786,-106.48525001783169",
+        "phone_number": "(915) 544-5500",
+        "email_address": "cmireles@villamariaep.org",
+        "fax_number": "",
+        "official_website": "https://villamariaep.org/",
+        "twitter": "",
+        "facebook": "https://www.facebook.com/elpasovillamaria/",
+        "instagram": "",
+        "description": "",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/17391_1634868848.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/fb_2076.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "YWCA El Paso For Women - Sara McKnight Transitional Living Center",
+        "address": "3700 Altura Ave",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79930",
+        "location": "31.795616001726884,-106.44853895830389",
+        "phone_number": "(915) 566-2762",
+        "email_address": "k.suarez@ywcaelpaso.org",
+        "fax_number": "",
+        "official_website": "https://www.ywcaelpaso.org/",
+        "twitter": "https://twitter.com/ywcaelpaso",
+        "facebook": "https://www.facebook.com/ywca.org/",
+        "instagram": "https://www.instagram.com/ywcaelpaso/",
+        "description": "The Sara McKnight Transitional Living Center (TLC) provides housing for 39 homeless women at a time with or without children for up to 24 months; however, the average stay is less than one year. YWCA El Paso del Norte Regions Transitional Living Center provides a bridge to successful independence for women who are homeless or at risk of homelessness.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/17392__uqi.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "El Paso Villa Maria - For Women",
+        "address": "920 S. Oregon St.",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.750405985745786,-106.48525001783169",
+        "phone_number": "(915) 544-5500",
+        "email_address": "cmireles@villamariaep.org",
+        "fax_number": "",
+        "official_website": "http://www.villamariaep.org/",
+        "twitter": "https://twitter.com/foundationelp",
+        "facebook": "https://www.facebook.com/pages/Villa-Maria-a-Home-in-Desperate-Moments/272444626199734",
+        "instagram": "",
+        "description": "Villa Maria is a temporary home where women, homeless &amp; without children, heal to wholeness. Villa Maria receives referrals from various agencies including: probation officers, social workers, hospitals, the Center Against Family Violence, drug and alcohol treatment programs, other shelters and mental health agencies. And often women in need simply ring the doorbell for help. Within a year's time we receive more than three times the number of requests for shelter than we can realistically handle. Call for more information.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/3181_1636610822.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/3181_villamariaep_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Opportunity House El Paso Men's Resource Center",
+        "address": "1208 Myrtle Avenue",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.76409899804932,-106.47664297673695",
+        "phone_number": "(915) 577-0069",
+        "email_address": "ocinfo@ocelpaso.org",
+        "fax_number": "",
+        "official_website": "https://homelessopportunitycenter.org",
+        "twitter": "https://twitter.com/OCHomeless1ELP",
+        "facebook": "https://www.facebook.com/pages/OC-for-the-Homeless/275580619125258",
+        "instagram": "https://www.instagram.com/ochomelessshelter/",
+        "description": "Men's Resource Center Hours: 24 hours a day. Everyone seeking help in our facility receives 3 meals a day, free medical service, and free access to showers, bathrooms, laundry facilities, storage, clothes closet, individual bedding, phone and mail service, and substance abuse counseling among many others. Our emergency overnight shelter/day resource center is the only barrier-free facility in the Paso del Norte region. On average, the Mens Resource Center (MRC) provides a safe place for 170 homeless men from all walks of life to sleep.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/17387__jvw.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/17387_homelessopportunitycenter_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Opportunity House Women's Resource Center",
+        "address": "1220 Myrtle Avenue",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.764304019400996,-106.47632496733047",
+        "phone_number": "(915) 577-0069",
+        "email_address": "ocinfo@ocelpaso.org",
+        "fax_number": "",
+        "official_website": "https://homelessopportunitycenter.org/#",
+        "twitter": "https://twitter.com/OCHomeless1ELP",
+        "facebook": "https://www.facebook.com/OCHomeless/",
+        "instagram": "",
+        "description": "The Womens Resource Center (WRC) is an emergency shelter for single homeless women. This is our newest facility, created in response to the growing number of homeless women in our community. Before this facility was created, homeless women were housed in a separate area within the mens emergency shelter. It grew evident that this arrangement was problematic, and that the women could best be protected and supported in pursuing their goals given a separate facility. Now that the women have a safe place of their own, they have truly developed a supportive, community environment. The residents work together to maintain the shelter, advocate for each other, connect each other to resources, and encourage each other to make positive changes in their lives. All residents receive three meals a day, clothing, and basic hygiene items. They are also connected with supportive case management services and have access to all the services the Opportunity Center has to offer.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/17388__aqd.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/17388_homelessopportunitycenter_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Rescue Mission of El Paso",
+        "address": "221 N. Lee Street",
+        "city": "El Paso",
+        "state": "TX",
+        "zip_code": "79901",
+        "location": "31.765361019300926,-106.47142599638153",
+        "phone_number": "(915) 532-2575",
+        "email_address": "info@rmelp.org",
+        "fax_number": "",
+        "official_website": "https://rmelp.org/",
+        "twitter": "https://www.twitter.com/rescue_ep",
+        "facebook": "https://www.facebook.com/FRCTaunton/",
+        "instagram": "",
+        "description": "",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/719__ied.JPG",
+          "https://www.homelessshelterdirectory.org/gallery/284_facebook.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/719__vrx.JPG",
+          "https://www.homelessshelterdirectory.org/gallery/719__lnk.JPG",
+          "https://www.homelessshelterdirectory.org/gallery/719_rmelp_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      }
+    ]
+  }

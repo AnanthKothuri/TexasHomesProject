@@ -1,0 +1,70 @@
+{
+    "Plano": [
+      {
+        "name": "Hope's Door New Beginning Center",
+        "address": "218 N 10th St.",
+        "city": "Plano",
+        "state": "TX",
+        "zip_code": "75040",
+        "location": "33.01262710470967,-96.68956195939502",
+        "phone_number": "(972) 276-0057",
+        "email_address": "mebenton@hdnbc.org",
+        "fax_number": "",
+        "official_website": "https://hdnbc.org",
+        "twitter": "https://twitter.com/HopesDoorInc",
+        "facebook": "https://facebook.com/hdnbcenter",
+        "instagram": "https://www.instagram.com/hopesdoor/",
+        "description": "At Hope's Door New Beginning Center, we help individuals and families escape and heal from domestic abuse, dating abuse and family violence through our free trauma-informed services. Our two emergency shelters offer temporary housing to survivors and their children fleeing life-threatening situations. Clients living in our emergency shelters are provided with food, clothing and all the necessities of daily living along with case management, safety planning, counseling, legal support, and referral to other community resources. Clients can stay in the emergency shelter for up to 90 days and the location of the shelter remains strictly confidential to ensure the safety of those living in the shelter. Children living in the shelter are enrolled in schools nearby or may attend their home school if it is safe to do so. In addition to temporary shelter, we offer the following services free of charge at both of our Outreach Centers in Plano and Garland: -Counseling sessions for adults and children, including individual and group therapy -Legal support including legal advice, assistance with protective orders, child custody and divorce, and possible full representation -Transitional housing services for clients leaving the shelter that includes rental assistance, deposit waivers, case management and life-skills classesSurvivors in need of services other than shelter or those who have left the shelter can access these services in English or Spanish. Anyone wishing to receive any of our free services are encouraged to call our 24-Hour Hotline, which is answered in English and Spanish 24 hours a day, 7 days a week. 24-Hour Hotline: 972-276-0057 If you are or think you might be in an abusive relationship, know that you are not alone, it is not your fault, and help is available.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/613__vyf.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/279_hopesdoor.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/613_hdnbc_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "City House",
+        "address": "902 E. 16th Street",
+        "city": "Plano",
+        "state": "TX",
+        "zip_code": "75074",
+        "location": "33.02055399539907,-96.70186203750869",
+        "phone_number": "(972) 424-4626",
+        "email_address": "davery@cityhouse.org",
+        "fax_number": "",
+        "official_website": "http://www.cityhouse.org/",
+        "twitter": "https://twitter.com/TexasCityHouse",
+        "facebook": "https://www.facebook.com/TexasCityHouse",
+        "instagram": "https://www.instagram.com/texascityhouse/",
+        "description": "City House provides emergency shelter for ages newborn - 17, and transitional living services (residential and nonresidential) to 18-21 year olds.Need help now? After 5:00 pm.. Call us at 972-971-0278.Programs and Services Today we serve youth ages newborn to 21 years through four primary programs: Emergency shelter for children (newborn to 17 years) Transitional Living Program comprised of several residential homes (18-21 years) Youth Resource &amp; Community Outreach Center (16-21 years) Free Individual &amp; Family Crisis Counseling Services",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/192_cityhouse_org.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/192__vrq.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/83_texascityhouse.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      },
+      {
+        "name": "Emily's Place Transitional Housing For Women",
+        "address": "P. O. Box 260671",
+        "city": "Plano",
+        "state": "TX",
+        "zip_code": "75026",
+        "location": "33.020790000000034,-96.69924999999995",
+        "phone_number": "(972) 424-7775",
+        "email_address": "info@emilysplacetx.org",
+        "fax_number": "(972) 424-7779",
+        "official_website": "https://emilysplacetx.org/",
+        "twitter": "https://www.twitter.com/emilysplacetx",
+        "facebook": "https://www.facebook.com/emilysplacetxorg/",
+        "instagram": "https://www.instagram.com/bigpappybbq",
+        "description": "Emily's Place is not a shelter, which typical allows women to stay for 30 - 90 days. Rather, it is a transformational housing ministry based on a 24 month stay commitment which promotes stability and wise choices.The transformational program includes counseling, addictions recovery, vocational assistance, life skills development and spiritual nurturing--all within a structured environment of 24/7 live-in staff who are dedicated to offering the support and accountability needed to transition from a difficult past into a bright future.For victims of domestic violence, Emily's Place is the BRIDGE from the shelter back into the community.",
+        "photo_urls": [
+          "https://www.homelessshelterdirectory.org/gallery/fb_2091.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/3378__stf.jpg",
+          "https://www.homelessshelterdirectory.org/gallery/3378_emilysplacetx_org.jpg"
+        ],
+        "update_datetime": "2023-06-21T17:24:12Z"
+      }
+    ]
+  }
