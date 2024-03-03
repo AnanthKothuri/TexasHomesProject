@@ -1,1 +1,26 @@
-{"Irving": [{"name": "Brighter Tomorrows", "address": "928 Bluebird Dr", "city": "Irving", "state": "TX", "zip_code": "75061", "location": "32.821308990391586,-96.95725301138928", "phone_number": "(972) 254-4003", "email_address": "diana@brightertomorrows.net", "fax_number": "", "official_website": "http://www.brightertomorrows.net/", "twitter": "https://twitter.com/brightertomorr3", "facebook": "https://www.facebook.com/brightertomorrowstx/", "instagram": "https://www.instagram.com/explore/locations/430497259/brighter-tomorrows/", "description": "Brighter Tomorrows provides free emergency shelter for victims of domestic and sexual violence at 2 locations. Each location provides 35 beds in a safe, supportive environment. Our shelters are staffed 24 hours a day, year round. The shelters are fenced and equipped with security cameras. Brighter Tomorrows Transitional Housing Program is available to families that are no longer in immediate crisis. Our program helps survivors develop skills to stabilize their finances and provide for their own futures.", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/16108_1622538837.jpg", "https://www.homelessshelterdirectory.org/gallery/fb_957.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}]}
+{
+  "Irving": [
+    {
+      "name": "Brighter Tomorrows",
+      "address": "928 Bluebird Dr",
+      "city": "Irving",
+      "state": "TX",
+      "zip_code": 75061,
+      "phone_number": "(972) 254-4003",
+      "email_address": "diana@brightertomorrows.net",
+      "fax_number": "",
+      "official_website": "http://www.brightertomorrows.net/",
+      "twitter": "https://twitter.com/brightertomorr3",
+      "facebook": "https://www.facebook.com/brightertomorrowstx/",
+      "instagram": "https://www.instagram.com/explore/locations/430497259/brighter-tomorrows/",
+      "description": "Brighter Tomorrows provides free emergency shelter for victims of domestic and sexual violence at 2 locations. Each location provides 35 beds in a safe, supportive environment. Our shelters are staffed 24 hours a day, year round. The shelters are fenced and equipped with security cameras. Brighter Tomorrows Transitional Housing Program is available to families that are no longer in immediate crisis. Our program helps survivors develop skills to stabilize their finances and provide for their own futures.",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/16108_1622538837.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/fb_957.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 32.821308990391586,
+      "long": -96.95725301138928
+    }
+  ]
+}

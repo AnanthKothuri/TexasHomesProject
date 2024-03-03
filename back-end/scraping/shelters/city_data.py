@@ -1,0 +1,70 @@
+# https://www.texas-demographics.com/cities_by_population
+
+texas_cities = [
+    'Houston',
+    'San Antonio',
+    'Dallas',
+    'Austin',
+    'Fort Worth',
+    'El Paso',
+    'Arlington',
+    'Corpus Christi',
+    'Plano',
+    'Lubbock',
+    'Laredo',
+    'Irving',
+    'Garland',
+    'Frisco',
+    'Amarillo',
+    'Grand Prairie',
+    'McKinney',
+    'Brownsville',
+    'Killeen',
+    'Pasadena'
+]
+
+filenames = [
+    'cities/houston.json',
+    'cities/san-antonio.json',
+    'cities/dallas.json',
+    'cities/austin.json',
+    'cities/fort-worth.json',
+    'cities/el-paso.json',
+    'cities/arlington.json',
+    'cities/corpus-christi.json',
+    'cities/plano.json',
+    'cities/lubbock.json',
+    'cities/laredo.json',
+    'cities/irving.json',
+    'cities/garland.json',
+    'cities/frisco.json',
+    'cities/amarillo.json',
+    'cities/grand-prairie.json',
+    'cities/mckinney.json',
+    'cities/brownsville.json',
+    'cities/killeen.json',
+    'cities/pasadena.json'
+]
+
+city_populations = {
+    'Houston': 2_296_253,
+    'San Antonio': 1_445_662,
+    'Dallas': 1_300_642,
+    'Austin': 958_202,
+    'Fort Worth': 924_663,
+    'El Paso': 677_181,
+    'Arlington': 393_469,
+    'Corpus Christi': 317_804,
+    'Plano': 284_948,
+    'Lubbock': 258_190,
+    'Laredo': 255_293,
+    'Irving': 254_962,
+    'Garland': 244_026,
+    'Frisco': 202_075,
+    'Amarillo': 200_360,
+    'Grand Prairie': 197_279,
+    'McKinney': 196_160,
+    'Brownsville': 186_999,
+    'Killeen': 153_708,
+    'Pasadena': 150_620
+}

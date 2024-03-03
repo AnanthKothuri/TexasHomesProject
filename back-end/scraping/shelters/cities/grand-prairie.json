@@ -1,1 +1,25 @@
-{"Grand Prairie": [{"name": "Edwards Housing", "address": "3119 Teodoro Drive", "city": "Grand Prairie", "state": "TX", "zip_code": "75052", "location": "32.62911697972059,-97.06534100559789", "phone_number": "(817) 404-7733", "email_address": "tanishae@att.net", "fax_number": "", "official_website": "https://www.edwardshousing-inc.org/", "twitter": "https://twitter.com/horizontalnt", "facebook": "https://www.facebook.com/Edwards-Housing-103234494906558/", "instagram": "", "description": "", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/no_photo_16.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}]}
+{
+  "Grand Prairie": [
+    {
+      "name": "Edwards Housing",
+      "address": "3119 Teodoro Drive",
+      "city": "Grand Prairie",
+      "state": "TX",
+      "zip_code": 75052,
+      "phone_number": "(817) 404-7733",
+      "email_address": "tanishae@att.net",
+      "fax_number": "",
+      "official_website": "https://www.edwardshousing-inc.org/",
+      "twitter": "https://twitter.com/horizontalnt",
+      "facebook": "https://www.facebook.com/Edwards-Housing-103234494906558/",
+      "instagram": "",
+      "description": "",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/no_photo_16.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 32.62911697972059,
+      "long": -97.06534100559789
+    }
+  ]
+}

@@ -1,1 +1,67 @@
-{"Killeen": [{"name": "Kingdom of Judah Women & Children Crisis Shelter", "address": "not provided", "city": "Killeen", "state": "TX", "zip_code": "76543", "location": "31.11689000000007,-97.72736999999995", "phone_number": "(737) 758-8107", "email_address": "koj.outreachministriesintl@yahoo.com", "fax_number": "", "official_website": "", "twitter": "", "facebook": "", "instagram": "", "description": "Office hours: Mon-Fri 9am-5pm Intake .24 hr emergency crisis shelter temporary/transitional We provide food,clothing and a safe clean place for Homeless/Domestic Violence Crimes to individual,women/veterans and children, spiritual individual/group counseling life skills programeducational material,safety plan,housing ,resumes financial budgeting ,job readiness,substance abuse program, mentorship for low income and needy families we are also a community outreach by referral to clients other local state and federal programs.Our goal is to help the client to become spiritual mentally and physically able to become self sufficient.we", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/21783_1642417144.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}, {"name": "Jesus Hope and Love Mission", "address": "818 North Fourth Street", "city": "Killeen", "state": "TX", "zip_code": "76541", "location": "31.124969521056656,-97.72750276714493", "phone_number": "(254) 239-1610", "email_address": "muhsinluqman1@gmail.com", "fax_number": "", "official_website": "https://jhlm.org/", "twitter": "https://twitter.com/jhelumbb", "facebook": "https://www.facebook.com/propertywalapk", "instagram": "https://www.instagram.com/mhjhelum", "description": "", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/17397__cul.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}, {"name": "Friends in Crisis Shelter", "address": "412 E Sprott St", "city": "Killeen", "state": "TX", "zip_code": "76541", "location": "31.124820009846108,-97.72419873187573", "phone_number": "(254) 245-8269", "email_address": "ficincvc@earthlink.net", "fax_number": "", "official_website": "http://www.familiesincrisis.net", "twitter": "", "facebook": "https://www.facebook.com/pages/Friends-in-Crisis-Shelter/358349901002167", "instagram": "https://www.instagram.com/childreneverywhere", "description": "", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/17396__sce.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}]}
+{
+  "Killeen": [
+    {
+      "name": "Kingdom of Judah Women & Children Crisis Shelter",
+      "address": "not provided",
+      "city": "Killeen",
+      "state": "TX",
+      "zip_code": 76543,
+      "phone_number": "(737) 758-8107",
+      "email_address": "koj.outreachministriesintl@yahoo.com",
+      "fax_number": "",
+      "official_website": "",
+      "twitter": "",
+      "facebook": "",
+      "instagram": "",
+      "description": "Office hours: Mon-Fri 9am-5pm Intake .24 hr emergency crisis shelter temporary/transitional We provide food,clothing and a safe clean place for Homeless/Domestic Violence Crimes to individual,women/veterans and children, spiritual individual/group counseling life skills programeducational material,safety plan,housing ,resumes financial budgeting ,job readiness,substance abuse program, mentorship for low income and needy families we are also a community outreach by referral to clients other local state and federal programs.Our goal is to help the client to become spiritual mentally and physically able to become self sufficient.we",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/21783_1642417144.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 31.11689000000007,
+      "long": -97.72736999999995
+    },
+    {
+      "name": "Jesus Hope and Love Mission",
+      "address": "818 North Fourth Street",
+      "city": "Killeen",
+      "state": "TX",
+      "zip_code": 76541,
+      "phone_number": "(254) 239-1610",
+      "email_address": "muhsinluqman1@gmail.com",
+      "fax_number": "",
+      "official_website": "https://jhlm.org/",
+      "twitter": "https://twitter.com/jhelumbb",
+      "facebook": "https://www.facebook.com/propertywalapk",
+      "instagram": "https://www.instagram.com/mhjhelum",
+      "description": "",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/17397__cul.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 31.124969521056656,
+      "long": -97.72750276714493
+    },
+    {
+      "name": "Friends in Crisis Shelter",
+      "address": "412 E Sprott St",
+      "city": "Killeen",
+      "state": "TX",
+      "zip_code": 76541,
+      "phone_number": "(254) 245-8269",
+      "email_address": "ficincvc@earthlink.net",
+      "fax_number": "",
+      "official_website": "http://www.familiesincrisis.net",
+      "twitter": "",
+      "facebook": "https://www.facebook.com/pages/Friends-in-Crisis-Shelter/358349901002167",
+      "instagram": "https://www.instagram.com/childreneverywhere",
+      "description": "",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/17396__sce.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 31.124820009846108,
+      "long": -97.72419873187573
+    }
+  ]
+}

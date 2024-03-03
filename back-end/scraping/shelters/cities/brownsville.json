@@ -1,1 +1,73 @@
-{"Brownsville": [{"name": "Ozanam Center Brownsville", "address": "656 N Minnesota Ave", "city": "Brownsville", "state": "TX", "zip_code": "78521", "location": "25.923508985863776,-97.43099901705561", "phone_number": "(956) 831-6331", "email_address": "theozanamcenter@hotmail.com", "fax_number": "", "official_website": "http://www.ozanambrownsvillecenter.org/", "twitter": "", "facebook": "https://www.facebook.com/Ozanam-Center-110474690761471/", "instagram": "", "description": "", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/3380__oeg.jpg", "https://www.homelessshelterdirectory.org/gallery/3380_ozanambrownsvillecenter_org.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}, {"name": "Good Neighbor Settlement House", "address": "1254 E Tyler St", "city": "Brownsville", "state": "TX", "zip_code": "78520", "location": "25.905912018337247,-97.49145701410782", "phone_number": "(956) 542-2368", "email_address": "", "fax_number": "", "official_website": "https://www.goodneighborsettlementhouseinc.org/", "twitter": "https://twitter.com/tttf_", "facebook": "https://www.facebook.com/GoodNeighborSettlementHouse/", "instagram": "https://www.instagram.com/goodneighborsettlementhouseinc", "description": "Office Hours: Monday - Friday 8am to 6pmSaturdayBreakfast: 7:30 to 8:30 a.m.Dinner: 5:00 to 6:00 p.m.Emergency food pantryAfter-Hours Transportation Program to Ozanam CenterShowers: 7:30 - 9:00 a.m.Clothing Voucher: 7:30 - 9:00 a.m.List of Services:Communication ServicesUse of Mailing AddressPhone ServiceCopiesTranslation AssistanceFax", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/17083__tqg.jpg", "https://www.homelessshelterdirectory.org/gallery/fb_2886.jpg", "https://www.homelessshelterdirectory.org/gallery/17083__jsl.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}, {"name": "Friendship of Women", "address": "95 E Price Rd", "city": "Brownsville", "state": "TX", "zip_code": "78521", "location": "25.93279999025762,-97.4707350216204", "phone_number": "(956) 544-7412", "email_address": "help@fowinc.com", "fax_number": "(956) 541-7676", "official_website": "http://www.fowinc.com/", "twitter": "https://twitter.com/fowinc", "facebook": "https://www.facebook.com/Friendship.of.Women/", "instagram": "https://www.instagram.com/hope_fowinc/", "description": "Long term emergency housing for womens who are victims of domestic violence. Emergency Shelter FOW's emergency shelter serves as a safe haven for women and children fleeing an abusive or unhealthy relationship or following a sexual assault victimization. As part of the emergency shelter services, all clients will be helped with food, clothing, and a confidential safe place. Individualized case management and advocacy is provided by trained staff to provide support through crisis intervention, peer support groups, counseling, child services, and emergency transportation. FOW's Community Outreach Center Men, women, and their children experiencing a crisis as a result of domestic violence or sexual assault can seek services by visiting our Community Center. We provide individualized services focused on healing and empowerment.", "photo_urls": ["https://www.homelessshelterdirectory.org/gallery/344__fod.jpg", "https://www.homelessshelterdirectory.org/gallery/157_hope_fowinc.jpg", "https://www.homelessshelterdirectory.org/gallery/344_fowinc_com.jpg", "https://www.homelessshelterdirectory.org/gallery/fb_2689.jpg"], "update_datetime": "2023-06-21T17:24:12Z"}]}
+{
+  "Brownsville": [
+    {
+      "name": "Ozanam Center Brownsville",
+      "address": "656 N Minnesota Ave",
+      "city": "Brownsville",
+      "state": "TX",
+      "zip_code": 78521,
+      "phone_number": "(956) 831-6331",
+      "email_address": "theozanamcenter@hotmail.com",
+      "fax_number": "",
+      "official_website": "http://www.ozanambrownsvillecenter.org/",
+      "twitter": "",
+      "facebook": "https://www.facebook.com/Ozanam-Center-110474690761471/",
+      "instagram": "",
+      "description": "",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/3380__oeg.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/3380_ozanambrownsvillecenter_org.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 25.923508985863776,
+      "long": -97.43099901705561
+    },
+    {
+      "name": "Good Neighbor Settlement House",
+      "address": "1254 E Tyler St",
+      "city": "Brownsville",
+      "state": "TX",
+      "zip_code": 78520,
+      "phone_number": "(956) 542-2368",
+      "email_address": "",
+      "fax_number": "",
+      "official_website": "https://www.goodneighborsettlementhouseinc.org/",
+      "twitter": "https://twitter.com/tttf_",
+      "facebook": "https://www.facebook.com/GoodNeighborSettlementHouse/",
+      "instagram": "https://www.instagram.com/goodneighborsettlementhouseinc",
+      "description": "Office Hours: Monday - Friday 8am to 6pmSaturdayBreakfast: 7:30 to 8:30 a.m.Dinner: 5:00 to 6:00 p.m.Emergency food pantryAfter-Hours Transportation Program to Ozanam CenterShowers: 7:30 - 9:00 a.m.Clothing Voucher: 7:30 - 9:00 a.m.List of Services:Communication ServicesUse of Mailing AddressPhone ServiceCopiesTranslation AssistanceFax",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/17083__tqg.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/fb_2886.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/17083__jsl.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 25.905912018337247,
+      "long": -97.49145701410782
+    },
+    {
+      "name": "Friendship of Women",
+      "address": "95 E Price Rd",
+      "city": "Brownsville",
+      "state": "TX",
+      "zip_code": 78521,
+      "phone_number": "(956) 544-7412",
+      "email_address": "help@fowinc.com",
+      "fax_number": "(956) 541-7676",
+      "official_website": "http://www.fowinc.com/",
+      "twitter": "https://twitter.com/fowinc",
+      "facebook": "https://www.facebook.com/Friendship.of.Women/",
+      "instagram": "https://www.instagram.com/hope_fowinc/",
+      "description": "Long term emergency housing for womens who are victims of domestic violence. Emergency Shelter FOW's emergency shelter serves as a safe haven for women and children fleeing an abusive or unhealthy relationship or following a sexual assault victimization. As part of the emergency shelter services, all clients will be helped with food, clothing, and a confidential safe place. Individualized case management and advocacy is provided by trained staff to provide support through crisis intervention, peer support groups, counseling, child services, and emergency transportation. FOW's Community Outreach Center Men, women, and their children experiencing a crisis as a result of domestic violence or sexual assault can seek services by visiting our Community Center. We provide individualized services focused on healing and empowerment.",
+      "photo_urls": [
+        "https://www.homelessshelterdirectory.org/gallery/344__fod.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/157_hope_fowinc.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/344_fowinc_com.jpg",
+        "https://www.homelessshelterdirectory.org/gallery/fb_2689.jpg"
+      ],
+      "update_datetime": "2023-06-21T17:24:12Z",
+      "lat": 25.93279999025762,
+      "long": -97.4707350216204
+    }
+  ]
+}
