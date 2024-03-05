@@ -33,3 +33,24 @@ class Event(BaseModel):
     good_for: list = []
     related_models: dict = {}
     map_url: str = ""
+
+class Shelter(BaseModel):
+    id: int
+    name: str
+    address: str
+    city: str
+    state: str
+    zip_code: int
+    lat: float
+    long: float
+    phone_number: str
+    email_address: str = ""
+    fax_number: str = ""
+    official_website: str = ""
+    twitter: str = ""
+    facebook: str = ""
+    instagram: str = ""
+    description: str = ""
+    photo_urls: list = []
+    related_models: dict = {}
+    update_datetime: str

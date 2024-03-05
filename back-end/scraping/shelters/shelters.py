@@ -29,11 +29,6 @@ def scrape_shelters_via_api():
             with open(filename, 'w') as f:
                 json.dump(data, f, indent=2)
 
-"""
-TODO
-* include 'id' as field when i combine all json into one big shelters.json object (or maybe for supabase only?)
-* convert str:location -> float:lat, float:long
-"""
 
 def clean_city_data():
     '''
@@ -97,6 +92,44 @@ def find_null_keys():
     print("Null keys:", result)
 
 
+def aggregate_shelters_into_single_file():
+    '''
+    Aggregate all json files in `cities` directory into a single json file
+    '''
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    directory = os.path.join(current_dir, 'cities')
+    all_shelters = []
+    shelter_id = 0
+    for filename in os.listdir(directory):
+        if filename.endswith('.json'):
+            with open(os.path.join(directory, filename), 'r') as f:
+                city_data = json.load(f)
+                city_name = list(city_data.keys())[0]
+                shelters_in_city = city_data[city_name]
+                for shelter in shelters_in_city:
+                    # include unique id for each shelter
+                    shelter['id'] = shelter_id
+                    shelter['related_models'] = {}
+                    all_shelters.append(shelter)
+                    shelter_id += 1
+    aggregated_data = { 'shelters': all_shelters }
+    # write the aggregated data back to the file
+    with open('shelters.json', 'w') as f:
+        json.dump(aggregated_data, f, indent=2)
+
+
+def add_shelters_to_supabase():
+    '''
+    Adds contents of 'shelters.json' to Supabase db
+    '''
+    with open('shelters.json', "r") as file:
+        data = json.load(file)['shelters']
+        for shelter in data:
+            supa.insert_shelter(shelter)
+
+
 if __name__ == "__main__":
     # scrape_shelters_via_api()
-    clean_city_data()
+    # clean_city_data()
+    # aggregate_shelters_into_single_file()
+    add_shelters_to_supabase()
