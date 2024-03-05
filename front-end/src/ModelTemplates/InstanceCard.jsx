@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './InstanceCard.css'; // Make sure to create a corresponding CSS file for styling
 import { useNavigate } from 'react-router-dom';
-import {Card, Button} from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
 function InstanceCard({item, type}) {
     return (
@@ -19,22 +19,69 @@ export default InstanceCard;
 
 function DeveloperInstanceCard({item}) {
 
-    const roleStyle = {
-        fontSize: '0.7em',
-        backgroundColor: '#e0edff',
-        borderRadius: '7px',
-        padding: '2px 6px',
-        marginLeft: '10px',
+    // used when animating the commit, issue, test stats
+    const [animatedCommits, setAnimatedCommits] = useState(0);
+    const [animatedIssues, setAnimatedIssues] = useState(0);
+    const [animatedTests, setAnimatedTests] = useState(0);
+
+    const INTERVAL_SPEED = 30.5;  // larger number == more slow
+
+    useEffect(() => {
+        let commits = 0;
+        let issues = 0;
+        let tests = 0;
+    
+        const interval = setInterval(() => {
+          // increment commits
+          if (commits < item.num_commits) {
+            commits++;
+            setAnimatedCommits(commits);
+          }
+    
+          // increment issues
+          if (issues < item.num_issues) {
+            issues++;
+            setAnimatedIssues(issues);
+          }
+
+          // increment tests
+          if (tests < item.num_tests) {
+            tests++;
+            setAnimatedTests(tests);
+          }
+    
+          // clear interval when all stats reach their final values
+          if (commits === item.num_commits && issues === item.num_issues && tests === item.num_tests) {
+            clearInterval(interval);
+          }
+        }, INTERVAL_SPEED);
+    
+        return () => clearInterval(interval);
+      }, [item.num_commits, item.num_issues, item.num_tests]);
+
+    // define styling for 'backend' and 'frontend' labels
+    const roleStyle = (color) => {
+        return {
+            fontSize: '0.7em',
+            color: "#fff",
+            fontWeight: 600,
+            backgroundColor: color,
+            borderRadius: '7px',
+            padding: '2px 6px',
+            marginLeft: '10px',
+            letterSpacing: 0.5,
+        }
     };
 
+    // define styling for member gitlab info labels
     const statStyle = {
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#f5f5f5',
         borderRadius: '7px',
         padding: '4px 8px',
         margin: '0px 2px',
     }
 
-    const renderStat = (label, value) => (
+    const renderGitlabStat = (label, value) => (
         <span style={statStyle}>
             <b>{label}: </b>
             <span style={{ color: "#6b6b6b" }}>{value}</span>
@@ -47,12 +94,12 @@ function DeveloperInstanceCard({item}) {
             <Card.Body>
                 <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'  }}>
                     <b>{item.name}</b>  
-                    <span style={roleStyle}>{item.role}</span>
+                    <span style={roleStyle(item.role_color)}>{item.role}</span>
                 </Card.Title>
                 <Card.Text className='description-text'>{item.description}</Card.Text>
                 <Card.Text className='row-attribute' style={{ fontFamily: 'monospace', display: 'flex', justifyContent: 'center' }}>
                     <Card.Text style={{ textAlign: 'center' }}>
-                        {renderStat('commits', item.num_commits)} {renderStat('issues', item.num_issues)} {renderStat('tests', item.num_tests)}
+                        {renderGitlabStat('commits', animatedCommits)} {renderGitlabStat('issues', animatedIssues)} {renderGitlabStat('tests', animatedTests)}
                     </Card.Text>
                 </Card.Text>
             </Card.Body>

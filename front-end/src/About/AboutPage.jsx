@@ -40,19 +40,29 @@ const AboutPage = () => {
       });
   }, [PROJECT_ID, GITLAB_TOKEN]);
 
+  // consolidate commit data (bc jeronimo + ananth use multiple gitlab accounts)
+  let commitData = {};
   let totalCommits = 0;
-  let totalIssues = 0;
+  contributors.forEach((member) => {
+    member.emails.forEach((email) => {
+      // `contibutorResults` stores data from API call; `contributors` is local json object
+      const contributor = contributorResults.find((c) => c.email === email);
+      if (contributor) {
+        let key = contributor.name.charAt(0).toLowerCase();
+        if (!(key in commitData)) {
+          commitData[key] = 0;
+        }
+        commitData[key] += contributor.commits;
+        totalCommits += contributor.commits;
+      }
+    });
+  });
 
+  let totalIssues = 0;
   const data = {
     aboutPage: contributors.map((contributor) => {
-      // teamMemberData only includes data for 1 team member (based on email)
-      const teamMemberData = contributorResults.find(
-        (contributorFromAPI) => contributorFromAPI.email === contributor.email
-      );
-      
       // numCommits
-      const num_commits = teamMemberData ? teamMemberData.commits : 0;
-      totalCommits += num_commits;
+      const num_commits = commitData[contributor.name.charAt(0).toLowerCase()]
 
       // numIssues
       const num_issues = issueResults.filter(
@@ -60,7 +70,7 @@ const AboutPage = () => {
       ).length;
       totalIssues += num_issues;
 
-      // append new entry for each team member
+      // append new entry into each team member's json object entry
       return {
         ...contributor,
         num_commits,
@@ -68,8 +78,40 @@ const AboutPage = () => {
       };
     })
   };
+
+  // useful for animating total gitlab stats
+  const [animatedTotalCommits, setAnimatedTotalCommits] = useState(0);
+  const [animatedTotalIssues, setAnimatedTotalIssues] = useState(0);
+
+  const INTERVAL_SPEED = 20;  // larger number == more slow
+
+  useEffect(() => {
+    let commits = 0;
+    let issues = 0;
+
+    const interval = setInterval(() => {
+      // increment commits
+      if (commits < totalCommits) {
+        commits++;
+        setAnimatedTotalCommits(commits);
+      }
+
+      // increment issues
+      if (issues < totalIssues) {
+        issues++;
+        setAnimatedTotalIssues(issues);
+      }
+
+      // clear interval when all stats reach their final values
+      if (commits === totalCommits && issues === totalIssues) {
+        clearInterval(interval);
+      }
+    }, INTERVAL_SPEED);
+
+    return () => clearInterval(interval);
+  }, [totalCommits, totalIssues]);
   
-  // useful for rending totalCommits + totalIssues
+  // useful for rending Gitlab totalCommits and totalIssues
   const renderGitlabStat = (label, value) => (
     <>
       <b>{label}: </b>
@@ -77,6 +119,7 @@ const AboutPage = () => {
     </>
   );
 
+  // useful for rending 'tools used' cards
   const renderToolsUsed = (tools_used) => {
     return (
       <div className="row row-cols-auto" style={{ display: 'flex', justifyContent: 'center' }}>
@@ -108,7 +151,7 @@ const AboutPage = () => {
           nearby homeless shelters, support organizations that aid the homeless, and spread the
           word about upcoming volunteer opportunities. We hope the result of integrating this
           disparate data will encourage users to feel more confidence in being able to quickly access 
-          resources when presented with an opportunity of helping someone suffering from homeslessness.
+          resources when presented with an opportunity of helping someone suffering from homelessness.
         </p>
       </div>
 
@@ -119,6 +162,7 @@ const AboutPage = () => {
       <div className="row row-cols-auto" style={{justifyContent: 'center'}}>
         {data.aboutPage.map((item) => (
             <div className="col" key={item.name}>
+              {/* create a new instance card for each team member */}
               <InstanceCard item={item} type={"Meet the Team"} />
             </div>
           ))
@@ -131,9 +175,9 @@ const AboutPage = () => {
           Total Stats
         </header>
         <p style={{ fontSize: '1.2em', paddingLeft: 120, paddingRight: 120, fontFamily: 'monospace' }}>
-          {renderGitlabStat("Total commits", totalCommits)}
+          {renderGitlabStat("Total commits", animatedTotalCommits)}
           <br/>
-          {renderGitlabStat("Total issues", totalIssues)}
+          {renderGitlabStat("Total issues", animatedTotalIssues)}
         </p>
       </div>
 
