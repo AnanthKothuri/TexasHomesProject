@@ -12,7 +12,7 @@ router = APIRouter(
 
 @router.get("/")
 async def getAll(session: AsyncSession = Depends(get_db)):
-    res = await session.execute(text("SELECT * from counties"))
+    res = await session.execute(text('SELECT * from "Counties"'))
     return [x._asdict() for x in res.all()]
 
 

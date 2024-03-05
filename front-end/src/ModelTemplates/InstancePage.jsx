@@ -1,33 +1,20 @@
 // InstancePage.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import shelterData from '../data/shelterData.json'
-import countyData from '../data/countyData.json'
-import eventData from '../data/eventData.json'
-import InstanceCard from './InstanceCard';
 import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
+import useFetchAll from '../hooks/usefetchAll';
 // import GoogleMap from '../components/GoogleMap';
 
 
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
 
-function find_item_for_id(id, type) {
-  switch (type) {
-    case 'shelters':
-      return shelterData.shelters.find(item => item.id.toString() === id);
-    case 'counties':
-      return countyData.counties.find(item => item.id.toString() === id);
-    case 'events':
-      return  eventData.events.find(item => item.id.toString() === id);
-    default:
-      return null;
-  }
-}
 
 const InstancePage = () => {
   let { type, id } = useParams(); // Assuming the route is something like '/:type/:id'
-  var instanceData = find_item_for_id(id, type);
+  const { data: instanceData, loading, error } = useFetchAll('http://api.texashomesproject.me/' + type + '/' + id);
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
   if (!instanceData) {
     return <div className="instance-not-found">Instance not found</div>;
   }
@@ -44,14 +31,6 @@ const InstancePage = () => {
         <h1>Related</h1>
         <div class="row row-cols-auto">
 
-          {instanceData.related_models.map((item, index) => (
-                <div class="col">
-                  {find_item_for_id(item.id.toString(), item.type.toLowerCase()) ? 
-                    <InstanceCard item={find_item_for_id(item.id.toString(), item.type.toLowerCase())} type={item.type} />
-                    : <p>Could not load related model</p>
-                  }
-                </div>
-            ))}
         </div>
       </div>
     </div>
@@ -122,37 +101,37 @@ function CountyInstancePage({item}) {
         County
       </div>
       <div className="card-body">
-        <h5 class="card-title">{item.name}</h5>
-        <p class="card-text">{item.short_description}</p>
-        <a href="/counties" class="btn btn-primary">Back to Counties</a>
+        <h5 className="card-title">{item.name}</h5>
+        <p className="card-text">{item.short_description}</p>
+        <a href="/counties" className="btn btn-primary">Back to Counties</a>
       </div>
-      <div class="card-footer text-body-secondary">
+      <div className="card-footer text-body-secondary">
         {item.website_url}
       </div>
     </div>
 
-    <div class="row" style={{maxWidth: '50rem'}}>
-      <div class="col-md-4">
-        <img src={item.image_url} class="img-fluid rounded-start" alt={item.name}/>
+    <div className="row" style={{maxWidth: '50rem'}}>
+      <div className="col-md-4">
+        <img src={item.image_url} className="img-fluid rounded-start" alt={item.name}/>
       </div>
 
       <div class="col-md-4">
-        <img src={item.map} class="img-fluid rounded-end" alt={item.name}/>
+        <img src={item.map} className="img-fluid rounded-end" alt={item.name}/>
       </div>
     </div>
 
-    <div class="col-md-8" style={{margin: 20, maxWidth: '50rem'}}>
-        <div class="card-body">
-          <h5 class="card-title">Summary</h5>
-          <p class="card-text">{item.long_description}</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <div className="col-md-8" style={{margin: 20, maxWidth: '50rem'}}>
+        <div className="card-body">
+          <h5 className="card-title">Summary</h5>
+          <p className="card-text">{item.long_description}</p>
+          <p className="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
         </div>
     </div>
 
-    <ul class="list-group" style={{margin: 40}}>
-      <li class="list-group-item disabled" aria-current="true">Statistics</li>
-      <li class="list-group-item">Population: {item.population}</li>
-      <li class="list-group-item">Housing Units: {item.housing}</li>
+    <ul className="list-group" style={{margin: 40}}>
+      <li className="list-group-item disabled" aria-current="true">Statistics</li>
+      <li className="list-group-item">Population: {item.population}</li>
+      <li className="list-group-item">Housing Units: {item.housing}</li>
     </ul>
   </div>
   )
