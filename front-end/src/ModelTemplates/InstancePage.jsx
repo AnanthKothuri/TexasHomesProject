@@ -11,7 +11,7 @@ import './InstancePage.css'; // Make sure to create a corresponding CSS file
 
 const InstancePage = () => {
   let { type, id } = useParams(); // Assuming the route is something like '/:type/:id'
-  const { data: instanceData, loading, error } = useFetchAll('http://api.texashomesproject.me/' + type + '/' + id);
+  const { data: instanceData, loading, error } = useFetchAll('https://api.texashomesproject.me/' + type + '/' + id);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
