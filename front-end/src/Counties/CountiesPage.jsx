@@ -5,7 +5,7 @@ import useFetchAll from '../hooks/usefetchAll';
 
 
 const CountiesPage = () => {
-  const { data: counties, loading, error } = useFetchAll('http://api.texashomesproject.me/counties/');
+  const { data: counties, loading, error } = useFetchAll('https://api.texashomesproject.me/counties/');
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;

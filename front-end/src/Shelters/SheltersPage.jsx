@@ -3,7 +3,7 @@ import PageLayout from '../ModelTemplates/PageLayout';
 import useFetchAll from '../hooks/usefetchAll';
 
 const SheltersPage = () => {
-  const { data: shelters, loading, error } = useFetchAll('http://api.texashomesproject.me/shelters/');
+  const { data: shelters, loading, error } = useFetchAll('https://api.texashomesproject.me/shelters/');
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
