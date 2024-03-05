@@ -8,3 +8,4 @@ pip install webdriver-manager
 npm install google-map-react
 npm install @iconify/react
 npm install @iconify/icons-mdi
+npm install react-bootstrap-pagination-control

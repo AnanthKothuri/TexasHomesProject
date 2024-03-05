@@ -1,9 +1,14 @@
-import React from 'react';
 import PageLayout from '../ModelTemplates/PageLayout';
-import data from '../data/shelterData.json';
+//import data from '../data/countyData.json';
+import useFetchAll from '../hooks/usefetchAll';
 
 const SheltersPage = () => {
-  return <PageLayout data={data.shelters} pageTitle={"Shelters"} />;
+  const { data: shelters, loading, error } = useFetchAll('https://api.texashomesproject.me/shelters/');
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  return <PageLayout data={shelters} pageTitle={"Shelters"} />;
 }
 
 export default SheltersPage;

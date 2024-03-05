@@ -116,7 +116,7 @@ function ShelterInstanceCard({item}) {
     return (
         <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>Shelter</Card.Header>
-            <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : "l"} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text className='description-text'>{item.description}</Card.Text>
@@ -147,7 +147,7 @@ function CountyInstanceCard({item}) {
     return (
         <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>County</Card.Header>
-            <Card.Img variant="top" src={item.image_url} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Img variant="top" src={'http://' + item.image_url} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Subtitle className='description-text'>{item.short_description}</Card.Subtitle>
@@ -180,7 +180,7 @@ function EventInstanceCard({item}) {
     return (
         <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>Event</Card.Header>
-            <Card.Img variant="top" src={item.image} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Img variant="top" src={item.image_url} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text className='description-text'>{item.description}</Card.Text>
