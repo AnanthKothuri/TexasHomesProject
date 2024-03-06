@@ -29,4 +29,5 @@ const useFetchAll = (url) => {
   return { data, loading, error };
 };
 
+
 export default useFetchAll;
