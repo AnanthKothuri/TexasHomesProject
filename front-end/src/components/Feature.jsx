@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 const Feature = ({ smalltext, text, icon, iconBg, href }) => {
+=======
+import { Button } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+
+const Feature = ({ smalltext, text, icon, iconBg }) => {
+>>>>>>> 57b435c (small frontend changes)
     const stackStyle = {
       display: 'flex',
       alignItems: 'center',

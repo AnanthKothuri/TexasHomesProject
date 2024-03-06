@@ -10,6 +10,7 @@ import {useLocation} from 'react-router-dom';
 
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
 import InstanceCard from './InstanceCard';
+import LoadingPage from '../components/LoadingPage';
 
 const date_params = {
   year: 'numeric',
@@ -53,7 +54,7 @@ function RelatedModels({ inputData }) {
   );
 
   // Check if any of the requests is still loading
-  if (l1 || l2 || l3) return <div>Loading related models...</div>;
+  if (l1 || l2 || l3) return <LoadingPage/>;
 
   // Check if any of the requests resulted in an error
   if (e1 || e2 || e3) {
@@ -61,25 +62,34 @@ function RelatedModels({ inputData }) {
   }
 
   return (
-    <div className="container" style={{ padding: 40 }}>
+    <div className="container" style={{ padding: 40}}>
 
       {relatedCounties && relatedCounties.length > 0 && (
         <>
-          <h2>Related Counties</h2>
+          <Row xs="auto" style={{alignItems: 'center'}}>
+            <Col> <h2>Related Counties</h2> </Col>
+            <Col> <h3 style={{color: 'lightgray'}}>{relatedCounties.length}</h3> </Col>
+          </Row>
           <HorizontalScrollList items={relatedCounties} type="Counties" />
         </>
       )}
 
       {relatedEvents && relatedEvents.length > 0 && (
         <>
-          <h2>Related Events</h2>
+          <Row xs="auto" style={{alignItems: 'center'}}>
+            <Col> <h2>Related Events</h2> </Col>
+            <Col> <h3 style={{color: 'lightgray'}}>{relatedEvents.length}</h3> </Col>
+          </Row>
           <HorizontalScrollList items={relatedEvents} type="Events" />
         </>
       )}
 
       {relatedShelters && relatedShelters.length > 0 && (
         <>
-          <h2>Related Shelters</h2>
+            <Row xs="auto" style={{alignItems: 'center'}}>
+            <Col> <h2>Related Shelters</h2> </Col>
+            <Col> <h3 style={{color: 'lightgray'}}>{relatedShelters.length}</h3> </Col>
+          </Row>
           <HorizontalScrollList items={relatedShelters} type="Shelters" />
         </>
       )}
