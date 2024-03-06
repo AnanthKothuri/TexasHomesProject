@@ -39,31 +39,33 @@ const HomePage = () => {
           </p>
         </Col>
 
+        {/* Display info for "Shelters", "Counties", "Events" with icons */}
         <Col style={{ fontSize: '1.2em' }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <p style={{ marginBottom: 5, fontSize: 25 }}>
               At a glance,
             </p>
           </div>
-          {/* Display info for "Shelters", "Counties", "Events" with icons */}
           <Feature
             icon={<MdNightShelter style={{ color: "#0b2b68", fontSize: '1.5em' }}/>}
             text="Shelters"
-            smalltext="There are X homeless shelters in Texas."
+            smalltext="There are 134 homeless shelters in Texas."
+            href="shelters/"
           />
           <Feature
             icon={<FaLandmarkFlag style={{ color: "#c91e40", fontSize: '1.2em' }}/>}
             text="Counties"
-            smalltext="There are X counties in Texas."
+            smalltext="There are 254 counties in Texas."
+            href="counties/"
           />
           <Feature
             icon={<FaHandsHelping style={{ color: "#1d66b5", fontSize: '1.3em' }}/>}
             text="Events"
-            smalltext="There are X upcoming volunteer events."
+            smalltext="There are 143 upcoming volunteer events."
+            href="events/"
           />
         </Col>
       </Row>
-
     </div>
   );
 }
