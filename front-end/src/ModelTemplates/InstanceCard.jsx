@@ -3,6 +3,12 @@ import './InstanceCard.css'; // Make sure to create a corresponding CSS file for
 import { useNavigate } from 'react-router-dom';
 import {Card, Button} from 'react-bootstrap'
 
+const date_params = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+}
+
 function InstanceCard({item, type}) {
     return (
         <div>
@@ -69,7 +75,7 @@ function ShelterInstanceCard({item}) {
     return (
         <Card className='card-content mb-4' style={{ width: 400 }}>
             <Card.Header>Shelter</Card.Header>
-            <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : "l"} style={{height: 250, objectFit: 'cover'}} />
+            <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text className='description-text'>{item.description}</Card.Text>
@@ -103,19 +109,26 @@ function CountyInstanceCard({item}) {
             <Card.Img variant="top" src={'http://' + item.image_url} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
-                <Card.Subtitle className='description-text'>{item.short_description}</Card.Subtitle>
-                <Card.Text className='description-text'>{item.long_description}</Card.Text>
+                <Card.Text className='description-text'>{item.description}</Card.Text>
                 <Card.Text className='row-attribute'>
                     <p style={{fontWeight: 'bold', paddingRight: 10}}>Population</p>
-                    <p>{item.population}</p>
+                    <p>{item.population.toLocaleString()}</p>
                 </Card.Text>
                 <Card.Text className='row-attribute'>
                     <p style={{fontWeight: 'bold', paddingRight: 10}}>Housing Units</p>
-                    <p>{item.housing}</p>
+                    <p>{item.housing_units.toLocaleString()}</p>
                 </Card.Text>
                 <Card.Text className='row-attribute'>
                     <p style={{fontWeight: 'bold', paddingRight: 10}}>Website</p>
-                    <p className='description-text'>{item.website_url}</p>
+                    <a className='description-text' href={item.website_url} target='_blank' rel='noopener noreferrer'>
+                        {item.website_url}
+                    </a>
+                </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
+                    <p>{item.lat}</p>
+                    <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
+                    <p>{item.long}</p>
                 </Card.Text>
                 <Button variant="primary" className="card-button" onClick={navigateToCounty}>Explore County</Button>
             </Card.Body>
@@ -138,17 +151,35 @@ function EventInstanceCard({item}) {
                 <Card.Title>{item.title}</Card.Title>
                 <Card.Text className='description-text'>{item.description}</Card.Text>
                 <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Date Posted</p>
-                    <p>{item.date}</p>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Organization</p>
+                    <p>{item.organization}</p>
                 </Card.Text>
                 <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Time</p>
-                    <p>{item.time}</p>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Date Posted</p>
+                    <p>{new Date(item.date_posted).toLocaleString('en-US', date_params)}</p>
                 </Card.Text>
                 <Card.Text className='row-attribute'>
                     <p style={{fontWeight: 'bold', paddingRight: 10}}>Location</p>
-                    <p className='description-text'>{item.location}</p>
+                    <p className='description-text'>{item.address}</p>
                 </Card.Text>
+                <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
+                    <p>{item.lat}</p>
+                    <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
+                    <p>{item.long}</p>
+                </Card.Text>
+                {/* <Card.Text className='row-attribute'>
+                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Causes</p>
+                    <div className="row row-cols-auto">
+                        {item.cause_areas.length === 0 ? (
+                        <div>No items found.</div>
+                        ) : (
+                            item.cause_areas.map((item, index) => (
+                                <p className="cause-item">{item}</p>
+                            ))
+                        )}
+                    </div>
+                </Card.Text> */}
                 <Button variant="primary" className="card-button" onClick={navigateToEvent}>View Event</Button>
             </Card.Body>
         </Card>

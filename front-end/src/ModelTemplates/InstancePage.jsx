@@ -8,6 +8,11 @@ import useFetchAll from '../hooks/usefetchAll';
 
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
 
+const date_params = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+}
 
 const InstancePage = () => {
   let { type, id } = useParams(); // Assuming the route is something like '/:type/:id'
@@ -112,27 +117,43 @@ function CountyInstancePage({item}) {
 
     <div className="row" style={{maxWidth: '50rem'}}>
       <div className="col-md-4">
-        <img src={item.image_url} className="img-fluid rounded-start" alt={item.name}/>
+        <img src={"http://" + item.image_url} className="img-fluid rounded-start" alt={item.name}/>
       </div>
 
       <div class="col-md-4">
-        <img src={item.map} className="img-fluid rounded-end" alt={item.name}/>
+        <img src={"http://" + item.map} className="img-fluid rounded-end" alt={item.name}/>
       </div>
     </div>
 
     <div className="col-md-8" style={{margin: 20, maxWidth: '50rem'}}>
         <div className="card-body">
           <h5 className="card-title">Summary</h5>
-          <p className="card-text">{item.long_description}</p>
-          <p className="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          <p className="card-text">{item.description}</p>
+
+          <h5 className="card-title">Demographics</h5>
+          <p className="card-text">{item.text}</p>
         </div>
     </div>
 
-    <ul className="list-group" style={{margin: 40}}>
-      <li className="list-group-item disabled" aria-current="true">Statistics</li>
-      <li className="list-group-item">Population: {item.population}</li>
-      <li className="list-group-item">Housing Units: {item.housing}</li>
-    </ul>
+    <Col md={8} style={{ margin: 20, maxWidth: '50rem' }}>
+      <Card.Text className='row-attribute'>
+            <p style={{fontWeight: 'bold', paddingRight: 10}}>Population</p>
+            <p>{item.population.toLocaleString()}</p>
+      </Card.Text>
+
+      <Card.Text className='row-attribute'>
+            <p style={{fontWeight: 'bold', paddingRight: 10}}>Housing Units</p>
+            <p>{item.housing_units.toLocaleString()}</p>
+      </Card.Text>
+
+      <Card.Text className='row-attribute'>
+          <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
+          <p>{item.lat}</p>
+          <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
+          <p>{item.long}</p>
+      </Card.Text>
+    </Col>
+
   </div>
   )
 }
@@ -155,34 +176,112 @@ function EventInstancePage({item}) {
 
       <Row style={{ maxWidth: '50rem'}}>
           <Col md={4}>
-            <img src={item.image} className="img-fluid rounded-start" alt={item.name} />
+            <img src={item.image_url} className="img-fluid rounded-start" alt={item.name} />
           </Col>
-            <Col>
-              <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
-              </div>
+          <Col>
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
+            </div>
+          </Col>
+          {item.map_url !== "" && (
+            <Col md={4}>
+              <img src={item.map_url} className="img-fluid rounded-start" alt={item.name} />
             </Col>
+          )}
       </Row>
 
 
       <Col md={8} style={{ margin: 20, maxWidth: '50rem' }}>
         <Card.Body>
           <Card.Title>Description</Card.Title>
-          <Card.Text><small className="text-body-secondary">{item.date_posted}</small></Card.Text>
+          <Card.Text><small className="text-body-secondary">{new Date(item.date_posted).toLocaleString('en-US', date_params)}</small></Card.Text>
 
           <Card.Text>{item.description}</Card.Text>
-          <Card.Text><small className="text-body-secondary">Last updated {item.update_datetime}</small></Card.Text>
         </Card.Body>
       </Col>
 
-      <ListGroup style={{ margin: 40 }}>
-        <ListGroup.Item disabled aria-current="true">Details</ListGroup.Item>
-        <ListGroup.Item>Date Posted: {item.date}</ListGroup.Item>
-        <ListGroup.Item>Time: {item.time}</ListGroup.Item>
-        <ListGroup.Item>Causes: {item.cause_areas}</ListGroup.Item>
-        <ListGroup.Item>Skills: {item.skills}</ListGroup.Item>
-        <ListGroup.Item>Requirements: {item.requirements}</ListGroup.Item>
-      </ListGroup>
+      <Col md={8} style={{ margin: 20, maxWidth: '50rem' }}>
+        <Card.Body>
+          <Card.Text className='row-attribute'>
+                <p style={{fontWeight: 'bold', paddingRight: 10}}>Organization</p>
+                <p>{item.organization}</p>
+
+          </Card.Text>
+
+          <Card.Text className='row-attribute'>
+                <p style={{fontWeight: 'bold', paddingRight: 10}}>Date Posted</p>
+                <p>{new Date(item.date_posted).toLocaleString('en-US', date_params)}</p>
+          </Card.Text>
+
+          <Card.Text className='row-attribute'>
+                <p style={{fontWeight: 'bold', paddingRight: 10}}>Address</p>
+                <p>{item.address}</p>
+          </Card.Text>
+
+          <Card.Text className='row-attribute'>
+              <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
+              <p>{item.lat}</p>
+              <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
+              <p>{item.long}</p>
+          </Card.Text>
+
+          <Card.Subtitle>Cause Areas</Card.Subtitle>
+          <div className="row row-cols-auto">
+              {item.cause_areas.length === 0 ? (
+              <div>None</div>
+              ) : (
+                  item.cause_areas.map((item, index) => (
+                      <p className="cause-item">{item}</p>
+                  ))
+              )}
+          </div>
+          
+          {item.skills.length > 0 && (
+            <>
+              <Card.Subtitle>Skills</Card.Subtitle>
+              <div className="row row-cols-auto">
+                  {item.skills.length === 0 ? (
+                  <div>None</div>
+                  ) : (
+                      item.skills.map((item, index) => (
+                          <p className="skills-item">{item}</p>
+                      ))
+                  )}
+              </div>
+            </>
+          )}
+
+          {item.good_for.length > 0 && (
+            <>
+              <Card.Subtitle>Good For</Card.Subtitle>
+              <div className="row row-cols-auto">
+                  {item.good_for.length === 0 ? (
+                  <div>None</div>
+                  ) : (
+                      item.skills.map((item, index) => (
+                          <p className="good-for-item">{item}</p>
+                      ))
+                  )}
+              </div>
+            </>
+          )}
+
+          {item.requirements.length > 0 && (
+            <>
+              <Card.Subtitle>Requirements</Card.Subtitle>
+              <div className="row row-cols-auto">
+                  {item.requirements.length === 0 ? (
+                  <div>None</div>
+                  ) : (
+                      item.skills.map((item, index) => (
+                          <p className="requirements-item">{item}</p>
+                      ))
+                  )}
+              </div>
+            </>
+          )}
+        </Card.Body>
+      </Col>
 
     </Container>
   );

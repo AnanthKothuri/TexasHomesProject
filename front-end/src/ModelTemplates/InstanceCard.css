@@ -9,6 +9,18 @@
     justify-content: left;
     text-align: left;
   }
+
+  .cause-item {
+    background-color: #d8e2f5;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    border-radius: 8px;
+  }
   
   .card-button {
     background-color: #303030;
