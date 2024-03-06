@@ -57,10 +57,7 @@ export const tools_used = [
   },
 ];
 
-const BACKEND_COLOR = "#4e6b91";  // blue
-const FRONTEND_COLOR = "#bd4b48"; // red
-const FULLSTACK_COLOR = "#4e6b91";  // blue
-
+const FULLSTACK_COLOR = "#1d66b5";
 
 // ordering effects order displayed on website
 export const contributors = [
@@ -92,7 +89,7 @@ export const contributors = [
     emails: ["shahmirnation@gmail.com"],
     gitlab_username: "shahmir-m",
     description:
-      "I'm a senior majoring in C.S. I'm a big football fan, avid rock climber, enjoyer of many sports and video games, and a sci-fi nerd :)",
+      "I'm a senior majoring in CS, I'm a big football fan, avid rock climber, enjoyer of sports/video games, and a sci-fi nerd :)",
     role: "fullstack",
     role_color: FULLSTACK_COLOR,
     num_tests: 0,
