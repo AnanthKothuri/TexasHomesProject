@@ -1,32 +1,30 @@
-SHELL	:= bash
-BLACK	:= black
-
-#start the web preview
-start:
-	cd ./front-end && npm start
-
-#commit and push the changes to remote
-commit:
-	git add -A
-	@read -p "commit message: " COMMITMSG; \
-	git commit -m "$$COMMITMSG"
-	git push
-
-#add all then show status
-add:
-	git add -A
-	git status
-
-# pull from remote gitlab
-pull:
-	git pull
-	git status
+MAIN_BRANCH := main
 
 install:
-	cd ./front-end && npm install
+	npm install
 
+start:
+	npm run start
 
-branch:
-	@read -p "branch name: " BRANCHMSG; \
-	git branch "$$BRANCHMSG"; \
-	git checkout "$$BRANCHMSG"
+pull:
+	git pull origin $(MAIN_BRANCH)
+
+push:
+	git push origin $(MAIN_BRANCH)
+
+install-packages:
+	./frontend/install_dependencies.sh
+
+# build frontend
+build-frontend :
+	docker build ./front-end/Dockerfile -t front-end .
+
+run-frontend:
+	docker run -dp 127.0.0.1:3000:3000 front-end
+
+# build api
+build-api :
+	docker build ./api/Dockerfile -t api .
+
+run-api:
+	docker run -dp 127.0.0.1:3000:3000 api
