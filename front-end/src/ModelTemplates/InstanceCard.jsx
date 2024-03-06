@@ -95,7 +95,7 @@ function DeveloperInstanceCard({item}) {
     );
 
     return (
-        <Card className='card-content mb-4 shadow' style={{ width: 500 }}>
+        <Card className='card-content mb-4 shadow' style={{ width: 400 }}>
             <Card.Img variant="top" src={item.img_src} style={{height: 300, objectFit: 'cover'}} />
             <Card.Body>
                 <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'  }}>

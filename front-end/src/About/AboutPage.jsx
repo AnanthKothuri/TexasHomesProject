@@ -211,11 +211,11 @@ const AboutPage = () => {
           Data Sources
         </header>
         <div style={{ fontSize: '1.2em' }}>
-          <a href={sources[0]}>VolunteerMatch</a>
+          <a href={sources[0]}>Volunteer Match</a>
           <br />
-          <a href={sources[1]}>VolunteerTX</a>
+          <a href={sources[1]}>Volunteer TX</a>
           <br />
-          <a href={sources[2]}>TexasCounties</a>
+          <a href={sources[2]}>Texas Counties</a>
           <br />
           <a href={sources[3]}>Homeless Shelters API</a>
           <br />
