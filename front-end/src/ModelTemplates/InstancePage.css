@@ -4,7 +4,68 @@
   align-items: center;
   /* height: 100vh; */
 }
+.row-attribute {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
 
+.description-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+          line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.cause-item {
+  background-color: #d8e2f5;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+.skills-item {
+  background-color: #d8f5e5;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+.good-for-item {
+  background-color: #f5efd8;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+.requirements-item {
+  background-color: #f5ded8;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
 
 /* InstancePage.css
 .instance-page {
