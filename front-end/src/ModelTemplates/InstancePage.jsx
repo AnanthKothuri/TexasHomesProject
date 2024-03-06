@@ -1,12 +1,15 @@
 // InstancePage.js
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
 import useFetchAll from '../hooks/usefetchAll';
+import useFetchAllIds from '../hooks/useFetchAllIds';
+import {useLocation} from 'react-router-dom';
 // import GoogleMap from '../components/GoogleMap';
 
 
 import './InstancePage.css'; // Make sure to create a corresponding CSS file
+import InstanceCard from './InstanceCard';
 
 const date_params = {
   year: 'numeric',
@@ -14,30 +17,95 @@ const date_params = {
   day: 'numeric'
 }
 
-const InstancePage = () => {
-  let { type, id } = useParams(); // Assuming the route is something like '/:type/:id'
-  const { data: instanceData, loading, error } = useFetchAll('https://api.texashomesproject.me/' + type + '/' + id);
+const HorizontalScrollList = ({items, type}) => {
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!instanceData) {
-    return <div className="instance-not-found">Instance not found</div>;
+  return (
+    <div style={{ overflowX: 'auto', whiteSpace: 'nowrap', padding: '10px' }}>
+      {items.map(item => (
+        <div
+          key={item.id}
+          style={{
+            display: 'inline-block',
+            // minWidth: '150px', // Set the minimum width for each item
+            margin: 10,
+            padding: 10
+          }}
+        >
+          <InstanceCard item={item} type={type} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+function RelatedModels({ inputData }) {
+  const { data: relatedCounties, loading: l1, error: e1 } = useFetchAllIds(
+    'https://api.texashomesproject.me/counties',
+    inputData.related_models.counties
+  );
+  const { data: relatedShelters, loading: l2, error: e2 } = useFetchAllIds(
+    'https://api.texashomesproject.me/shelters',
+    inputData.related_models.shelters
+  );
+  const { data: relatedEvents, loading: l3, error: e3 } = useFetchAllIds(
+    'https://api.texashomesproject.me/events',
+    inputData.related_models.events
+  );
+
+  // Check if any of the requests is still loading
+  if (l1 || l2 || l3) return <div>Loading related models...</div>;
+
+  // Check if any of the requests resulted in an error
+  if (e1 || e2 || e3) {
+    return <div>Error loading related models: {e1 || e2 || e3}</div>;
+  }
+
+  return (
+    <div className="container" style={{ padding: 40 }}>
+
+      {relatedCounties && relatedCounties.length > 0 && (
+        <>
+          <h2>Related Counties</h2>
+          <HorizontalScrollList items={relatedCounties} type="Counties" />
+        </>
+      )}
+
+      {relatedEvents && relatedEvents.length > 0 && (
+        <>
+          <h2>Related Events</h2>
+          <HorizontalScrollList items={relatedEvents} type="Events" />
+        </>
+      )}
+
+      {relatedShelters && relatedShelters.length > 0 && (
+        <>
+          <h2>Related Shelters</h2>
+          <HorizontalScrollList items={relatedShelters} type="Shelters" />
+        </>
+      )}
+    </div>
+  );
+}
+
+const InstancePage = () => {
+  const location = useLocation()
+  const {item} = location.state;
+  let { type, id } = useParams(); // Assuming the route is something like '/:type/:id'
+
+  if (!item) {
+    return <p>item is missing</p>
   }
 
   return (
 
     <div>
-      { type === 'shelters' ? (<ShelterInstancePage item={instanceData} />) : 
-          type === 'counties' ? (<CountyInstancePage item={instanceData} />) :
-          <EventInstancePage item={instanceData} />
+      { type === 'shelters' ? (<ShelterInstancePage item={item} />) : 
+          type === 'counties' ? (<CountyInstancePage item={item} />) :
+          <EventInstancePage item={item} />
       }
 
-      <div className='container' style={{padding: 40}}>
-        <h1>Related</h1>
-        <div class="row row-cols-auto">
+      <RelatedModels inputData={item} />
 
-        </div>
-      </div>
     </div>
   );
 };

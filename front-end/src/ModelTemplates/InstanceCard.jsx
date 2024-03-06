@@ -117,7 +117,7 @@ function ShelterInstanceCard({item}) {
     let navigate = useNavigate()
 
     function navigateToShelter() {
-        navigate(`/shelters/${item.id}`);
+        navigate(`/shelters/${item.id}`, {state: {item}});
       }
     return (
         <Card className='card-content mb-4' style={{ width: 400 }}>
@@ -148,7 +148,7 @@ function CountyInstanceCard({item}) {
     let navigate = useNavigate()
 
     function navigateToCounty() {
-        navigate(`/counties/${item.id}`);
+        navigate(`/counties/${item.id}`, {state: {item}});
       }
     return (
         <Card className='card-content mb-4' style={{ width: 400 }}>
@@ -187,7 +187,7 @@ function EventInstanceCard({item}) {
     let navigate = useNavigate()
 
     function navigateToEvent() {
-        navigate(`/events/${item.id}`);
+        navigate(`/events/${item.id}`, {state: {item}});
       }
 
     return (

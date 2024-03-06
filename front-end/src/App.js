@@ -18,10 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/shelters" element={<SheltersPage />} />
-          <Route path="/:type/:id" element={<InstancePage />} />
+          <Route path="/shelters" element={<SheltersPage />} />=
           <Route path="/counties" element={<CountiesPage />} />
-          <Route path="/:type/:id" element={<InstancePage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/:type/:id" element={<InstancePage />} />
         </Routes>

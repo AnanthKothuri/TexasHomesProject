@@ -9,3 +9,4 @@ npm install google-map-react
 npm install @iconify/react
 npm install @iconify/icons-mdi
 npm install react-bootstrap-pagination-control
+npm install @react-navigation/native
