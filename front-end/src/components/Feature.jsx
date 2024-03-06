@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-const Feature = ({ smalltext, text, icon, iconBg, href }) => {
-=======
-import { Button } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-
 const Feature = ({ smalltext, text, icon, iconBg }) => {
->>>>>>> 57b435c (small frontend changes)
     const stackStyle = {
       display: 'flex',
       alignItems: 'center',
@@ -32,14 +25,8 @@ const Feature = ({ smalltext, text, icon, iconBg }) => {
   
     return (
       <div style={stackStyle}>
-        <a href={href}>
-          <div style={flexStyle}>{icon}</div>
-        </a>
-        <span style={textStyle}>
-          <a href={href} style={{ textDecoration: 'none', color: "#000" }}>
-            {text}
-          </a>
-        </span>
+        <div style={flexStyle}>{icon}</div>
+        <span style={textStyle}>{text}</span>
         <span style={smallTextStyle}>{smalltext}</span>
       </div>
     );
