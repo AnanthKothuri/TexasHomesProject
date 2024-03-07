@@ -1,4 +1,4 @@
-const Feature = ({ smalltext, text, icon, iconBg, href }) => {
+const Feature = ({ smalltext, text, icon, iconBg }) => {
     const stackStyle = {
       display: 'flex',
       alignItems: 'center',
@@ -25,14 +25,8 @@ const Feature = ({ smalltext, text, icon, iconBg, href }) => {
   
     return (
       <div style={stackStyle}>
-        <a href={href}>
-          <div style={flexStyle}>{icon}</div>
-        </a>
-        <span style={textStyle}>
-          <a href={href} style={{ textDecoration: 'none', color: "#000" }}>
-            {text}
-          </a>
-        </span>
+        <div style={flexStyle}>{icon}</div>
+        <span style={textStyle}>{text}</span>
         <span style={smallTextStyle}>{smalltext}</span>
       </div>
     );

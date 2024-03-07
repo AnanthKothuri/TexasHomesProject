@@ -118,5 +118,50 @@ def event_to_county():
     print(f"Counties missing events: {missing_events}")
 
 
+def shelter_to_event():
+    shelters = supabase_func.get_all_shelters()
+    events = supabase_func.get_all_events()
+    for shelter in shelters:
+        shelter["related_models"] = {
+            "counties": shelter["related_models"]["counties"],
+            "events": [],
+            "shelters": []
+        }
+
+    MAX_PER_SHELTER = 5
+    for event in events:
+        min_shelter = -1
+        min_distance = sys.maxsize
+
+        for shelter in shelters:
+            if len(shelter["related_models"]["events"]) >= MAX_PER_SHELTER: continue
+
+            cord1 = (event["lat"], event["long"])
+            cord2 = (shelter["lat"], shelter["long"])
+            distance = geopy.distance.geodesic(cord1, cord2).miles
+
+            if distance < min_distance:
+                min_distance = distance
+                min_shelter = shelter["id"]
+
+        event["related_models"]["shelters"] = [min_shelter]
+        supabase_func.update_event(event)
+        for shelter in shelters:
+            if shelter["id"] == min_shelter:
+                shelter["related_models"]["events"].append(event["id"])
+
+        # print(event["related_models"])
+                
+    for shelter in shelters:
+        supabase_func.update_shelter(shelter)
+
+    
+    # printing stats
+    missing_events = 0
+    for shelter in shelters:
+        if shelter["related_models"]["events"] == []: missing_events += 1
+    print(f"Shelters missing events: {missing_events}")
+
 if __name__ == "__main__":
-    shelter_to_county()
+    # shelter_to_county()
+    shelter_to_event()
