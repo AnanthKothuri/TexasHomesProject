@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react';
-import App from '../../src/App.js';
+import App from '../src/App.js';
 
     describe('Frontend Tests', () => {
         test('check that THP Splashpage header rendered', () => {

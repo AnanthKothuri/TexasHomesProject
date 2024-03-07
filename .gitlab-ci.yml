@@ -1,9 +1,17 @@
 stages:
   # - api-tests
   # - postman-api-tests
-  # - unit-tests
+  - frontend-tests
   - acceptance-tests
   - build
+
+frontend-tests:
+  stage: frontend-tests
+  script:
+    - cd ./front-end
+    - npm install
+    - export CI=false  # Disable treating warnings as errors
+    - npm run test
 
 
 acceptance-tests:
