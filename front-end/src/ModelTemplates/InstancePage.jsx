@@ -5,10 +5,10 @@ import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
 import useFetchAll from '../hooks/usefetchAll';
 import useFetchAllIds from '../hooks/useFetchAllIds';
 import {useLocation} from 'react-router-dom';
-// import GoogleMap from '../components/GoogleMap';
+import CustomGoogleMap from '../components/GoogleMap'
 
 
-import './InstancePage.css'; // Make sure to create a corresponding CSS file
+import './InstancePage.css';
 import InstanceCard from './InstanceCard';
 import LoadingPage from '../components/LoadingPage';
 
@@ -143,9 +143,10 @@ function ShelterInstancePage({item}) {
                 <img src={item.photo_urls[0]} className="img-fluid rounded-start" alt={item.name} />
             </Col>
             <Col>
-              <div className="embed-responsive embed-responsive-16by9">
+              {/* <div className="embed-responsive embed-responsive-16by9">
                 <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
-              </div>
+              </div> */}
+              <CustomGoogleMap latitude={item.lat} longitude={item.long}/>
             </Col>
       </Row>
 
@@ -258,13 +259,16 @@ function EventInstancePage({item}) {
           </Col>
           <Col>
             <div className="embed-responsive embed-responsive-16by9">
-              <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
+              {/* <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe> */}
+              
             </div>
           </Col>
-          {item.map_url !== "" && (
+          {item.map_url !== "" ?(
             <Col md={4}>
               <img src={item.map_url} className="img-fluid rounded-start" alt={item.name} />
             </Col>
+          ) : (
+            <CustomGoogleMap latitude={item.lat} longitude={item.long}/>
           )}
       </Row>
 

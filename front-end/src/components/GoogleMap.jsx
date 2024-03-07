@@ -1,43 +1,48 @@
 import React from 'react'
-import GoogleMapReact from 'google-map-react'
-import { Icon } from '@iconify/react'
-import './GoogleMap.css'
-// import locationIcon from '@iconify/icons-mdi/map-marker'
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-const google_maps_api_key = "AIzaSyBq8FPWJxKm3odyidqfXyHrUP3qRwx4c3s"
+const api_key = "AIzaSyBq8FPWJxKm3odyidqfXyHrUP3qRwx4c3s"
+const containerStyle = {
+  width: '400px',
+  height: '400px'
+};
 
-const LocationPin = ({ text }) => (
-    <div className="pin">
-        <Icon icon='map-marker' className="pin-icon" />
-        <p className="pin-text">{text}</p>
-    </div>
-)
 
-function GoogleMap({ address, lat, lng, zoomLevel, text}) {
-    const location = {
-        address: address,
-        latitude: lat,
-        longitude: lng,
-    }
-    return (
-        <div className="map">
-            <h2 className="map-h2">{text}</h2>
+function CustomGoogleMap({latitude, longitude}) {
 
-            <div className="google-map">
-            <GoogleMapReact
-                bootstrapURLKeys={{ key: google_maps_api_key }}
-                defaultCenter={location}
-                defaultZoom={zoomLevel}
+    const center = {
+        lat: latitude,
+        lng: longitude
+        };
+    const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: api_key
+    })
+
+    const [map, setMap] = React.useState(null)
+
+    const onLoad = React.useCallback(function callback(map) {
+        const bounds = new window.google.maps.LatLngBounds(center);
+        // map.fitBounds(bounds);
+
+        setMap(map)
+    }, [])
+
+    const onUnmount = React.useCallback(function callback(map) {
+    setMap(null)
+    }, [])
+
+    return isLoaded ? (
+        <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={15}
+            onLoad={onLoad}
+            onUnmount={onUnmount}
             >
-                <LocationPin
-                lat={location.latitude}
-                lng={location.longitude}
-                text={location.address}
-                />
-            </GoogleMapReact>
-            </div>
-        </div>
-    )
+            <></>
+        </GoogleMap>
+    ) : <></>
 }
 
-export default GoogleMap
+export default React.memo(CustomGoogleMap)
