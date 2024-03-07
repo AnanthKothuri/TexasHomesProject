@@ -1,38 +1,53 @@
 # SWE - Texas Homes Project - Group 21
 
 ### Website:
+
 https://www.texashomesproject.me
 
-### Postman API Documentation:
-https://documenter.getpostman.com/view/23353623/2sA2r545RR#6b31cf1e-1622-4bc1-be25-bda989164be8
+### Backend API:
 
-### Team Member Information:
+https://api.texashomesproject.me/
 
-| Name                     | GitLab ID       |
+### Postman Documentation:
+
+https://documenter.getpostman.com/view/23353623/2sA2r545RR
+
+### GitLab Pipeline:
+
+https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
+
+### Team Member Info:
+
+| Team Members             | GitLab ID       |
 | :----------------------- | --------------- |
 | Jeronimo Del Valle Ocejo | @jerodvo        |
 | Gabriel Casanova         | @gabecasanova   |
 | Shahmir Masood           | @shahmir-m      |
 | Ananth Kothuri           | @ananth.kothuri |
 
-### Pipeline URL:
-https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
+### IDB Phase Info:
 
-### Git SHA:
-f578ed87da97833136d59310fe0dfa4bda8e1ce0
+| Phase | Leader         | GitSHA                                   |
+| ----- | -------------- | ---------------------------------------- |
+| 1     | Ananth Kothuri | f578ed87da97833136d59310fe0dfa4bda8e1ce0 |
+| 2     | Shahmir Masood |                                          |
+| 3     |                |                                          |
+| 4     |                |                                          |
 
-### Phase Leader: Ananth Kothuri
- * facilitated the team by planning/delegating team member tasks
- * quickly responded to text messages regarding the project
- * hosted team meet-ups to collaboratively code
+### Phase Leader Responsibilies:
 
-### Estimated Time to Completion:
- * Jeronimo: 13 hours
- * Gabriel: 17 hours
- * Shahmir: 15 hours
- * Ananth: 17 hours
+- help coordinate team planning and delegation of tasks
+- respond to group texts quickly for help with debugging
+- plan team meet-ups for collaborative coding
 
-### Actual Time to Completion: 20 hours
+### Estimated vs. Actual Time Spent (in hours):
+
+| Name                     | Estimated | Actual |
+| :----------------------- | --------- | ------ |
+| Jeronimo Del Valle Ocejo | 32        | 40     |
+| Gabriel Casanova         | 35        | 40     |
+| Shahmir Masood           | 31        | 40     |
+| Ananth Kothuri           | 37        | 40     |
 
 ---
 

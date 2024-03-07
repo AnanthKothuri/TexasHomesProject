@@ -4,7 +4,32 @@ sys.path.insert(0, '../supabase_func')
 import supabase_func
 import geopy.distance
 
+def shelter_to_shelter():
+    '''
+    connect all shelters from the same county (via shelters["related_models"]["shelters"])
+    '''
+    shelters = supabase_func.get_all_shelters()
+    RELATED_MODELS = "related_models"
+    for shelter in shelters:
+        county_id = shelter[RELATED_MODELS]["counties"][0]
+        before = shelter[RELATED_MODELS]["shelters"]
+        for other in shelters:
+            if shelter["id"] == other["id"]: continue
+            if county_id == other[RELATED_MODELS]["counties"][0]:
+                # `shelter` and `other` are both shelters in the same county, connect them
+                if (other["id"] not in shelter[RELATED_MODELS]["shelters"]):
+                    shelter[RELATED_MODELS]["shelters"].append(other["id"])
+                if (shelter["id"] not in other[RELATED_MODELS]["shelters"]):
+                    other[RELATED_MODELS]["shelters"].append(shelter["id"])
+        # time to update the new shelters, only if we haven't done it already
+        if before != shelter[RELATED_MODELS]["shelters"]:
+            supabase_func.update_shelter(shelter)
+
+
 def shelter_to_county():
+    '''
+    connect shelters to their respective counties; connect counties will all of their shelters
+    '''
     shelters = supabase_func.get_all_shelters()
     counties = supabase_func.get_all_counties()
 
@@ -40,9 +65,8 @@ def shelter_to_county():
             # print(shelter["zip_code"], m[min_county][:-7])
 
         for county in counties:
-            if county["id"] == min_county:
-                if shelter["id"] not in county["related_models"]["shelters"]:
-                    county["related_models"]["shelters"].append(shelter["id"])
+            if county["id"] == min_county and shelter["id"] not in county["related_models"]["shelters"]:
+                county["related_models"]["shelters"].append(shelter["id"])
 
     sorted_counties = sorted(counties, key=lambda x: len(x["related_models"]["shelters"]), reverse=True)
     for county in sorted_counties:
@@ -87,7 +111,6 @@ def event_to_county():
     for county in counties:
         supabase_func.update_county(county)
 
-    
     # printing stats
     missing_events = 0
     for county in counties:
