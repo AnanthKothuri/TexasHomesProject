@@ -6,6 +6,7 @@ stages:
   - build
 
 frontend-tests:
+  image: node:20-alpine
   stage: frontend-tests
   script:
     - cd ./front-end
