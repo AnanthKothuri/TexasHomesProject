@@ -10,3 +10,6 @@ npm install @iconify/react
 npm install @iconify/icons-mdi
 npm install react-bootstrap-pagination-control
 npm install @react-navigation/native
+npm install jest
+npm install --save-dev ts-jest
+npm install --save-dev jest-environment-jsdom
