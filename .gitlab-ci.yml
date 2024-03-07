@@ -13,7 +13,7 @@ frontend-tests:
     - npm install
     - export CI=false  # Disable treating warnings as errors
     - npm run test
-
+    
 
 acceptance-tests:
   stage: acceptance-tests
