@@ -50,19 +50,19 @@ const HomePage = () => {
             icon={<MdNightShelter style={{ color: "#0b2b68", fontSize: '1.5em' }}/>}
             text="Shelters"
             smalltext="There are 134 homeless shelters in Texas."
-            href="shelters/"
+            href="/shelters"
           />
           <Feature
             icon={<FaLandmarkFlag style={{ color: "#c91e40", fontSize: '1.2em' }}/>}
             text="Counties"
             smalltext="There are 254 counties in Texas."
-            href="counties/"
+            href="/counties"
           />
           <Feature
             icon={<FaHandsHelping style={{ color: "#1d66b5", fontSize: '1.3em' }}/>}
             text="Events"
             smalltext="There are 143 upcoming volunteer events."
-            href="events/"
+            href="/events"
           />
         </Col>
       </Row>
