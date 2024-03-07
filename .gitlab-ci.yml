@@ -10,10 +10,11 @@ frontend-tests:
   stage: frontend-tests
   script:
     - cd ./front-end
+    - ./install_dependencies.sh
     - npm install
     - export CI=false  # Disable treating warnings as errors
     - npm run test
-    
+
 
 acceptance-tests:
   stage: acceptance-tests
