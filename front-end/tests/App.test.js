@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react';
-import App from '../../src/App.js';
+import App from '../src/App.js';
 
 //frontend test suite
     describe('Frontend Tests', () => {
