@@ -8,5 +8,11 @@ module.exports = {
         '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
         '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js'
     },
-    testEnvironment: 'jest-environment-jsdom'
+    testEnvironment: 'jest-environment-jsdom',
+    testEnvironmentOptions: {
+      url: "https://www.texashomesproject.me/"
+    } 
   };
+
+
+    
