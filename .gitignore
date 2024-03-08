@@ -1,3 +1,5 @@
 node_modules
 .env
 .DS_Store
+ubuntu@ec2-18-222-170-241.us-east-2.compute.amazonaws.com/
+host/

@@ -1,3 +1,4 @@
+import React from 'react'
 const Feature = ({ smalltext, text, icon, iconBg }) => {
     const stackStyle = {
       display: 'flex',
