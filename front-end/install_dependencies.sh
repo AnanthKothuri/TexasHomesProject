@@ -13,3 +13,4 @@ npm install @react-navigation/native
 npm install jest
 npm install --save-dev ts-jest
 npm install --save-dev jest-environment-jsdom
+npm i -S @react-google-maps/api
