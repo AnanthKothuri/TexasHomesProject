@@ -2,19 +2,19 @@
 
 ### Website:
 
-https://www.texashomesproject.me
+    https://www.texashomesproject.me
 
 ### Backend API:
 
-https://api.texashomesproject.me/
+    https://api.texashomesproject.me/
 
 ### Postman Documentation:
 
-https://documenter.getpostman.com/view/23353623/2sA2r545RR
+    https://documenter.getpostman.com/view/23353623/2sA2r545RR
 
 ### GitLab Pipeline:
 
-https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
+    https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
 
 ### Team Member Info:
 
