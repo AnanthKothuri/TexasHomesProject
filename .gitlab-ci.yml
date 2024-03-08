@@ -1,13 +1,11 @@
 stages:
-  # - api-tests
-  # - postman-api-tests
-  - frontend-tests
+  - front-back-end-tests
   - acceptance-tests
   - build
 
-frontend-tests:
+front-back-end-tests:
   image: node:20-alpine
-  stage: frontend-tests
+  stage: front-back-end-tests
   script:
     - cd ./front-end
     - npm install

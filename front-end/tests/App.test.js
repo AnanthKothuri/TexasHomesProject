@@ -2,6 +2,10 @@ import React from 'react'
 import { render, screen } from '@testing-library/react';
 import App from '../src/App.js';
 
+const axios = require('axios').default;
+
+  
+
 //frontend test suite
     describe('Frontend Tests', () => {
         test('check that THP Splashpage header rendered', () => {
@@ -54,5 +58,81 @@ import App from '../src/App.js';
             render(<App />);
             const navElement = screen.getAllByRole('button', {name: /Toggle Navigation/i});
             expect(navElement.length).toBeGreaterThan(0); 
+        });
+    });
+
+// Backend test suite 
+    describe('Backend API Tests', () => {
+        describe('GET counties', () => {
+            test('should return a list of counties', async () => {
+                try {
+                    const response = await axios.get('https://api.texashomesproject.me/counties/');
+                    expect(response.status).toBe(200);
+                    expect(Array.isArray(response.data)).toBe(true);
+                } catch (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        describe('GET county ID', () => {
+            test('should return a specific county by id', async () => {
+                try {
+                    const response = await axios.get('https://api.texashomesproject.me/counties/1');
+                    expect(response.status).toBe(200);
+                    expect(response.data).toHaveProperty('id');
+                } catch (error) {
+                    console.error(error);
+                }               
+            });
+        });
+
+        describe('GET events', () => {
+            test('should return a list of events', async () => {
+                try {
+                    const response = await axios.get('https://api.texashomesproject.me/events/');
+                    expect(response.status).toBe(200);
+                    expect(Array.isArray(response.data)).toBe(true);
+                } catch (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        describe('GET event ID', () => {
+            test('should return a specific event by id', async () => {
+                try {
+                    const response = await axios.get('https://api.texashomesproject.me/events/1');
+                    expect(response.status).toBe(200);
+                    expect(response.data).toHaveProperty('id');
+                } catch (error) {
+                    console.error(error);
+                } 
+            });
+        });
+
+
+        describe('GET shelters', () => {
+            test('should return a list of shelters', async () => {
+                try {
+                    const response = await axios.get('https://api.texashomesproject.me/shelters/');
+                    expect(response.status).toBe(200);
+                    expect(Array.isArray(response.data)).toBe(true);
+                } catch (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        describe('GET shelter ID', () => {
+            test('should return a specific shelter by id', async () => {
+                try {
+                    const response = await axios.get('https://api.texashomesproject.me/shelters/1');
+                    expect(response.status).toBe(200);
+                    expect(response.data).toHaveProperty('id');
+                } catch (error) {
+                    console.error(error);
+                } 
+            });
         });
     });
