@@ -30,7 +30,7 @@
 | Phase | Leader         | GitSHA                                   |
 | ----- | -------------- | ---------------------------------------- |
 | 1     | Ananth Kothuri | f578ed87da97833136d59310fe0dfa4bda8e1ce0 |
-| 2     | Shahmir Masood |                                          |
+| 2     | Shahmir Masood | 904e60659e9ad06596f2f641ed9334a17a1db6c7 |
 | 3     |                |                                          |
 | 4     |                |                                          |
 
