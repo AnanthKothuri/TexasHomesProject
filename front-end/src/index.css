@@ -1,8 +1,15 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: local('Noto Sans'), url('./fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf') format('truetype'), url('./fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    font-family: 'Noto Sans', sans-serif;
+    /* src: local('NotoSans'), url(./fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf) format('truetype'), url(./fonts/NotoSans-VariableFont_wdth,wght.ttf) format('truetype'); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
