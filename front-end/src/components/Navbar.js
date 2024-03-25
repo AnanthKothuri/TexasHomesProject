@@ -1,10 +1,17 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { logo_info } from "../data/logo";
+import Colors from "../assets/Colors";
+import './Navbar.css';
+
+const navbar = {
+  backgroundColor: Colors.beige,
+  backgroundSize: "0"
+};
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" bg="navbarColor">
       <Container>
         <a href="/">
           <img
