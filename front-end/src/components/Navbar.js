@@ -22,15 +22,15 @@ function NavBar() {
             style={{ marginRight: 3 }}
           />
         </a>
-        <Navbar.Brand href="/">Texas Homes Project</Navbar.Brand>
+        <Navbar.Brand href="/" style={{fontFamily: 'NotoSans'}}>Texas Homes Project</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {/* <Nav.Link href="/">Home</Nav.Link> */}
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/shelters">Shelters</Nav.Link>
-            <Nav.Link href="/counties">Counties</Nav.Link>
-            <Nav.Link href="/events">Events</Nav.Link>
+            <Nav.Link href="/about" style={{fontFamily: 'NotoSans'}}>About</Nav.Link>
+            <Nav.Link href="/shelters" style={{fontFamily: 'NotoSans'}}>Shelters</Nav.Link>
+            <Nav.Link href="/counties" style={{fontFamily: 'NotoSans'}}>Counties</Nav.Link>
+            <Nav.Link href="/events" style={{fontFamily: 'NotoSans'}}>Events</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

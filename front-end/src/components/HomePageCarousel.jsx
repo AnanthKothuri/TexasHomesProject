@@ -2,6 +2,7 @@ import React from 'react';
 import slide1 from "../assets/home-page/homeless1.jpg";
 import slide2 from "../assets/home-page/homeless2.jpg";
 import slide3 from "../assets/home-page/homeless3.jpg";
+import slide4 from "../assets/home-page/homelessMan.png";
 import { Carousel, Image } from 'react-bootstrap';
 import Colors from '../assets/Colors';
 
@@ -11,25 +12,32 @@ const HomePageCarousel = () => {
   const COLOR_OVERLAY = 'rgba(0, 0, 0, 0.5)'
 
   const titleStyling = {
-    fontSize: 55,
+    fontSize: 50,
     margin: 20,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     textShadow: '0 0 2em grey',
+    fontFamily: 'NotoSans-Bold'
   }
 
   const subtitleStyling = {
     fontSize: 30,
     whiteSpace: 'normal',
-    marginBottom: 80
+    marginBottom: 80,
+    fontFamily: "NotoSans"
   }
   
   const captionStyling = {
     fontSize: 15,
     fontWeight: 'light',
     textShadow: '0 0 0.3em grey',
+    fontFamily: "NotoSans"
   }
 
   const slides = [
+    { 
+      image: slide4,
+      caption: "Image of a homeless man"
+    },
     { 
       image: slide1, 
       caption: "Homeless tents set up in front of a Picasso quote"
