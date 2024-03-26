@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './InstanceCard.css'; // Make sure to create a corresponding CSS file for styling
 import { useNavigate } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
+import Colors from '../assets/Colors';
 
 const date_params = {
     year: 'numeric',
@@ -120,25 +121,29 @@ function ShelterInstanceCard({item}) {
         navigate(`/shelters/${item.id}`, {state: {item}});
       }
     return (
-        <Card className='card-content mb-4' style={{ width: 400 }}>
-            <Card.Header>Shelter</Card.Header>
+        <Card className='card-content mb-4' style={{ width: 400, borderWidth: 0 , boxShadow: '0 4px 8px 0 rgba(0,0,0,0.1)'}}>
+            {/* <Card.Header>Shelter</Card.Header> */}
             <Card.Img variant="top" src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text className='description-text'>{item.description}</Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>City</p>
-                    <p>{item.city}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Address</p>
-                    <p>{item.address}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Website</p>
-                    <p>{item.official_website}</p>
-                </Card.Text>
-                <Button variant="primary" className="card-button" onClick={navigateToShelter}>Learn More</Button>
+                <Card.Title style={{fontFamily: "NotoSans-SemiBold", fontSize: 18}}>{item.name}</Card.Title>
+                <Card.Text className='description-text' style={{fontFamily: "NotoSans", fontSize: 15}}>{item.description}</Card.Text>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>City</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.city}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Address</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.address}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Website</p>
+                    <a href={item.official_website} style={{fontFamily: 'NotoSans'}} target="_blank" rel="noopener noreferrer">
+                        {item.name}
+                    </a>
+                </div>
+                <Button variant="primary" onClick={navigateToShelter} style={{backgroundColor: Colors.lightBlue, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold"}}>
+                    Learn More
+                </Button>
             </Card.Body>
         </Card>
     )
@@ -151,33 +156,35 @@ function CountyInstanceCard({item}) {
         navigate(`/counties/${item.id}`, {state: {item}});
       }
     return (
-        <Card className='card-content mb-4' style={{ width: 400 }}>
-            <Card.Header>County</Card.Header>
+        <Card className='card-content mb-4' style={{ width: 400, borderWidth: 0 , boxShadow: '0 4px 8px 0 rgba(0,0,0,0.1)'}}>
+            {/* <Card.Header>County</Card.Header> */}
             <Card.Img variant="top" src={'http://' + item.image_url} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text className='description-text'>{item.description}</Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Population</p>
-                    <p>{item.population.toLocaleString()}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Housing Units</p>
-                    <p>{item.housing_units.toLocaleString()}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Website</p>
+                <Card.Title style={{fontFamily: "NotoSans-SemiBold", fontSize: 18}}>{item.name}</Card.Title>
+                <Card.Text className='description-text' style={{fontFamily: "NotoSans", fontSize: 15}}>{item.description}</Card.Text>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Population</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.population.toLocaleString()}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Housing Units</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.housing_units.toLocaleString()}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Website</p>
                     <a className='description-text' href={item.website_url} target='_blank' rel='noopener noreferrer'>
-                        {item.website_url}
+                        {item.name}
                     </a>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
-                    <p>{item.lat}</p>
-                    <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
-                    <p>{item.long}</p>
-                </Card.Text>
-                <Button variant="primary" className="card-button" onClick={navigateToCounty}>Explore County</Button>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Lat</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.lat}</p>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.long}</p>
+                </div>
+                <Button variant="primary" onClick={navigateToCounty} style={{backgroundColor: Colors.semiYellow, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold", color: Colors.darkGray}}>
+                    Explore County
+                </Button>
             </Card.Body>
         </Card>
     )
@@ -191,30 +198,30 @@ function EventInstanceCard({item}) {
       }
 
     return (
-        <Card className='card-content mb-4' style={{ width: 400 }}>
-            <Card.Header>Event</Card.Header>
+        <Card className='card-content mb-4' style={{ width: 400, borderWidth: 0 , boxShadow: '0 4px 8px 0 rgba(0,0,0,0.1)'}}>
+            {/* <Card.Header>Event</Card.Header> */}
             <Card.Img variant="top" src={item.image_url} style={{height: 250, objectFit: 'cover'}} />
             <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Text className='description-text'>{item.description}</Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Organization</p>
-                    <p>{item.organization}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Date Posted</p>
-                    <p>{new Date(item.date_posted).toLocaleString('en-US', date_params)}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Location</p>
-                    <p className='description-text'>{item.address}</p>
-                </Card.Text>
-                <Card.Text className='row-attribute'>
-                    <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
-                    <p>{item.lat}</p>
-                    <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
-                    <p>{item.long}</p>
-                </Card.Text>
+                <Card.Title style={{fontFamily: "NotoSans-SemiBold", fontSize: 18}}>{item.title}</Card.Title>
+                <Card.Text className='description-text' style={{fontFamily: "NotoSans", fontSize: 15}}>{item.description}</Card.Text>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Organization</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.organization}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Date Posted</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{new Date(item.date_posted).toLocaleString('en-US', date_params)}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Location</p>
+                    <p className='description-text' style={{fontFamily: 'NotoSans-Light'}}>{item.address}</p>
+                </div>
+                <div className='row-attribute'>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10}}>Lat</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.lat}</p>
+                    <p style={{fontFamily: 'NotoSans-Bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
+                    <p style={{fontFamily: 'NotoSans-Light'}}>{item.long}</p>
+                </div>
                 {/* <Card.Text className='row-attribute'>
                     <p style={{fontWeight: 'bold', paddingRight: 10}}>Causes</p>
                     <div className="row row-cols-auto">
@@ -227,7 +234,9 @@ function EventInstanceCard({item}) {
                         )}
                     </div>
                 </Card.Text> */}
-                <Button variant="primary" className="card-button" onClick={navigateToEvent}>View Event</Button>
+                <Button variant="primary" onClick={navigateToEvent} style={{backgroundColor: Colors.semiRed, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold", color: Colors.white}}>
+                    View Event
+                </Button>
             </Card.Body>
         </Card>
     )

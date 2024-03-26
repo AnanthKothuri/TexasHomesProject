@@ -10,8 +10,6 @@ import HomePageCarousel from '../components/HomePageCarousel'; // Ensure this co
 import graphImage from "../assets/home-page/graph.png"
 import Colors from '../assets/Colors';
 
-import './HomePage.css'
-
 const HomePage = () => {
   const pageContainerStyle = {
     display: 'flex',
