@@ -2,6 +2,7 @@ import './PageLayout.css';
 import React, { useState, useEffect } from 'react';
 import InstanceCard from './InstanceCard.jsx';
 import { PaginationControl } from 'react-bootstrap-pagination-control';
+import Colors from '../assets/Colors.js';
 
 
 function PageLayout({ data = [], pageTitle}) {
@@ -10,6 +11,10 @@ function PageLayout({ data = [], pageTitle}) {
     const [end, setEnd] = useState(0)
     // const [displayedData, setDisplayedData] = useState([])
     const [page, setPage] = useState(1)
+
+    const description = pageTitle == "Shelters" ? "Shelter data describes various homeless shelters and locations throughout Texas. It also includes key details such as the city, address, website, contact information, and more to assist those who need potential resources."
+        : pageTitle == "Counties" ? "County data describes different Texas counties and their statistics on homelessness. This includes information such as population, housing units, descriptions, and more." :
+        "Event data represents various events throughout Texas to assist homeless shelters and communities. Events contain information about locations, dates, contact information, and requirements for volunteers."
 
     function updateDisplayedData(page) {
         console.log(page)
@@ -31,11 +36,25 @@ function PageLayout({ data = [], pageTitle}) {
         <div className="container text-center">
 
             {/* title */}
-            {pageTitle && <header className="page-header" style={{fontSize: 30, padding: 30}}>
-                {pageTitle}
-            </header>}
+            {pageTitle && 
+            <div style={{backgroundColor: Colors.beige, borderRadius: 20, padding: 20, margin: 20, paddingLeft: '10%', paddingRight: '10%', textAlign: 'left'}}>
+                {/* <header className="page-header" style={{fontSize: 30, padding: 30}}>
+                    {pageTitle}
+                </header> */}
+                <div style={{flexDirection: 'row', display: 'flex', marginTop: 20,}}>
+                    {/* <div style={{width: 25, height: 100, backgroundColor: Colors.white, marginRight: 30}}></div> */}
+                    <div>
+                        <p style={{fontSize: 50, fontWeight: 'bold', fontFamily: 'NotoSans-SemiBold'}}>{pageTitle}</p>
+                        <p style={{fontSize: 25, fontFamily: 'NotoSans-Light'}}>{description}</p>
+                    </div>
+                </div>
+            </div>
+            }
 
             {/* search bar */}
+            <div style={{backgroundColor: 'lightgray', height: 40, margin: 20}}>
+                <p>Put search bar here</p>
+            </div>
 
             {/* grid */}
             <div className="row row-cols-auto" style={{justifyContent: 'center'}}>
