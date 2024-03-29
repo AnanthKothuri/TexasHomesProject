@@ -1,8 +1,7 @@
 // InstancePage.js
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Card, Row, Col, ListGroup } from 'react-bootstrap';
-import useFetchAll from '../hooks/usefetchAll';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 import useFetchAllIds from '../hooks/useFetchAllIds';
 import {useLocation} from 'react-router-dom';
 import CustomGoogleMap from '../components/GoogleMap'
@@ -11,6 +10,7 @@ import CustomGoogleMap from '../components/GoogleMap'
 import './InstancePage.css';
 import InstanceCard from './InstanceCard';
 import LoadingPage from '../components/LoadingPage';
+import Colors from '../assets/Colors';
 
 const date_params = {
   year: 'numeric',
@@ -62,13 +62,13 @@ function RelatedModels({ inputData }) {
   }
 
   return (
-    <div className="container" style={{ padding: 40}}>
+    <div className="container" style={{marginLeft: '10%', marginRight: '10%', marginTop: 30}}>
 
       {relatedCounties && relatedCounties.length > 0 && (
         <>
           <Row xs="auto" style={{alignItems: 'center'}}>
-            <Col> <h2>Related Counties</h2> </Col>
-            <Col> <h3 style={{color: 'lightgray'}}>{relatedCounties.length}</h3> </Col>
+            <Col> <h2 style={{fontFamily: 'NotoSans-SemiBold', fontSize: 25}}>Related Counties</h2> </Col>
+            <Col> <h3 style={{color: 'lightgray', fontFamily: 'NotoSans', fontSize: 25}}>{relatedCounties.length}</h3> </Col>
           </Row>
           <HorizontalScrollList items={relatedCounties} type="Counties" />
         </>
@@ -77,8 +77,8 @@ function RelatedModels({ inputData }) {
       {relatedEvents && relatedEvents.length > 0 && (
         <>
           <Row xs="auto" style={{alignItems: 'center'}}>
-            <Col> <h2>Related Events</h2> </Col>
-            <Col> <h3 style={{color: 'lightgray'}}>{relatedEvents.length}</h3> </Col>
+            <Col> <h2 style={{fontFamily: 'NotoSans-SemiBold', fontSize: 25}}>Related Events</h2> </Col>
+            <Col> <h3 style={{color: 'lightgray', fontFamily: 'NotoSans', fontSize: 25}}>{relatedEvents.length}</h3> </Col>
           </Row>
           <HorizontalScrollList items={relatedEvents} type="Events" />
         </>
@@ -87,8 +87,8 @@ function RelatedModels({ inputData }) {
       {relatedShelters && relatedShelters.length > 0 && (
         <>
             <Row xs="auto" style={{alignItems: 'center'}}>
-            <Col> <h2>Related Shelters</h2> </Col>
-            <Col> <h3 style={{color: 'lightgray'}}>{relatedShelters.length}</h3> </Col>
+            <Col> <h2 style={{fontFamily: 'NotoSans-SemiBold', fontSize: 25}}>Related Shelters</h2> </Col>
+            <Col> <h3 style={{color: 'lightgray', fontFamily: 'NotoSans', fontSize: 25}}>{relatedShelters.length}</h3> </Col>
           </Row>
           <HorizontalScrollList items={relatedShelters} type="Shelters" />
         </>
@@ -99,8 +99,21 @@ function RelatedModels({ inputData }) {
 
 const InstancePage = () => {
   const location = useLocation()
+  const [isExpanded, setIsExpanded] = useState(false);
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
   const {item} = location.state;
   let { type, id } = useParams(); // Assuming the route is something like '/:type/:id'
+  const details = type === "shelters" ? [['Phone', item.phone_number], ['Email', item.email_address], ['Website', item.official_website], ['Facebook', item.facebook], ['Instagram', item.instagram], ['Twitter', item.twitter]] :
+                  type === "counties" ? [['Website', item.website_url], ['Population', item.population.toLocaleString()], ['Housing Units', item.housing_units.toLocaleString()], ['Lat', item.lat], ['Long', item.long]] :
+                  type === "events" ? [['Organization', item.organization], ['Date Posted', item.date_posted], ['Address', item.address], ['Lat', item.lat], ['Long', item.long]] :
+                  []
+  const title = type === "shelters" ? item.name : type === "counties" ? item.name : type === "events" ? item.title : ""
+  const image = type === "shelters" ? item.photo_urls[0] : type === "counties" ? "http://" + item.image_url : type === "events" ? item.image_url : ""
+  const description = type === "shelters" ? item.description : type === "counties" ? item.description : type === "events" ? item.description : ""
+  const detail_lists = type === "events" ? [['Cause Areas', item.cause_areas], ['Skills', item.skills], ['Good For', item.good_for], ['Requirements', item.requirements]]: []
+  const backHref = `/${type}`
 
   if (!item) {
     return <p>item is missing</p>
@@ -109,10 +122,71 @@ const InstancePage = () => {
   return (
 
     <div>
-      { type === 'shelters' ? (<ShelterInstancePage item={item} />) : 
-          type === 'counties' ? (<CountyInstancePage item={item} />) :
-          <EventInstancePage item={item} />
-      }
+      <div style={{flexDirection: 'column', marginLeft: '10%', marginRight: '10%'}}>
+        <div style={{fontSize: 20, margin: 25}}>
+          <a href={backHref} className="back-button">Back to {type.charAt(0).toUpperCase() + type.slice(1)}</a>
+        </div>
+
+        <div className='image-container'>
+          <img className='background-image' src={image} alt={title} />
+          <div className="overlay"></div>
+          <div className='title'>{title}</div>
+        </div>
+
+        <div style={{margin: 20, marginTop: 50}}>
+          <p style={{fontFamily: 'NotoSans-SemiBold', fontSize: 25}}>Description</p>
+          {/* <p style={{fontFamily: 'NotoSans', fontSize: 15}}>{item.official_website}</p> */}
+          <div className={`${isExpanded ? 'description-expanded' : 'description-truncated'}`}>
+            <p style={{fontFamily: 'NotoSans-Light', fontSize: 20}}>{description}</p>
+          </div>
+        </div>
+
+        <div style={{fontSize: 30, fontFamily: "NotoSans-Light", marginLeft: 20}}>
+          {isExpanded ? '' : '.  .  .'}
+        </div>
+        <button style={{backgroundColor: Colors.lightBlue, borderRadius: 10, borderWidth: 0, fontSize: 20, fontFamily: "NotoSans-Light", padding: 10, margin: 20}} 
+                onClick={toggleExpand}>
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+        <Row>
+              <Col style={{margin: 20}}>
+                <p style={{fontFamily: 'NotoSans-SemiBold', fontSize: 25}}>Details</p>
+
+                {details.map((detail, index) => (
+                  <div key={index}>
+                    <div style={{flexDirection: 'row', display: 'flex'}}>
+                      <p style={{fontFamily: 'NotoSans', fontSize: 18, marginRight: 20}}>{detail[0]}: </p>
+                      <p style={{fontFamily: 'NotoSans-Light', fontSize: 18}}>{detail[1]}</p>
+                    </div>
+                  </div>
+                ))}
+
+                {detail_lists.length !== 0 && (
+                  detail_lists.map((list, index) => (
+                    <div key={index}>
+                      <div className="row row-cols-auto">
+                      <p style={{ fontFamily: 'NotoSans', fontSize: 18, marginRight: 20 }}>{list[0]}: </p>
+                        {list[1].length === 0 ? (
+                          <p style={{ fontFamily: 'NotoSans-Light', fontSize: 18 }}>None</p>
+                        ) : (
+                          list[1].map((item, innerIndex) => (
+                            <p key={innerIndex} style={{ fontFamily: 'NotoSans-Light', fontSize: 18 }}>{item}</p>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  ))
+                )}
+
+              </Col>
+              <Col>
+                {/* <div className="embed-responsive embed-responsive-16by9">
+                  <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
+                </div> */}
+                <CustomGoogleMap latitude={item.lat} longitude={item.long}/>
+              </Col>
+        </Row>
+      </div>
 
       <RelatedModels inputData={item} />
 
@@ -121,121 +195,6 @@ const InstancePage = () => {
 };
 
 export default InstancePage;
-
-function ShelterInstancePage({item}) {
-  return (
-    <Container className="centered-container" style={{ flex: 1, flexDirection: 'column' }}>
-
-      <Card className="text-center" style={{ margin: 40, width: '50rem' }}>
-        <Card.Header>Shelter</Card.Header>
-        <Card.Body>
-          <Card.Title>{item.name}</Card.Title>
-          <Card.Text>{item.address}</Card.Text>
-          <a href="/shelters" className="btn btn-primary">Back to Shelters</a>
-        </Card.Body>
-        <Card.Footer className="text-body-secondary">
-          {item.city}, {item.state} {item.zip_code}
-        </Card.Footer>
-      </Card>
-
-      <Row style={{ maxWidth: '50rem'}}>
-            <Col md={4}>
-                <img src={item.photo_urls[0]} className="img-fluid rounded-start" alt={item.name} />
-            </Col>
-            <Col>
-              {/* <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" src={item.video_url} allowfullscreen title={item.name}></iframe>
-              </div> */}
-              <CustomGoogleMap latitude={item.lat} longitude={item.long}/>
-            </Col>
-      </Row>
-
-
-      <Col md={8} style={{ margin: 20, maxWidth: '50rem' }}>
-        <Card.Body>
-          <Card.Title>Description</Card.Title>
-          <Card.Text><small className="text-body-secondary">{item.official_website}</small></Card.Text>
-
-          <Card.Text>{item.description}</Card.Text>
-          <Card.Text><small className="text-body-secondary">Last updated {item.update_datetime}</small></Card.Text>
-        </Card.Body>
-      </Col>
-
-      <ListGroup style={{ margin: 40 }}>
-        <ListGroup.Item disabled aria-current="true">Contact</ListGroup.Item>
-        <ListGroup.Item>Phone: {item.phone_number}</ListGroup.Item>
-        <ListGroup.Item>Email: {item.email_address}</ListGroup.Item>
-        <ListGroup.Item>Fax: {item.fax_number}</ListGroup.Item>
-        <ListGroup.Item>Twitter: {item.twitter}</ListGroup.Item>
-        <ListGroup.Item>Facebook: {item.facebook}</ListGroup.Item>
-        <ListGroup.Item>Instagram: {item.instagram}</ListGroup.Item>
-        <ListGroup.Item>Coordinates: {item.coordinate}</ListGroup.Item>
-      </ListGroup>
-
-    </Container>
-  );
-}
-
-function CountyInstancePage({item}) {
-  return (
-  <div className="centered-container" style={{flex: 1, flexDirection: 'column'}}>
-
-    <div className="card text-center" style={{margin: 40, width: '50rem'}}>
-      <div className="card-header">
-        County
-      </div>
-      <div className="card-body">
-        <h5 className="card-title">{item.name}</h5>
-        <p className="card-text">{item.short_description}</p>
-        <a href="/counties" className="btn btn-primary">Back to Counties</a>
-      </div>
-      <div className="card-footer text-body-secondary">
-        {item.website_url}
-      </div>
-    </div>
-
-    <div className="row" style={{maxWidth: '50rem'}}>
-      <div className="col-md-4">
-        <img src={"http://" + item.image_url} className="img-fluid rounded-start" alt={item.name}/>
-      </div>
-
-      <div class="col-md-4">
-        <img src={"http://" + item.map} className="img-fluid rounded-end" alt={item.name}/>
-      </div>
-    </div>
-
-    <div className="col-md-8" style={{margin: 20, maxWidth: '50rem'}}>
-        <div className="card-body">
-          <h5 className="card-title">Summary</h5>
-          <p className="card-text">{item.description}</p>
-
-          <h5 className="card-title">Demographics</h5>
-          <p className="card-text">{item.text}</p>
-        </div>
-    </div>
-
-    <Col md={8} style={{ margin: 20, maxWidth: '50rem' }}>
-      <Card.Text className='row-attribute'>
-            <p style={{fontWeight: 'bold', paddingRight: 10}}>Population</p>
-            <p>{item.population.toLocaleString()}</p>
-      </Card.Text>
-
-      <Card.Text className='row-attribute'>
-            <p style={{fontWeight: 'bold', paddingRight: 10}}>Housing Units</p>
-            <p>{item.housing_units.toLocaleString()}</p>
-      </Card.Text>
-
-      <Card.Text className='row-attribute'>
-          <p style={{fontWeight: 'bold', paddingRight: 10}}>Lat</p>
-          <p>{item.lat}</p>
-          <p style={{fontWeight: 'bold', paddingRight: 10, paddingLeft: 20}}>Long</p>
-          <p>{item.long}</p>
-      </Card.Text>
-    </Col>
-
-  </div>
-  )
-}
 
 function EventInstancePage({item}) {
   return (
