@@ -141,7 +141,7 @@ function ShelterInstanceCard({item}) {
                         {item.name}
                     </a>
                 </div>
-                <Button variant="primary" onClick={navigateToShelter} style={{backgroundColor: Colors.lightBlue, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold"}}>
+                <Button variant="primary" onClick={navigateToShelter} style={{backgroundColor: Colors.blue, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold"}}>
                     Learn More
                 </Button>
             </Card.Body>
@@ -234,7 +234,7 @@ function EventInstanceCard({item}) {
                         )}
                     </div>
                 </Card.Text> */}
-                <Button variant="primary" onClick={navigateToEvent} style={{backgroundColor: Colors.semiRed, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold", color: Colors.white}}>
+                <Button variant="primary" onClick={navigateToEvent} style={{backgroundColor: Colors.red, borderWidth: 0, width: '100%', fontFamily: "NotoSans-SemiBold", color: Colors.white}}>
                     View Event
                 </Button>
             </Card.Body>

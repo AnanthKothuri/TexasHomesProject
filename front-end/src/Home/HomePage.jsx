@@ -92,7 +92,7 @@ const HomePage = () => {
           <Col className="text-center" style={{maxWidth: 250, marginBottom: 30}}>
             <div style ={{backgroundColor: Colors.semiBlue, padding: 20, borderRadius: 15}}>
               <p style={{fontSize: 18, fontFamily: 'NotoSans-SemiBold'}}>Shelters</p>
-              <p style={{fontFamily: "NotoSans", fontSize: 15}}>&#8226; Homeless shelters located throughout Texas<br/>&#8226; Contains information on contact, websites, descriptions, etc.</p>
+              <p style={{fontFamily: "NotoSans"}}>&#8226; Homeless shelters located throughout Texas<br/>&#8226; Contains information on contact, websites, descriptions, etc.</p>
               
               <Link to="/shelters">
                 <button style={getbuttonStyle(Colors.lightBlue)}>View Shelters</button>
@@ -104,7 +104,7 @@ const HomePage = () => {
           <Col className="text-center" style={{maxWidth: 250, marginBottom: 30}}>
             <div style ={{backgroundColor: Colors.semiYellow, padding: 20, borderRadius: 15}}>
               <p style={{fontSize: 18, fontFamily: "NotoSans-SemiBold"}}>Counties</p>
-              <p style={{fontFamily: "NotoSans"}}>&#8226; Texas counties and their data about homelessness<br/>&#8226; Contains information on county desciptions, housing units, population, and more.</p>
+              <p style={{fontFamily: "NotoSans"}}>&#8226; Texas counties and their data about homelessness.<br/>&#8226; Contains information on housing units, population, and more.</p>
 
               <Link to="/counties">
                 <button style={getbuttonStyle(Colors.lightYellow)}>View Counties</button>
@@ -115,7 +115,7 @@ const HomePage = () => {
           <Col className="text-center" style={{maxWidth: 250, marginBottom: 30}}>
             <div style ={{backgroundColor: Colors.semiRed, padding: 20, borderRadius: 15}}>
               <p style={{fontSize: 18, fontFamily: "NotoSans-SemiBold"}}>Events</p>
-              <p style={{fontFamily: "NotoSans"}}>&#8226; Volunteering events in Texas for homelessness<br/>&#8226; Contains about locations, dates, details, and requirements.</p>
+              <p style={{fontFamily: "NotoSans"}}>&#8226; Volunteering events in Texas for homeless individuals.<br/>&#8226; Contains about locations, dates, details, and requirements.</p>
 
               <Link to="/events">
                 <button style={getbuttonStyle(Colors.lightRed)}>View Events</button>
