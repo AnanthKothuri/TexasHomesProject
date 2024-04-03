@@ -11,7 +11,7 @@ const navbar = {
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" bg="navbarColor">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" bg="navbarColor" style={{ minHeight: "70px" }}>
       <Container>
         <a href="/">
           <img

@@ -54,3 +54,4 @@ class Shelter(BaseModel):
     photo_urls: list = []
     related_models: dict = {}
     update_datetime: str
+    short_description: str = ""

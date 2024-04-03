@@ -1,3 +1,7 @@
+a:hover {
+  color: black;
+}
+
 .centered-container {
   display: flex;
   justify-content: center;
@@ -67,6 +71,12 @@
   border-radius: 8px;
 }
 
+.main-instance-page {
+  flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .background-image {
   height: 400px;
   width: 100%;
@@ -113,17 +123,54 @@
   font-family: "NotoSans-Light";
 }
 
+.toggle-button {
+  background-color: white;
+  border-width: 0;
+  font-size: 1.2em;
+  margin-bottom: 17px;
+  margin-left: 7px;
+}
+
+.toggle-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggle-button:hover .toggle-icon {
+  transform: scale(1.2);
+}
+
 .description-container {
-  padding: 10;
+  /* background-color: #fff68f; */
+  background-color: #bfbfbf2e;
+  font-family: "NotoSans-Light";
+  font-size: 20px;
+  white-space: break-spaces; /* allows \n to display */
+  overflow-y: scroll;
+  padding: 15px 25px;
 }
 
 .description-truncated {
   overflow: hidden;
-  position: relative; /* Required for transition */
-  /* line-height: 1.2em; Adjust line height for proper truncation */
-  max-height: 20em; /* Example height before truncating */
+  position: relative;
+  max-height: 10em;
+}
+
+.description-truncated:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10em; /* Height of the gradient fade-out */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
 }
 
 .description-expanded {
   max-height: none; /* Expand the text to show full content */
+}
+
+.contact-type {
+  /* indicates phone, email, website, twitter, etc */
+  font-family: "NotoSans";
+  font-size: 18px;
+  margin-right: 20px;
+  font-weight: bold;
 }

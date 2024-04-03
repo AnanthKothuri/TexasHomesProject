@@ -1,60 +1,78 @@
 /* Card.css */
 .card {
-    border: 1px solid #d9d9d9;
-    border-radius: 10px 10px 5 5;
-  }
-  
-  .card-content {
-    align-items: left;
-    justify-content: left;
-    text-align: left;
-  }
+  border: 1px solid #d9d9d9;
+  border-radius: 10px 10px 5 5;
+}
 
-  .cause-item {
-    background-color: #d8e2f5;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    border-radius: 8px;
-  }
-  
-  .card-button {
-    background-color: #303030;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
+.instance-card {
+  transition: transform 0.5s ease;
+}
 
-  .row-attribute {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
+.instance-card:hover {
+  transform: scale(1.02);
+}
 
-  .description-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-            line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
+.card-title {
+  font-family: "NotoSans-SemiBold";
+  font-size: 18px;
+}
 
-  .clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: 4; /* Change the number to control the maximum number of lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
+.hide-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-content {
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+.cause-item {
+  background-color: #d8e2f5;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}
+
+/* .card-button {
+  background-color: #303030;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+} */
+
+.row-attribute {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.description-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+          line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Change the number to control the maximum number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
