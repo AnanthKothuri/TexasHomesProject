@@ -99,12 +99,12 @@ if (!data) return <div>No data available</div>;
   <button onClick={() => { setSortCriterion('title');}}>Sort Title</button>
   <button onClick={() => { setSortCriterion('organization');}}>Sort Organization</button>
   <button onClick={() => { setSortCriterion('date_posted');}}>Sort Day Posted</button>
-  <button onClick={() => { setSortCriterion('address');}}>Sort Adress</button>
+  <button onClick={() => { setSortCriterion('address');}}>Sort Address</button>
 
       {/* THESE ARE FOR SHELTERS */}
   <button onClick={() => { setSortCriterion('city');}}>Sort City</button>
   <button onClick={() => { setSortCriterion('name');}}>Sort Name</button>
-  <button onClick={() => { setSortCriterion('address');}}>Sort Adress</button>
+  <button onClick={() => { setSortCriterion('address');}}>Sort Address</button>
   {/* Repeat for other sort criteria */}
 </div>
       {/* From Searchbar.jsx*/}
