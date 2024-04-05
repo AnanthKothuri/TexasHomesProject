@@ -6,6 +6,7 @@
     "@googlemaps/js-api-loader": "^1.16.2",
     "@iconify/icons-mdi": "^1.2.48",
     "@iconify/react": "^4.1.1",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@react-google-maps/api": "^2.19.3",
     "@react-navigation/native": "^6.1.14",
     "@testing-library/jest-dom": "^5.17.0",
