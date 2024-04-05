@@ -4,14 +4,18 @@ import InstanceCard from "./InstanceCard.jsx";
 import { PaginationControl } from "react-bootstrap-pagination-control";
 import Colors from "../assets/Colors.js";
 import SearchBar from "../components/Searchbar.jsx";
+import useFetchAll from '../hooks/usefetchAll';
 
-function PageLayout({ data = [], pageTitle }) {
+function PageLayout({ pageTitle }) {
   const [numPerPage, setNumPerPage] = useState(15);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(15); // Default to numPerPage
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState(""); // Added for search functionality
+  const [sortCriterion, setSortCriterion] = useState('');
 
+  const { data, loading, error } = useFetchAll('https://api.texashomesproject.me/' + pageTitle.toLowerCase() + '/', { sort_by: sortCriterion });
+  
   const description =
     pageTitle === "Shelters"
       ? "Shelter data describes various homeless shelters and locations throughout Texas. It also includes key details such as the city, address, website, contact information, and more to assist those who need potential resources."
@@ -23,10 +27,15 @@ function PageLayout({ data = [], pageTitle }) {
 
   useEffect(() => {
     const newEnd =
-      page * numPerPage > data.length ? data.length : page * numPerPage;
+      page * numPerPage > (data?.length || 0) ? data?.length : page * numPerPage;
     setStart((page - 1) * numPerPage);
     setEnd(newEnd);
-  }, [page, data.length, numPerPage]);
+  }, [page, data, numPerPage]);
+  if (loading) return <div>Loading...</div>;
+if (error) return <div>Error: {error}</div>;
+if (!data) return <div>No data available</div>;
+
+// Continue with rendering using `data`
 
   const filteredData = searchQuery
     ? data.filter((item) => {
@@ -79,14 +88,32 @@ function PageLayout({ data = [], pageTitle }) {
           </div>
         </div>
       )}
+      <div style={{ marginBottom: 20 }}>
+    {/* THESE ARE FOR COUNTIES */}
 
+  <button onClick={() => { setSortCriterion('name');}}>Sort Name</button>
+  <button onClick={() => { setSortCriterion('housing_units');}}>Sort Housing Units</button>
+  <button onClick={() => { setSortCriterion('population');}}>Sort Population</button>
+
+      {/* THESE ARE FOR EVENTS */}
+  <button onClick={() => { setSortCriterion('title');}}>Sort Title</button>
+  <button onClick={() => { setSortCriterion('organization');}}>Sort Organization</button>
+  <button onClick={() => { setSortCriterion('date_posted');}}>Sort Day Posted</button>
+  <button onClick={() => { setSortCriterion('address');}}>Sort Adress</button>
+
+      {/* THESE ARE FOR SHELTERS */}
+  <button onClick={() => { setSortCriterion('city');}}>Sort City</button>
+  <button onClick={() => { setSortCriterion('name');}}>Sort Name</button>
+  <button onClick={() => { setSortCriterion('address');}}>Sort Adress</button>
+  {/* Repeat for other sort criteria */}
+</div>
       {/* From Searchbar.jsx*/}
       <SearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         placeholder={`Search ${pageTitle}`}
       />
-
+      
       <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
         {filteredData.slice(start, end).map((item, index) => (
           <div className="col" key={index}>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-const useFetchAll = (url) => {
+// Modify the hook to accept a base URL and an options object
+const useFetchAll = (baseUrl, options = {}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -9,7 +10,10 @@ const useFetchAll = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(url);
+        // Construct the query string based on options
+        const queryString = new URLSearchParams(options).toString();
+        const urlWithParams = `${baseUrl}?${queryString}`;
+        const response = await fetch(urlWithParams);
         if (!response.ok) {
           throw new Error(`An error occurred: ${response.statusText}`);
         }
@@ -23,11 +27,11 @@ const useFetchAll = (url) => {
       }
     };
 
+    // Include stringified options in the dependency array to refetch when options change
     fetchData();
-  }, [url]);
+  }, [baseUrl, JSON.stringify(options)]);
 
   return { data, loading, error };
 };
-
 
 export default useFetchAll;
