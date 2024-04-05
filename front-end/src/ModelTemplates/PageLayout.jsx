@@ -106,7 +106,7 @@ if (!data) return <div>No data available</div>;
   <button onClick={() => { setSortCriterion('name');}}>Sort Name</button>
   <button onClick={() => { setSortCriterion('address');}}>Sort Address</button>
   {/* Repeat for other sort criteria */}
-</div>
+    </div>
       {/* From Searchbar.jsx*/}
       <SearchBar
         searchQuery={searchQuery}
@@ -117,7 +117,6 @@ if (!data) return <div>No data available</div>;
       <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
         {filteredData.slice(start, end).map((item, index) => (
           <div className="col" key={index}>
-            {" "}
             {/* Changed to use index as key to avoid potential key duplication */}
             <InstanceCard item={item} type={pageTitle} />
           </div>

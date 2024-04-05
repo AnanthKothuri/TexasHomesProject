@@ -4,19 +4,11 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { Dialog, DialogContent, DialogTrigger } from "./Dialog"; // search popup
 import InstanceCard from "../ModelTemplates/InstanceCard";
+import SearchBar from "./Searchbar";
 import Colors from "../assets/Colors";
 import { logo_info } from "../data/logo";
+import useFetchAll from "../hooks/usefetchAll";
 import "./Navbar.css";
-
-/*
-
-
-ctrl f and search "todo" for things that still need to be done for global search functionality
-
-
-
-
-*/
 
 /**
  * Debounces a state value (`searchTerm`), delaying its update until a certain amount of time
@@ -66,29 +58,74 @@ const HorizontalScrollList = ({ items, type }) => {
 };
 
 /* "Global Search" button -> searchbar pop-up ('dialog') */
-function DialogComponent({
-  searchTerm,
-  setSearchTerm,
-  debounced,
-  shelters,
-  counties,
-  events,
-}) {
+function DialogComponent({ searchTerm, setSearchTerm }) {
   const location = useLocation();
+  const [isLoaded, setIsLoaded] = useState(false); // if search popup has been loaded
+  const [shelters, setShelters] = useState([]);
+  const [counties, setCounties] = useState([]);
+  const [events, setEvents] = useState([]);
 
-  // todo- now we need to filter only those model instances that actually match the searchTerm
-  const filter = (items, debounced) => {
-    /* 
-    
-    i'm not entirely sure how `debounced` is supposed to be used here
-
-    */
-    return items;
+  const fetchData = async () => {
+    const shelterData = await useFetchAll(
+      "https://api.texashomesproject.me/shelters/"
+    );
+    const countyData = await useFetchAll(
+      "https://api.texashomesproject.me/counties/"
+    );
+    const eventData = await useFetchAll(
+      "https://api.texashomesproject.me/events/"
+    );
+    return { shelterData, countyData, eventData };
   };
 
-  const filteredShelters = filter(shelters, debounced);
-  const filteredCounties = filter(counties, debounced);
-  const filteredEvents = filter(events, debounced);
+  useEffect(() => {
+    if (isLoaded) {
+      const updateState = async () => {
+        try {
+          const { shelterData, countyData, eventData } = await fetchData();
+          setShelters(shelterData);
+          setCounties(countyData);
+          setEvents(eventData);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        } finally {
+          setIsLoaded(false);
+        }
+      };
+
+      updateState();
+    }
+  }, [isLoaded]);
+
+  const handleDialogTrigger = async () => {
+    setIsLoaded(true);
+  };
+
+  const filter = (items) => {
+    if (!searchTerm) {
+      // if no search has been made, return everything
+      return items;
+    }
+    const searchLower = searchTerm.toLowerCase();
+    return items.filter((item) =>
+      Object.values(item).some(
+        (value) =>
+          typeof value === "string" && value.toLowerCase().includes(searchLower)
+      )
+    );
+  };
+
+  const filteredShelters = null;
+  const filteredCounties = null;
+  const filteredEvents = null;
+
+  if (isLoaded) {
+    console.log(shelters);
+  }
+
+  // const filteredShelters = filter(shelters);
+  // const filteredCounties = filter(counties);
+  // const filteredEvents = filter(events);
 
   /* Additional dialog-specific styling can be found/altered at "./DialogStyles.js" */
   const searchButtonStyle = {
@@ -97,12 +134,22 @@ function DialogComponent({
     fontFamily: "NotoSans",
   };
 
+  // <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
+  //   {filteredData.slice(start, end).map((item, index) => (
+  //     <div className="col" key={index}>
+  //       {" "}
+  //       {/* Changed to use index as key to avoid potential key duplication */}
+  //       <InstanceCard item={item} type={pageTitle} />
+  //     </div>
+  //   ))}
+  // </div>;
+
   return (
     <div className="flex flex-row items-center justify-between gap-2 md:gap-4">
       {location.pathname === "/" && (
         // Only renders search button if we're on the home page
         <Dialog>
-          <DialogTrigger asChild>
+          <DialogTrigger onClick={handleDialogTrigger} asChild>
             <Button variant="light" style={searchButtonStyle}>
               <FaSearch style={{ marginLeft: 2, marginRight: 8 }} />
               <span
@@ -120,10 +167,10 @@ function DialogComponent({
             {/* the actual popup */}
             <div style={{ fontFamily: "NotoSans" }}>
               <h1 style={{ marginTop: "0.2rem" }}>Global Search</h1>
-              <input
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ marginTop: 10, width: "100%" }}
+              <SearchBar
+                searchQuery={searchTerm}
+                setSearchQuery={setSearchTerm}
+                placeholder={"Global Search"}
               />
               {/* todo- change these to not be hardcoded 0 values */}
               <h3 style={{ marginTop: 20 }}>Shelters - 0</h3>
@@ -155,11 +202,6 @@ function DialogComponent({
 function NavBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const debounced = useDebounce(searchTerm.toLowerCase(), 500);
-
-  // todo- make API request/query for all model instances, we'll filter them down by searchTerm later
-  const {
-    data: { shelters, counties, events },
-  } = { data: { shelters: null, counties: null, events: null } };
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -193,9 +235,6 @@ function NavBar() {
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           debounced={debounced}
-          shelters={shelters}
-          counties={counties}
-          events={events}
         />
       </Container>
     </Navbar>
