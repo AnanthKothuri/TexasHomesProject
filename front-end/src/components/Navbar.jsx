@@ -112,6 +112,7 @@ function DialogComponent({
               </span>
             </Button>
           </DialogTrigger>
+          {/* <DialogContent style={{ overflowY: "auto" }}> */}
           <DialogContent>
             {/* the actual popup */}
             <div style={{ fontFamily: "NotoSans" }}>
@@ -121,22 +122,23 @@ function DialogComponent({
                 setSearchQuery={setSearchTerm}
                 placeholder={"Global Search"}
               />
-              {/* todo- change these to not be hardcoded 0 values */}
-              <h3 style={{ marginTop: 20 }}>Shelters - 0</h3>
+              <h3 style={{ marginTop: 20 }}>
+                Shelters - {filteredShelters.length}
+              </h3>
               {filteredShelters && (
                 <HorizontalScrollList
                   items={filteredShelters}
                   type="Shelters"
                 />
               )}
-              <h3>Counties - 0</h3>
+              <h3>Counties - {filteredCounties.length}</h3>
               {filteredCounties && (
                 <HorizontalScrollList
                   items={filteredCounties}
                   type="Counties"
                 />
               )}
-              <h3>Events - 0</h3>
+              <h3>Events - {filteredEvents.length}</h3>
               {filteredEvents && (
                 <HorizontalScrollList items={filteredEvents} type="Events" />
               )}
@@ -152,31 +154,28 @@ function NavBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const debounced = useDebounce(searchTerm.toLowerCase(), 500);
 
-  // ~~PLACEHOLDERS ~~
-  const shelters = undefined;
-  const counties = undefined;
-  const events = undefined;
-
-  // problem code commented out
-
   // query all model instances, we'll filter them down by searchTerm later
-  // const { shelters, loading1, error1 } = useFetchAll(
-  //   "https://api.texashomesproject.me/shelters/"
-  // );
+  const {
+    data: shelters,
+    loading: loading1,
+    error: error1,
+  } = useFetchAll("https://api.texashomesproject.me/shelters/");
 
-  // const { counties, loading2, error2 } = useFetchAll(
-  //   "https://api.texashomesproject.me/counties/"
-  // );
+  const {
+    data: counties,
+    loading: loading2,
+    error: error2,
+  } = useFetchAll("https://api.texashomesproject.me/counties/");
 
-  // const { events, loading3, error3 } = useFetchAll(
-  //   "https://api.texashomesproject.me/events/"
-  // );
+  const {
+    data: events,
+    loading: loading3,
+    error: error3,
+  } = useFetchAll("https://api.texashomesproject.me/events/");
 
-  // if (loading1 || loading2 || loading3) return <div>Loading...</div>;
-  // if (error1 || error2 || error3)
-  //   return <div>Error: {error1 || error2 || error3}</div>;
-
-  // console.log(shelters);
+  if (loading1 || loading2 || loading3) return <div>Loading...</div>;
+  if (error1 || error2 || error3)
+    return <div>Error: {error1 || error2 || error3}</div>;
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -204,7 +203,6 @@ function NavBar() {
             <Nav.Link href="/events">Events</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        {/* !!!! NEW !!!! */}
         {/* Search Button -> when clicked becomes search popup ("dialog") */}
         <DialogComponent
           searchTerm={searchTerm}

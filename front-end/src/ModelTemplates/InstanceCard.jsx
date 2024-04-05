@@ -162,7 +162,7 @@ function ShelterInstanceCard({ item }) {
       >
         <Card.Img
           variant="top"
-          src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""}
+          src={item.photo_urls?.[0] ?? ""}
           style={{ height: 250, objectFit: "cover" }}
         />
         <Card.Body>
