@@ -1,8 +1,8 @@
 .detail-card {
-  transition: transform 0.8s ease;
+  transition: transform 0.4s ease;
 }
 
 .detail-card:hover {
-  transform: scale(1.04);
+  transform: scale(1.035);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
 }

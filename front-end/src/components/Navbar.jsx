@@ -4,19 +4,11 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { Dialog, DialogContent, DialogTrigger } from "./Dialog"; // search popup
 import InstanceCard from "../ModelTemplates/InstanceCard";
+import SearchBar from "./Searchbar";
 import Colors from "../assets/Colors";
 import { logo_info } from "../data/logo";
+import useFetchAll from "../hooks/usefetchAll";
 import "./Navbar.css";
-
-/*
-
-
-ctrl f and search "todo" for things that still need to be done for global search functionality
-
-
-
-
-*/
 
 /**
  * Debounces a state value (`searchTerm`), delaying its update until a certain amount of time
@@ -44,10 +36,10 @@ function useDebounce(value, delay) {
   return debouncedValue;
 }
 
-const HorizontalScrollList = ({ items, type }) => {
+const HorizontalScrollList = ({ items, type, search }) => {
   // Display cards in a horizontal scrollable view
   return (
-    <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px" }}>
+    <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
       {items.map((item) => (
         // render each individual card
         <div
@@ -58,7 +50,7 @@ const HorizontalScrollList = ({ items, type }) => {
             padding: 10,
           }}
         >
-          <InstanceCard item={item} type={type} />
+          <InstanceCard item={item} type={type} searchQuery={search}/>
         </div>
       ))}
     </div>
@@ -66,29 +58,54 @@ const HorizontalScrollList = ({ items, type }) => {
 };
 
 /* "Global Search" button -> searchbar pop-up ('dialog') */
-function DialogComponent({
-  searchTerm,
-  setSearchTerm,
-  debounced,
-  shelters,
-  counties,
-  events,
-}) {
+function DialogComponent({ searchTerm, setSearchTerm }) {
   const location = useLocation();
+  const [displayType, setDisplayType] = useState("Shelters")
 
-  // todo- now we need to filter only those model instances that actually match the searchTerm
-  const filter = (items, debounced) => {
-    /* 
-    
-    i'm not entirely sure how `debounced` is supposed to be used here
+  // query all model instances, we'll filter them down by searchTerm later
+  const {
+    data: shelters,
+    loading: loading1,
+    error: error1,
+  } = useFetchAll("https://api.texashomesproject.me/shelters/");
 
-    */
-    return items;
+  const {
+    data: counties,
+    loading: loading2,
+    error: error2,
+  } = useFetchAll("https://api.texashomesproject.me/counties/");
+
+  const {
+    data: events,
+    loading: loading3,
+    error: error3,
+  } = useFetchAll("https://api.texashomesproject.me/events/");
+
+  if (loading1 || loading2 || loading3) return <div>Loading...</div>;
+  if (error1 || error2 || error3)
+    return <div>Error: {error1 || error2 || error3}</div>;
+
+  const filter = (items) => {
+    if (!items) return items;
+    if (!searchTerm) {
+      // if no search has been made, return everything
+      return items;
+    }
+    const searchLower = searchTerm.toLowerCase();
+    return items.filter((item) =>
+      Object.values(item).some(
+        (value) =>
+          typeof value === "string" && value.toLowerCase().includes(searchLower)
+      )
+    );
   };
 
-  const filteredShelters = filter(shelters, debounced);
-  const filteredCounties = filter(counties, debounced);
-  const filteredEvents = filter(events, debounced);
+  // const [filteredShelters, setFilteredShelters] = useState([])
+  // const [filteredCounties, setFilteredCounties] = useState([])
+  // const [filteredEvents, setFilteredEvents] = useState([])
+  const filteredShelters = filter(shelters);
+  const filteredCounties = filter(counties);
+  const filteredEvents = filter(events);
 
   /* Additional dialog-specific styling can be found/altered at "./DialogStyles.js" */
   const searchButtonStyle = {
@@ -98,7 +115,7 @@ function DialogComponent({
   };
 
   return (
-    <div className="flex flex-row items-center justify-between gap-2 md:gap-4">
+    <div>
       {location.pathname === "/" && (
         // Only renders search button if we're on the home page
         <Dialog>
@@ -116,33 +133,55 @@ function DialogComponent({
               </span>
             </Button>
           </DialogTrigger>
+          {/* <DialogContent style={{ overflowY: "auto" }}> */}
           <DialogContent>
             {/* the actual popup */}
-            <div style={{ fontFamily: "NotoSans" }}>
+            <div style={{ fontFamily: "NotoSans", overflowY: "scroll" }}>
               <h1 style={{ marginTop: "0.2rem" }}>Global Search</h1>
-              <input
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ marginTop: 10, width: "100%" }}
+
+              {/* tab row */}
+              <div style={{flexDirection: 'row', display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '100%'}}>
+                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Shelters" ? 0.5 : 1 }} onClick={() => {
+                  setDisplayType("Shelters")
+                }}>
+                  Shelters - {filteredShelters.length}
+                </h3>
+
+                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Counties" ? 0.5 : 1 }} onClick={() => {
+                  setDisplayType("Counties")
+                }}>
+                  Counties - {filteredCounties.length}
+                </h3>
+
+                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Events" ? 0.5 : 1}} onClick={() => {
+                  setDisplayType("Events")
+                }}>
+                  Events - {filteredEvents.length}
+                </h3>
+              </div>
+
+              <SearchBar
+                searchQuery={searchTerm}
+                setSearchQuery={setSearchTerm}
+                placeholder={"Global Search"}
               />
-              {/* todo- change these to not be hardcoded 0 values */}
-              <h3 style={{ marginTop: 20 }}>Shelters - 0</h3>
-              {filteredShelters && (
+
+              {filteredShelters && displayType==="Shelters" && (
                 <HorizontalScrollList
                   items={filteredShelters}
                   type="Shelters"
+                  search={searchTerm}
                 />
               )}
-              <h3>Counties - 0</h3>
-              {filteredCounties && (
+              {filteredCounties && displayType==="Counties" && (
                 <HorizontalScrollList
                   items={filteredCounties}
                   type="Counties"
+                  search={searchTerm}
                 />
               )}
-              <h3>Events - 0</h3>
-              {filteredEvents && (
-                <HorizontalScrollList items={filteredEvents} type="Events" />
+              {filteredEvents && displayType==="Events" && (
+                <HorizontalScrollList items={filteredEvents} type="Events" search={searchTerm}/>
               )}
             </div>
           </DialogContent>
@@ -155,11 +194,7 @@ function DialogComponent({
 function NavBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const debounced = useDebounce(searchTerm.toLowerCase(), 500);
-
-  // todo- make API request/query for all model instances, we'll filter them down by searchTerm later
-  const {
-    data: { shelters, counties, events },
-  } = { data: { shelters: null, counties: null, events: null } };
+  const location = useLocation();
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -187,16 +222,14 @@ function NavBar() {
             <Nav.Link href="/events">Events</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        {/* !!!! NEW !!!! */}
         {/* Search Button -> when clicked becomes search popup ("dialog") */}
-        <DialogComponent
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          debounced={debounced}
-          shelters={shelters}
-          counties={counties}
-          events={events}
+        {location.pathname === "/" && (
+          <DialogComponent
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            debounced={debounced}
         />
+        )}
       </Container>
     </Navbar>
   );

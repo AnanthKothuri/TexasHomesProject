@@ -108,7 +108,7 @@ function DeveloperInstanceCard({ item }) {
   );
 
   return (
-    <Card className="card-content mb-4 shadow" style={{ width: 400 }}>
+    <Card className="card-content mb-4 shadow dev-hover-card" style={{ width: 400 }}>
       <Card.Img
         variant="top"
         src={item.img_src}
@@ -164,7 +164,7 @@ function ShelterInstanceCard({ item, searchQuery}) {
       >
         <Card.Img
           variant="top"
-          src={item.photo_urls.length !== 0 ? item.photo_urls[0] : ""}
+          src={item.photo_urls?.[0] ?? ""}
           style={{ height: 250, objectFit: "cover" }}
         />
         <Card.Body>

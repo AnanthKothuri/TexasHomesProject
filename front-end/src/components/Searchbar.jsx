@@ -1,5 +1,5 @@
 // SearchBar.jsx
-import React from 'react';
+import React from "react";
 
 function SearchBar({ searchQuery, setSearchQuery, placeholder }) {
   return (
@@ -9,7 +9,7 @@ function SearchBar({ searchQuery, setSearchQuery, placeholder }) {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder={placeholder}
-        style={{ width: '100%', padding: 10 }}
+        style={{ width: "100%", padding: 10 }}
       />
     </div>
   );

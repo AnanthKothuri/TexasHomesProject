@@ -177,11 +177,9 @@ const HomePage = () => {
             marginBottom: 100,
           }}
         >
-          <Col
-            className="text-center detail-card"
-            style={{ maxWidth: 250, marginBottom: 30 }}
-          >
+          <Col style={{ maxWidth: 250, marginBottom: 30 }}>
             <div
+              className="text-center detail-card"
               style={{
                 backgroundColor: Colors.semiBlue,
                 padding: 20,
@@ -206,11 +204,9 @@ const HomePage = () => {
             </div>
           </Col>
 
-          <Col
-            className="text-center detail-card"
-            style={{ maxWidth: 250, marginBottom: 30 }}
-          >
+          <Col style={{ maxWidth: 250, marginBottom: 30 }}>
             <div
+              className="text-center detail-card"
               style={{
                 backgroundColor: Colors.semiYellow,
                 padding: 20,
@@ -235,11 +231,9 @@ const HomePage = () => {
             </div>
           </Col>
 
-          <Col
-            className="text-center detail-card"
-            style={{ maxWidth: 250, marginBottom: 30 }}
-          >
+          <Col style={{ maxWidth: 250, marginBottom: 30 }}>
             <div
+              className="text-center detail-card"
               style={{
                 backgroundColor: Colors.semiRed,
                 padding: 20,
