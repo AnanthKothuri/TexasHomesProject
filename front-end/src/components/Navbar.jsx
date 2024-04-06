@@ -39,7 +39,7 @@ function useDebounce(value, delay) {
 const HorizontalScrollList = ({ items, type }) => {
   // Display cards in a horizontal scrollable view
   return (
-    <div style={{ overflowX: "auto", whiteSpace: "nowrap", padding: "10px" }}>
+    <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
       {items.map((item) => (
         // render each individual card
         <div
@@ -60,6 +60,7 @@ const HorizontalScrollList = ({ items, type }) => {
 /* "Global Search" button -> searchbar pop-up ('dialog') */
 function DialogComponent({ searchTerm, setSearchTerm }) {
   const location = useLocation();
+  const [displayType, setDisplayType] = useState("Shelters")
 
   // query all model instances, we'll filter them down by searchTerm later
   const {
@@ -99,6 +100,9 @@ function DialogComponent({ searchTerm, setSearchTerm }) {
     );
   };
 
+  // const [filteredShelters, setFilteredShelters] = useState([])
+  // const [filteredCounties, setFilteredCounties] = useState([])
+  // const [filteredEvents, setFilteredEvents] = useState([])
   const filteredShelters = filter(shelters);
   const filteredCounties = filter(counties);
   const filteredEvents = filter(events);
@@ -132,31 +136,49 @@ function DialogComponent({ searchTerm, setSearchTerm }) {
           {/* <DialogContent style={{ overflowY: "auto" }}> */}
           <DialogContent>
             {/* the actual popup */}
-            <div style={{ fontFamily: "NotoSans" }}>
+            <div style={{ fontFamily: "NotoSans", overflowY: "scroll" }}>
               <h1 style={{ marginTop: "0.2rem" }}>Global Search</h1>
+
+              {/* tab row */}
+              <div style={{flexDirection: 'row', display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '100%'}}>
+                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Shelters" ? 0.5 : 1 }} onClick={() => {
+                  setDisplayType("Shelters")
+                }}>
+                  Shelters - {filteredShelters.length}
+                </h3>
+
+                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Counties" ? 0.5 : 1 }} onClick={() => {
+                  setDisplayType("Counties")
+                }}>
+                  Counties - {filteredCounties.length}
+                </h3>
+
+                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Events" ? 0.5 : 1}} onClick={() => {
+                  setDisplayType("Events")
+                }}>
+                  Events - {filteredEvents.length}
+                </h3>
+              </div>
+
               <SearchBar
                 searchQuery={searchTerm}
                 setSearchQuery={setSearchTerm}
                 placeholder={"Global Search"}
               />
-              <h3 style={{ marginTop: 20 }}>
-                Shelters - {filteredShelters.length}
-              </h3>
-              {filteredShelters && (
+
+              {filteredShelters && displayType==="Shelters" && (
                 <HorizontalScrollList
                   items={filteredShelters}
                   type="Shelters"
                 />
               )}
-              <h3>Counties - {filteredCounties.length}</h3>
-              {filteredCounties && (
+              {filteredCounties && displayType==="Counties" && (
                 <HorizontalScrollList
                   items={filteredCounties}
                   type="Counties"
                 />
               )}
-              <h3>Events - {filteredEvents.length}</h3>
-              {filteredEvents && (
+              {filteredEvents && displayType==="Events" && (
                 <HorizontalScrollList items={filteredEvents} type="Events" />
               )}
             </div>
@@ -170,6 +192,7 @@ function DialogComponent({ searchTerm, setSearchTerm }) {
 function NavBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const debounced = useDebounce(searchTerm.toLowerCase(), 500);
+  const location = useLocation();
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -198,11 +221,13 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
         {/* Search Button -> when clicked becomes search popup ("dialog") */}
-        <DialogComponent
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          debounced={debounced}
+        {location.pathname === "/" && (
+          <DialogComponent
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            debounced={debounced}
         />
+        )}
       </Container>
     </Navbar>
   );
