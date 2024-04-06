@@ -106,7 +106,7 @@ function DeveloperInstanceCard({ item }) {
   );
 
   return (
-    <Card className="card-content mb-4 shadow" style={{ width: 400 }}>
+    <Card className="card-content mb-4 shadow dev-hover-card" style={{ width: 400 }}>
       <Card.Img
         variant="top"
         src={item.img_src}
