@@ -31,7 +31,7 @@
 | ----- | -------------- | ---------------------------------------- |
 | 1     | Ananth Kothuri | f578ed87da97833136d59310fe0dfa4bda8e1ce0 |
 | 2     | Shahmir Masood | 904e60659e9ad06596f2f641ed9334a17a1db6c7 |
-| 3     |                |                                          |
+| 3     | Gabe Casanova  | 1122a9d58dbf5a6273f6d2b54836e29fbc5356b7 |
 | 4     |                |                                          |
 
 ### Phase Leader Responsibilies:
