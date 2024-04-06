@@ -58,14 +58,31 @@ const HorizontalScrollList = ({ items, type }) => {
 };
 
 /* "Global Search" button -> searchbar pop-up ('dialog') */
-function DialogComponent({
-  searchTerm,
-  setSearchTerm,
-  shelters,
-  counties,
-  events,
-}) {
+function DialogComponent({ searchTerm, setSearchTerm }) {
   const location = useLocation();
+
+  // query all model instances, we'll filter them down by searchTerm later
+  const {
+    data: shelters,
+    loading: loading1,
+    error: error1,
+  } = useFetchAll("https://api.texashomesproject.me/shelters/");
+
+  const {
+    data: counties,
+    loading: loading2,
+    error: error2,
+  } = useFetchAll("https://api.texashomesproject.me/counties/");
+
+  const {
+    data: events,
+    loading: loading3,
+    error: error3,
+  } = useFetchAll("https://api.texashomesproject.me/events/");
+
+  if (loading1 || loading2 || loading3) return <div>Loading...</div>;
+  if (error1 || error2 || error3)
+    return <div>Error: {error1 || error2 || error3}</div>;
 
   const filter = (items) => {
     if (!items) return items;
@@ -94,7 +111,7 @@ function DialogComponent({
   };
 
   return (
-    <div className="flex flex-row items-center justify-between gap-2 md:gap-4">
+    <div>
       {location.pathname === "/" && (
         // Only renders search button if we're on the home page
         <Dialog>
@@ -154,29 +171,6 @@ function NavBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const debounced = useDebounce(searchTerm.toLowerCase(), 500);
 
-  // query all model instances, we'll filter them down by searchTerm later
-  const {
-    data: shelters,
-    loading: loading1,
-    error: error1,
-  } = useFetchAll("https://api.texashomesproject.me/shelters/");
-
-  const {
-    data: counties,
-    loading: loading2,
-    error: error2,
-  } = useFetchAll("https://api.texashomesproject.me/counties/");
-
-  const {
-    data: events,
-    loading: loading3,
-    error: error3,
-  } = useFetchAll("https://api.texashomesproject.me/events/");
-
-  if (loading1 || loading2 || loading3) return <div>Loading...</div>;
-  if (error1 || error2 || error3)
-    return <div>Error: {error1 || error2 || error3}</div>;
-
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
@@ -208,9 +202,6 @@ function NavBar() {
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           debounced={debounced}
-          shelters={shelters}
-          counties={counties}
-          events={events}
         />
       </Container>
     </Navbar>
