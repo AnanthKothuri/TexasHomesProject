@@ -4,6 +4,8 @@ import { AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import Colors from "../assets/Colors";
+import HighlightedText from "../components/HighlightedText";
+import HighlightedDescription from "../components/HighlightedDescription";
 
 const date_params = {
   year: "numeric",
@@ -13,17 +15,17 @@ const date_params = {
 
 const WIDTH = 400;
 
-function InstanceCard({ item, type }) {
+function InstanceCard({ item, type, searchQuery}) {
   return (
     <div>
       {type === "Shelters" ? (
-        <ShelterInstanceCard item={item} />
+        <ShelterInstanceCard item={item} searchQuery={searchQuery} />
       ) : type === "Counties" ? (
-        <CountyInstanceCard item={item} />
+        <CountyInstanceCard item={item} searchQuery={searchQuery}/>
       ) : type === "Meet the Team" ? (
         <DeveloperInstanceCard item={item} />
       ) : (
-        <EventInstanceCard item={item} />
+        <EventInstanceCard item={item} searchQuery={searchQuery} />
       )}
     </div>
   );
@@ -143,7 +145,7 @@ function DeveloperInstanceCard({ item }) {
   );
 }
 
-function ShelterInstanceCard({ item }) {
+function ShelterInstanceCard({ item, searchQuery}) {
   let navigate = useNavigate();
 
   function navigateToShelter() {
@@ -167,7 +169,7 @@ function ShelterInstanceCard({ item }) {
         />
         <Card.Body>
           <Card.Title className="card-title hide-overflow">
-            {item.name}
+            <HighlightedText text={item.name} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-SemiBold", fontSize: 18 }}/>
           </Card.Title>
           <Card.Text
             className="description-text hide-overflow"
@@ -176,13 +178,15 @@ function ShelterInstanceCard({ item }) {
               fontSize: 15,
             }}
           >
-            {item.description}
+            <HighlightedDescription text={item.description} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans", fontSize: 15 }}/>
+            {/* {item.description} */}
           </Card.Text>
           <div className="row-attribute">
             <p style={{ fontFamily: "NotoSans-Bold", paddingRight: 10 }}>
               City
             </p>
-            <p style={{ fontFamily: "NotoSans-Light" }}>{item.city}</p>
+            <HighlightedText text={item.city} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-Light", fontSize: 16}}/>
+            {/* <p style={{ fontFamily: "NotoSans-Light" }}>{item.city}</p> */}
           </div>
           <div className="row-attribute">
             <p style={{ fontFamily: "NotoSans-Bold", paddingRight: 10 }}>
@@ -192,7 +196,8 @@ function ShelterInstanceCard({ item }) {
               className="hide-overflow"
               style={{ fontFamily: "NotoSans-Light" }}
             >
-              {item.address}
+              <HighlightedText text={item.address} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-Light", fontSize: 16}}/>
+              {/* {item.address} */}
             </p>
           </div>
           <div className="row-attribute">
@@ -227,7 +232,7 @@ function ShelterInstanceCard({ item }) {
   );
 }
 
-function CountyInstanceCard({ item }) {
+function CountyInstanceCard({ item, searchQuery }) {
   let navigate = useNavigate();
 
   function navigateToCounty() {
@@ -251,13 +256,14 @@ function CountyInstanceCard({ item }) {
         />
         <Card.Body>
           <Card.Title style={{ fontFamily: "NotoSans-SemiBold", fontSize: 18 }}>
-            {item.name}
+            <HighlightedText text={item.name} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-SemiBold", fontSize: 18 }}/>
           </Card.Title>
           <Card.Text
             className="description-text hide-overflow"
             style={{ fontFamily: "NotoSans", fontSize: 15, maxWidth: WIDTH }}
           >
-            {item.description}
+            <HighlightedDescription text={item.description} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans", fontSize: 15}}/>
+            {/* {item.description} */}
           </Card.Text>
           <div className="row-attribute">
             <p style={{ fontFamily: "NotoSans-Bold", paddingRight: 10 }}>
@@ -321,7 +327,7 @@ function CountyInstanceCard({ item }) {
   );
 }
 
-function EventInstanceCard({ item }) {
+function EventInstanceCard({ item, searchQuery }) {
   let navigate = useNavigate();
 
   function navigateToEvent() {
@@ -350,7 +356,8 @@ function EventInstanceCard({ item }) {
             className="hide-overflow"
             style={{ fontFamily: "NotoSans-SemiBold", fontSize: 18 }}
           >
-            {item.title}
+            <HighlightedText text={item.title} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-SemiBold", fontSize: 18}}/>
+            {/* {item.title} */}
           </Card.Title>
           <Card.Text
             className="description-text hide-overflow"
@@ -359,8 +366,10 @@ function EventInstanceCard({ item }) {
               fontSize: 15,
             }}
           >
-            {item.description}
+            <HighlightedDescription text={item.description} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans", fontSize: 15}}/>
+            {/* {item.description} */}
           </Card.Text>
+
           <div className="row-attribute">
             <p style={{ fontFamily: "NotoSans-Bold", paddingRight: 10 }}>
               Organization
@@ -369,15 +378,18 @@ function EventInstanceCard({ item }) {
               className="hide-overflow"
               style={{ fontFamily: "NotoSans-Light" }}
             >
-              {item.organization}
+              <HighlightedText text={item.organization} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-Light", fontSize: 16}}/>
+              {/* {item.organization} */}
             </p>
           </div>
+
           <div className="row-attribute">
             <p style={{ fontFamily: "NotoSans-Bold", paddingRight: 10 }}>
               Date Posted
             </p>
             <p style={{ fontFamily: "NotoSans-Light" }}>
-              {new Date(item.date_posted).toLocaleString("en-US", date_params)}
+              <HighlightedText text={new Date(item.date_posted).toLocaleString("en-US", date_params)} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-Light", fontSize: 16}}/>
+              {/* {new Date(item.date_posted).toLocaleString("en-US", date_params)} */}
             </p>
           </div>
           <div className="row-attribute">
@@ -388,7 +400,8 @@ function EventInstanceCard({ item }) {
               className="description-text"
               style={{ fontFamily: "NotoSans-Light" }}
             >
-              {item.address}
+              <HighlightedText text={item.address} stringToHighlight={searchQuery} styleType={{ fontFamily: "NotoSans-Light", fontSize: 16}}/>
+              {/* {item.address} */}
             </p>
           </div>
           <div className="row-attribute">

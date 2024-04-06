@@ -142,7 +142,7 @@ function PageLayout({ pageTitle }) {
         {filteredData.slice(start, end).map((item, index) => (
           <div className="col" key={index}>
             {/* Changed to use index as key to avoid potential key duplication */}
-            <InstanceCard item={item} type={pageTitle} />
+            <InstanceCard item={item} type={pageTitle} searchQuery={searchQuery}/>
           </div>
         ))}
       </div>

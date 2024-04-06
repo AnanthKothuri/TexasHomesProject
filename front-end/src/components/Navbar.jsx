@@ -36,7 +36,7 @@ function useDebounce(value, delay) {
   return debouncedValue;
 }
 
-const HorizontalScrollList = ({ items, type }) => {
+const HorizontalScrollList = ({ items, type, search }) => {
   // Display cards in a horizontal scrollable view
   return (
     <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
@@ -50,7 +50,7 @@ const HorizontalScrollList = ({ items, type }) => {
             padding: 10,
           }}
         >
-          <InstanceCard item={item} type={type} />
+          <InstanceCard item={item} type={type} searchQuery={search}/>
         </div>
       ))}
     </div>
@@ -170,16 +170,18 @@ function DialogComponent({ searchTerm, setSearchTerm }) {
                 <HorizontalScrollList
                   items={filteredShelters}
                   type="Shelters"
+                  search={searchTerm}
                 />
               )}
               {filteredCounties && displayType==="Counties" && (
                 <HorizontalScrollList
                   items={filteredCounties}
                   type="Counties"
+                  search={searchTerm}
                 />
               )}
               {filteredEvents && displayType==="Events" && (
-                <HorizontalScrollList items={filteredEvents} type="Events" />
+                <HorizontalScrollList items={filteredEvents} type="Events" search={searchTerm}/>
               )}
             </div>
           </DialogContent>
