@@ -72,9 +72,9 @@ function PageLayout({ pageTitle }) {
     : data;
 
   const allSorts = {
-    shelters: ["city", "name", "address"],
-    counties: ["name", "housing_units", "population"],
-    events: ["title", "organization", "date_posted", "address"],
+    shelters: ["city", "name", "address", "lat", "long"],
+    counties: ["name", "housing_units", "population", "lat", "long"],
+    events: ["title", "organization", "date_posted", "address", "lat", "long"],
   };
 
   const sorts = allSorts[pageTitle.toLowerCase()] || [];
