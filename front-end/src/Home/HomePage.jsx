@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 
 import "./HomePage.css";
-import { MdNightShelter } from "react-icons/md";
-import { FaHandsHelping } from "react-icons/fa"; // Adjusted import for consistency
-import { FaLandmarkFlag } from "react-icons/fa6"; // Adjusted import for consistency
-import Feature from "../components/Feature";
 import HomePageCarousel from "../components/HomePageCarousel"; // Ensure this component is set up correctly to display the carousel
 import graphImage from "../assets/home-page/graph.png";
 import Colors from "../assets/Colors";
@@ -97,7 +93,7 @@ const HomePage = () => {
             <p style={{ fontSize: 20, fontFamily: "NotoSans" }}>
               As of 2023, nearly 67,000 people in the state of Texas alone fell
               into homelessness. Of those that are homeless, around 20% are
-              unsheltered, meaning they have no place to go our sleep through
+              unsheltered, meaning they have no place to go sleep through
               the night. These are enormous numbers and are things we sometimes
               overlook as we go about our daily lives.
             </p>
