@@ -1,0 +1,32 @@
+/* Styling for `Visualizations` entire page */
+.our-visuals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for `Provider Visualizations` entire page */
+.provider-visuals {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+.our-visuals > h1, h3 {
+  color: #4785ff;
+}
+
+.provider-visuals > h1, h3 {
+    color: #ff665e;
+}
+
+/* D3 Visualization styling */
+.graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

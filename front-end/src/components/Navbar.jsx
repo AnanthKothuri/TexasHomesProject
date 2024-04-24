@@ -50,7 +50,7 @@ const HorizontalScrollList = ({ items, type, search }) => {
             padding: 10,
           }}
         >
-          <InstanceCard item={item} type={type} searchQuery={search}/>
+          <InstanceCard item={item} type={type} searchQuery={search} />
         </div>
       ))}
     </div>
@@ -60,7 +60,7 @@ const HorizontalScrollList = ({ items, type, search }) => {
 /* "Global Search" button -> searchbar pop-up ('dialog') */
 function DialogComponent({ searchTerm, setSearchTerm }) {
   const location = useLocation();
-  const [displayType, setDisplayType] = useState("Shelters")
+  const [displayType, setDisplayType] = useState("Shelters");
 
   // query all model instances, we'll filter them down by searchTerm later
   const {
@@ -140,22 +140,51 @@ function DialogComponent({ searchTerm, setSearchTerm }) {
               <h1 style={{ marginTop: "0.2rem" }}>Global Search</h1>
 
               {/* tab row */}
-              <div style={{flexDirection: 'row', display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '100%'}}>
-                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Shelters" ? 0.5 : 1 }} onClick={() => {
-                  setDisplayType("Shelters")
-                }}>
+              <div
+                style={{
+                  flexDirection: "row",
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <h3
+                  style={{
+                    marginTop: 20,
+                    cursor: "pointer",
+                    opacity: displayType !== "Shelters" ? 0.5 : 1,
+                  }}
+                  onClick={() => {
+                    setDisplayType("Shelters");
+                  }}
+                >
                   Shelters - {filteredShelters.length}
                 </h3>
 
-                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Counties" ? 0.5 : 1 }} onClick={() => {
-                  setDisplayType("Counties")
-                }}>
+                <h3
+                  style={{
+                    marginTop: 20,
+                    cursor: "pointer",
+                    opacity: displayType !== "Counties" ? 0.5 : 1,
+                  }}
+                  onClick={() => {
+                    setDisplayType("Counties");
+                  }}
+                >
                   Counties - {filteredCounties.length}
                 </h3>
 
-                <h3 style={{ marginTop: 20, cursor: 'pointer', opacity: displayType!=="Events" ? 0.5 : 1}} onClick={() => {
-                  setDisplayType("Events")
-                }}>
+                <h3
+                  style={{
+                    marginTop: 20,
+                    cursor: "pointer",
+                    opacity: displayType !== "Events" ? 0.5 : 1,
+                  }}
+                  onClick={() => {
+                    setDisplayType("Events");
+                  }}
+                >
                   Events - {filteredEvents.length}
                 </h3>
               </div>
@@ -166,22 +195,26 @@ function DialogComponent({ searchTerm, setSearchTerm }) {
                 placeholder={"Global Search"}
               />
 
-              {filteredShelters && displayType==="Shelters" && (
+              {filteredShelters && displayType === "Shelters" && (
                 <HorizontalScrollList
                   items={filteredShelters}
                   type="Shelters"
                   search={searchTerm}
                 />
               )}
-              {filteredCounties && displayType==="Counties" && (
+              {filteredCounties && displayType === "Counties" && (
                 <HorizontalScrollList
                   items={filteredCounties}
                   type="Counties"
                   search={searchTerm}
                 />
               )}
-              {filteredEvents && displayType==="Events" && (
-                <HorizontalScrollList items={filteredEvents} type="Events" search={searchTerm}/>
+              {filteredEvents && displayType === "Events" && (
+                <HorizontalScrollList
+                  items={filteredEvents}
+                  type="Events"
+                  search={searchTerm}
+                />
               )}
             </div>
           </DialogContent>
@@ -220,6 +253,10 @@ function NavBar() {
             <Nav.Link href="/shelters">Shelters</Nav.Link>
             <Nav.Link href="/counties">Counties</Nav.Link>
             <Nav.Link href="/events">Events</Nav.Link>
+            <Nav.Link href="/visualizations">Visualizations</Nav.Link>
+            <Nav.Link href="/provider-visualizations">
+              Provider Visualizations
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
         {/* Search Button -> when clicked becomes search popup ("dialog") */}
@@ -228,7 +265,7 @@ function NavBar() {
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             debounced={debounced}
-        />
+          />
         )}
       </Container>
     </Navbar>
