@@ -1,8 +1,8 @@
 import React from "react";
 import "./Visuals.css";
-import BarPlot from "./OurVisuals/barplot.js";
-import Histogram from "./OurVisuals/histogram.js";
-import LollipopChart from "./OurVisuals/lollipop.js";  // Assuming the component is in this path
+import BarPlot from "./OurVisuals/barplot.jsx";
+import Histogram from "./OurVisuals/histogram.jsx";
+import LollipopChart from "./OurVisuals/lollipop.jsx";  // Assuming the component is in this path
 
 const VisualizationsPage = () => {
   return (
