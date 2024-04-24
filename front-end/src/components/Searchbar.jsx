@@ -9,7 +9,7 @@ function SearchBar({ searchQuery, setSearchQuery, placeholder }) {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder={placeholder}
-        style={{ width: "100%", padding: 10 }}
+        style={{ width: "100%", padding: 10, borderRadius: 20, borderWidth: 1}}
       />
     </div>
   );

@@ -30,11 +30,12 @@ function PageLayout({ pageTitle }) {
   const [end, setEnd] = useState(15); // Default to numPerPage
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState(""); // Added for search functionality
-  const [sortCriterion, setSortCriterion] = useState("");
+  const [sortCriterion, setSortCriterion] = useState(pageTitle == "Events" ? "title" : "name");
+  const [hideSearch, setHideSearch] = useState(false)
 
   const { data, loading, error } = useFetchAll(
     "https://api.texashomesproject.me/" + pageTitle.toLowerCase() + "/",
-    { sort_by: sortCriterion }
+    { sort_by: sortCriterion.replace(/\s+/g, '_') }
   );
 
   const description =
@@ -73,8 +74,8 @@ function PageLayout({ pageTitle }) {
 
   const allSorts = {
     shelters: ["city", "name", "address", "lat", "long"],
-    counties: ["name", "housing_units", "population", "lat", "long"],
-    events: ["title", "organization", "date_posted", "address", "lat", "long"],
+    counties: ["name", "housing units", "population", "lat", "long"],
+    events: ["title", "organization", "date posted", "address", "lat", "long"],
   };
 
   const sorts = allSorts[pageTitle.toLowerCase()] || [];
@@ -120,24 +121,37 @@ function PageLayout({ pageTitle }) {
         </div>
       )}
       {/* From Searchbar.jsx*/}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <SearchBar
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          placeholder={`Search ${pageTitle}`}
-        />
-        <DropdownComponent
-          title="Filter by"
-          sorts={sorts}
-          setSortCriterion={setSortCriterion}
-        />
+
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', margin: 20}}>
+      <button style={{border: 'none', backgroundColor: Colors.white, fontFamily: "NotoSans", color: Colors.lightBlue}} onClick={() => {setHideSearch(!hideSearch)}}>
+        {hideSearch ? "Show Search Bar" : "Hide Search Bar"}
+      </button>
+      {!hideSearch && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <SearchBar
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            placeholder={`Search ${pageTitle}`}
+          />
+          <DropdownComponent
+            title="Filter by"
+            sorts={sorts}
+            setSortCriterion={setSortCriterion}
+          />
+
+          <p style={{fontFamily: "NotoSans-Light", fontSize: 15, paddingTop: 11}}>
+            {sortCriterion}
+          </p>
+        </div>
+      )}
       </div>
+
       <div className="row row-cols-auto" style={{ justifyContent: "center" }}>
         {filteredData.slice(start, end).map((item, index) => (
           <div className="col" key={index}>
