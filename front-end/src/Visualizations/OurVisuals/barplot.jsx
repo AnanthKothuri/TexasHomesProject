@@ -37,8 +37,8 @@ const BarPlot = () => {
         svg.selectAll("*").remove(); 
 
         const margin = { top: 20, right: 30, bottom: 40, left: 90 };
-        const width = 460 - margin.left - margin.right;
-        const height = 400 - margin.top - margin.bottom;
+        const width = 900 - margin.left - margin.right;
+        const height = 500 - margin.top - margin.bottom;
 
         const x = d3.scaleLinear()
             .domain([0, d3.max(data, d => d.value)])
@@ -72,7 +72,7 @@ const BarPlot = () => {
     };
 
     return (
-        <svg ref={ref} width={500} height={450} />
+        <svg ref={ref} width={900} height={600} />
     );
 };
 

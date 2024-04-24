@@ -73,7 +73,7 @@ const BarGraph = () => {
             .attr("fill", "#69b3a2");
     };
 
-    return <svg ref={ref} width={800} height={500}></svg>;
+    return <svg ref={ref} width={800} height={600}></svg>;
 };
 
 export default BarGraph;

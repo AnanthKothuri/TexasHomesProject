@@ -18,8 +18,8 @@ const Histogram = () => {
         svg.selectAll("*").remove();
 
         const margin = { top: 10, right: 30, bottom: 30, left: 40 };
-        const width = 460 - margin.left - margin.right;
-        const height = 400 - margin.top - margin.bottom;
+        const width = 900 - margin.left - margin.right;
+        const height = 500 - margin.top - margin.bottom;
 
         const chart = svg.append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -53,7 +53,7 @@ const Histogram = () => {
 
     return (
         <div>
-            <svg ref={ref} width={500} height={450}></svg>
+            <svg ref={ref} width={900} height={600}></svg>
         </div>
     );
 };

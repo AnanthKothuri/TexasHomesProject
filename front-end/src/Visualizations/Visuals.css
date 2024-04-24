@@ -4,21 +4,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .our-visuals > h1,
 .our-critiques > h1 {
-  color: #4785ff;
+  color: #000000;
   font-weight: bolder;
   padding-top: 25px;
   padding-bottom: 5px;
   font-size: 2.2em;
+  margin-bottom: 30px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .provider-visuals > h1,
 .other-critiques > h1 {
-  color: #ff665e;
+  color: #000000;
   font-weight: bolder;
   padding-top: 25px;
   padding-bottom: 5px;
@@ -26,26 +33,35 @@
 }
 
 .critique-item-wrapper {
-  background-color: #d2e1ff;
+  background-color: #f7f7f7;
   border-radius: 20px;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 7.5px;
   padding-bottom: 7.5px;
-  margin-bottom: 17.5px;
-  max-width: 450px;
+  margin-bottom: 30px;
+  width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
 }
 
 .critique-question {
   font-style: italic;
   font-weight: bold;
   font-size: 1.3em;
+  font-family: 'NotoSans';
   padding-bottom: 5px;
   padding-top: 10px;
 }
 
 .critique-answer {
   padding-bottom: 7.5px;
+  font-family: 'NotoSans';
 }
 
 /* D3 Visualization styling */
