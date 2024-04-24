@@ -10,7 +10,7 @@
 
 ### Postman Documentation:
 
-    https://documenter.getpostman.com/view/23353623/2sA2r545RR
+    https://documenter.getpostman.com/view/32930501/2sA3BrXA5C
 
 ### GitLab Pipeline:
 
