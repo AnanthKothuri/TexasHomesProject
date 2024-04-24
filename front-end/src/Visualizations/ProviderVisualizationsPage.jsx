@@ -1,6 +1,8 @@
 import React from "react";
 import "./Visuals.css";
-
+import ScatterPlot from "./ProviderVisuals/scatterplot.jsx";
+import BarGraph from "./ProviderVisuals/bargraph.jsx";
+import PieChart from "./ProviderVisuals/piechart.jsx";
 // Import D3 visualizations similar to this:
 
 // import Visual1 from "./ProviderVisuals/Visual1.js";
@@ -12,19 +14,19 @@ const ProviderVisualizationsaPage = () => {
     <div className="provider-visuals">
       <h1>Provider Visualizations</h1>
 
-      <h3>Provider Visual #1</h3>
+      <h3>Number of Homes In Counties Per Population</h3>
       <div className="graph">
-        <></>
+        <ScatterPlot />
       </div>
 
-      <h3>Provider Visual #2</h3>
+      <h3>Most Common Types of Organizations</h3>
       <div className="graph">
-        <></>
+        <BarGraph />
       </div>
 
-      <h3>Provider Visual #3</h3>
+      <h3>Amounts Of Different Types Of Resources</h3>
       <div className="graph">
-        <></>
+        <PieChart />
       </div>
 
       {/* Critiques */}
