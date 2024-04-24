@@ -1,26 +1,51 @@
-/* Styling for `Visualizations` entire page */
-.our-visuals {
+/* Styling for both visualization pages */
+.our-visuals, .provider-visuals {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-/* Styling for `Provider Visualizations` entire page */
-.provider-visuals {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-.our-visuals > h1, h3 {
+.our-visuals > h1,
+.our-critiques > h1 {
   color: #4785ff;
+  font-weight: bolder;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  font-size: 2.2em;
 }
 
-.provider-visuals > h1, h3 {
-    color: #ff665e;
+.provider-visuals > h1,
+.other-critiques > h1 {
+  color: #ff665e;
+  font-weight: bolder;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  font-size: 2.2em;
+}
+
+.critique-item-wrapper {
+  background-color: #d2e1ff;
+  border-radius: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  margin-bottom: 17.5px;
+  max-width: 450px;
+}
+
+.critique-question {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.critique-answer {
+  padding-bottom: 7.5px;
 }
 
 /* D3 Visualization styling */

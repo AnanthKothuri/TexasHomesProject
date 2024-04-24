@@ -26,6 +26,13 @@ const ProviderVisualizationsaPage = () => {
       <div className="graph">
         <></>
       </div>
+
+      {/* Critiques */}
+
+      <div className="other-critiques">
+        <h1>Other Critique</h1>
+        
+      </div>
     </div>
   );
 };

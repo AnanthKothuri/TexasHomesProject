@@ -57,7 +57,8 @@ export const tools_used = [
   },
 ];
 
-const FULLSTACK_COLOR = "#1d66b5";
+const FRONTEND_COLOR = "#c4162a";
+const BACKEND_COLOR = "#2e80bf";
 
 // ordering effects order displayed on website
 export const contributors = [
@@ -68,8 +69,8 @@ export const contributors = [
     gitlab_username: "jerodvo",
     description:
       "I'm a junior studying Computer Science at UT Austin. I like gaming, listening to music, and skiing in my free time.",
-    role: "fullstack",
-    role_color: FULLSTACK_COLOR,
+    role: "backend",
+    role_color: BACKEND_COLOR,
     num_tests: 0,
   },
   {
@@ -79,8 +80,8 @@ export const contributors = [
     gitlab_username: "gabecasanova",
     description:
       "I'm a senior CS major at UT Austin. In my spare time, I enjoy reading, working out with friends, and listening to music!",
-    role: "fullstack",
-    role_color: FULLSTACK_COLOR,
+    role: "frontend",
+    role_color: FRONTEND_COLOR,
     num_tests: 0,
   },
   {
@@ -90,8 +91,8 @@ export const contributors = [
     gitlab_username: "shahmir-m",
     description:
       "I'm a senior majoring in CS, I'm a big football fan, avid rock climber, enjoyer of sports/video games, and a sci-fi nerd :)",
-    role: "fullstack",
-    role_color: FULLSTACK_COLOR,
+    role: "backend",
+    role_color: BACKEND_COLOR,
     num_tests: 0,
   },
   {
@@ -101,8 +102,8 @@ export const contributors = [
     gitlab_username: "ananth.kothuri",
     description:
       "I’m a sophomore CS and Math major at UT Austin. I love to read, play with my dog, and travel to new countries and places.",
-    role: "fullstack",
-    role_color: FULLSTACK_COLOR,
+    role: "frontend",
+    role_color: FRONTEND_COLOR,
     num_tests: 0,
   },
 ];
