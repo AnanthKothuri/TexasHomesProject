@@ -10,15 +10,16 @@ const VisualizationsPage = () => {
       <h1>Visualizations</h1>
       <h3>Number of Shelters by City</h3>
       <div className="graph">
-        <BarPlot />
+        <BarPlot/>
       </div>
       <h3>County Population vs. Total Housing Units</h3>
       <div className="graph">
-        <Histogram />
+        <Histogram/>
       </div>
-      <h3>Lollipop Chart of Counties per Zip Code</h3>
+      <h3>Shelters per Zip Code</h3>
+      <h5>*zip codes not listed only have 1 shelter*</h5>
       <div className="graph">
-        <LollipopChart />
+        <LollipopChart/>
       </div>
     </div>
   );

@@ -24,10 +24,11 @@ const LollipopChart = () => {
             return acc;
         }, {});
 
-        return Object.keys(counts).map(zip => ({
+        // Filter to only include zip codes with more than one shelter
+        return Object.keys(counts).filter(zip => counts[zip] > 1).map(zip => ({
             zip,
             count: counts[zip]
-        })).sort((a, b) => b.count - a.count);
+        })).sort((a, b) => b.count - a.count); // Sorting might be optional depending on your preference
     };
 
     const drawLollipopChart = (data) => {
