@@ -2,7 +2,7 @@ import React from "react";
 import "./Visuals.css";
 import BarPlot from "./OurVisuals/barplot.jsx";
 import Histogram from "./OurVisuals/histogram.jsx";
-import LollipopChart from "./OurVisuals/lollipop.jsx";  // Assuming the component is in this path
+import LollipopChart from "./OurVisuals/lollipop.jsx"; // Assuming the component is in this path
 
 const VisualizationsPage = () => {
   const critiques = [
@@ -37,16 +37,16 @@ const VisualizationsPage = () => {
       <h1>Visualizations</h1>
       <h3>Number of Shelters by City</h3>
       <div className="graph">
-        <BarPlot/>
+        <BarPlot />
       </div>
       <h3>County Population vs. Total Housing Units</h3>
       <div className="graph">
-        <Histogram/>
+        <Histogram />
       </div>
       <h3>Shelters per Zip Code</h3>
       <h5>*zip codes not listed only have 1 shelter*</h5>
       <div className="graph">
-        <LollipopChart/>
+        <LollipopChart />
       </div>
       {/* Critiques */}
       <div className="our-critiques">
