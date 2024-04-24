@@ -33,7 +33,7 @@ const BarPlot = () => {
 
     const drawBarPlot = (data) => {
         const svg = d3.select(ref.current);
-        svg.selectAll("*").remove(); // Clear svg content before adding new elements
+        svg.selectAll("*").remove(); 
 
         const margin = { top: 20, right: 30, bottom: 40, left: 90 };
         const width = 460 - margin.left - margin.right;
