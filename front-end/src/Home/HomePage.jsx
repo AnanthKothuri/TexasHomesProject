@@ -117,7 +117,7 @@ const HomePage = () => {
               width="100%"
               height={300}
               src={
-                "https://www.youtube.com/embed/29X_Kmd6Ewg?si=lyNTQo-A4NPDniDd"
+                "https://www.youtube.com/embed/c9jB_fWUdc4?si=VG1pH9jY-JHlPqD2"
               }
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
