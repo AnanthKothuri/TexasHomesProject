@@ -5,7 +5,7 @@ const LollipopChart = () => {
     const ref = useRef();
 
     useEffect(() => {
-        fetch("http://api.texashomesproject.me/shelters/")
+        fetch("https://api.texashomesproject.me/shelters/")
             .then(response => response.json())
             .then(data => {
                 if (data && Array.isArray(data)) {

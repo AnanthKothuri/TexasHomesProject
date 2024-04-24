@@ -5,7 +5,7 @@ const Histogram = () => {
     const ref = useRef();
 
     useEffect(() => {
-        fetch("http://api.texashomesproject.me/counties")
+        fetch("https://api.texashomesproject.me/counties/")
             .then(response => response.json())
             .then(data => {
                 drawHistogram(data);
