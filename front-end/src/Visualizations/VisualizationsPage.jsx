@@ -34,23 +34,24 @@ const VisualizationsPage = () => {
 
   return (
     <div className="our-visuals">
-      <h1>Visualizations</h1>
-      <h3>Number of Shelters by City</h3>
+      <h1 style={{fontFamily: 'NotoSans-Bold'}}>Visualizations</h1>
+      <h3 style={{fontFamily: 'NotoSans'}}>Number of Shelters by City</h3>
       <div className="graph">
         <BarPlot />
       </div>
-      <h3>County Population vs. Total Housing Units</h3>
+      <h3 style={{fontFamily: 'NotoSans'}}>County Population vs. Total Housing Units</h3>
       <div className="graph">
         <Histogram />
       </div>
-      <h3>Shelters per Zip Code</h3>
-      <h5>*zip codes not listed only have 1 shelter*</h5>
+      <h3 style={{fontFamily: 'NotoSans'}}>Shelters per Zip Code</h3>
+      {/* <h5>*zip codes not listed only have 1 shelter*</h5> */}
       <div className="graph">
         <LollipopChart />
       </div>
+
       {/* Critiques */}
       <div className="our-critiques">
-        <h1>Self Critique</h1>
+        <h1 style={{fontFamily: 'NotoSans-Bold'}}>Self Critique</h1>
         {critiques.map((item, index) => (
           <div className="critique-item-wrapper">
             <div className="critique-question" key={index}>
@@ -62,7 +63,7 @@ const VisualizationsPage = () => {
           </div>
         ))}
       </div>
-      <div style={{ paddingBottom: 20 }} />
+      <div style={{ paddingBottom: 80 }} />
     </div>
   );
 };

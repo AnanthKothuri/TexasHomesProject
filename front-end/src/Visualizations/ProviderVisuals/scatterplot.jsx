@@ -70,7 +70,7 @@ const ScatterPlot = () => {
     };
 
     return (
-        <svg ref={ref} width={960} height={500} />
+        <svg ref={ref} width={960} height={600} />
     );
 };
 
