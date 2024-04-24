@@ -46,7 +46,7 @@ const Histogram = () => {
             .append("rect")
             .attr("x", d => x(d.population))
             .attr("y", d => y(d.housing_units))
-            .attr("width", 2)
+            .attr("width", 6)
             .attr("height", d => height - y(d.housing_units))
             .attr("fill", "#69b3a2");
     };
