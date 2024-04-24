@@ -1,11 +1,8 @@
 import React from "react";
 import "./Visuals.css";
-
-// Import D3 visualizations similar to this:
-
-// import Visual1 from "./OurVisuals/Visual1.js";
-// import Visual2 from "./OurVisuals/Visual2.js";
-// import Visual3 from "./OurVisuals/Visual3.js";
+import BarPlot from "./OurVisuals/barplot.jsx";
+import Histogram from "./OurVisuals/histogram.jsx";
+import LollipopChart from "./OurVisuals/lollipop.jsx";  // Assuming the component is in this path
 
 const VisualizationsPage = () => {
   const critiques = [
@@ -38,17 +35,18 @@ const VisualizationsPage = () => {
   return (
     <div className="our-visuals">
       <h1>Visualizations</h1>
-      <h3>Visual #1</h3>
+      <h3>Number of Shelters by City</h3>
       <div className="graph">
-        <></>
+        <BarPlot/>
       </div>
-      <h3>Visual #2</h3>
+      <h3>County Population vs. Total Housing Units</h3>
       <div className="graph">
-        <></>
+        <Histogram/>
       </div>
-      <h3>Visual #3</h3>
+      <h3>Shelters per Zip Code</h3>
+      <h5>*zip codes not listed only have 1 shelter*</h5>
       <div className="graph">
-        <></>
+        <LollipopChart/>
       </div>
       {/* Critiques */}
       <div className="our-critiques">
