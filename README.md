@@ -4,7 +4,7 @@
 
 ### Backend API: [https://api.texashomesproject.me/](https://api.texashomesproject.me/)
 
-### Postman Documentation: [https://documenter.getpostman.com/view/32930501/2sA3BrXA5C](https://documenter.getpostman.com/view/32930501/2sA3BrXA5C)
+### Postman: [https://documenter.getpostman.com/view/32930501/2sA3BrXA5C](https://documenter.getpostman.com/view/32930501/2sA3BrXA5C)
 
 ### GitLab Pipeline: [https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines](https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines)
 
