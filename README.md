@@ -2,19 +2,19 @@
 
 ### Website:
 
-    https://www.texashomesproject.me
+    [https://www.texashomesproject.me](https://www.texashomesproject.me)
 
 ### Backend API:
 
-    https://api.texashomesproject.me/
+    [https://api.texashomesproject.me/](https://api.texashomesproject.me/)
 
 ### Postman Documentation:
 
-    https://documenter.getpostman.com/view/32930501/2sA3BrXA5C
+    [https://documenter.getpostman.com/view/32930501/2sA3BrXA5C](https://documenter.getpostman.com/view/32930501/2sA3BrXA5C)
 
 ### GitLab Pipeline:
 
-    https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines
+    [https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines](https://gitlab.com/shahmir-m/cs373-group-21/-/pipelines)
 
 ### Team Member Info:
 
@@ -27,12 +27,12 @@
 
 ### IDB Phase Info:
 
-| Phase | Leader         | GitSHA                                   |
-| ----- | -------------- | ---------------------------------------- |
-| 1     | Ananth Kothuri | f578ed87da97833136d59310fe0dfa4bda8e1ce0 |
-| 2     | Shahmir Masood | 904e60659e9ad06596f2f641ed9334a17a1db6c7 |
-| 3     | Gabe Casanova  | 1122a9d58dbf5a6273f6d2b54836e29fbc5356b7 |
-| 4     |                |                                          |
+| Phase | Leader           | GitSHA                                   |
+| ----- | ---------------- | ---------------------------------------- |
+| 1     | Ananth Kothuri   | f578ed87da97833136d59310fe0dfa4bda8e1ce0 |
+| 2     | Shahmir Masood   | 904e60659e9ad06596f2f641ed9334a17a1db6c7 |
+| 3     | Gabriel Casanova | 1122a9d58dbf5a6273f6d2b54836e29fbc5356b7 |
+| 4     | Shahmir Masood   |                                          |
 
 ### Phase Leader Responsibilies:
 
@@ -44,10 +44,10 @@
 
 | Name                     | Estimated | Actual |
 | :----------------------- | --------- | ------ |
-| Jeronimo Del Valle Ocejo | 32        | 40     |
-| Gabriel Casanova         | 35        | 40     |
-| Shahmir Masood           | 31        | 40     |
-| Ananth Kothuri           | 37        | 40     |
+| Jeronimo Del Valle Ocejo | 42        | 50     |
+| Gabriel Casanova         | 45        | 50     |
+| Shahmir Masood           | 41        | 50     |
+| Ananth Kothuri           | 47        | 50     |
 
 ---
 
