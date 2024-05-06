@@ -13,7 +13,7 @@ const AboutPage = () => {
   const [issueResults, setIssueResults] = useState([]);
 
   const PROJECT_ID = 54614586;
-  const GITLAB_TOKEN = "glpat-FcEHeSx7LEzvmsJuN5zd";
+  const GITLAB_TOKEN = "glpat-FZpXtwFzJP6fWTrXp9jb";
 
   useEffect(() => {
     // fetch commit data
